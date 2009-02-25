@@ -11,6 +11,4 @@ h1. iPhone Font Browser (Objective-C, 2008)
 
 This iPhone application is based on code from the "Under the Bridge blog":http://www.alexcurylo.com/blog/2008/10/05/snippet-available-uifonts/ and allows users and developers to browse and play with the fonts available in the iPhone OS.
 
-!http://kosmaczewski.net/wp-content/uploads/2008/11/default.png!
-
-!http://kosmaczewski.net/wp-content/uploads/2008/11/fontbrowser.png!
+!http://kosmaczewski.net/wp-content/uploads/2008/11/default.png! !http://kosmaczewski.net/wp-content/uploads/2008/11/fontbrowser.png!
