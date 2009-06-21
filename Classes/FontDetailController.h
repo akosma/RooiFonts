@@ -1,6 +1,6 @@
 //
 //  FontDetailController.h
-//  FontBrowser
+//  FontKit
 //
 //  Created by Adrian on 11/12/08.
 //  Copyright 2008 Adrian Kosmaczewski. All rights reserved.
@@ -14,6 +14,8 @@
     IBOutlet UISlider *slider;
     IBOutlet UILabel *sizeLabel;
     IBOutlet UITextView *sampleView;
+    IBOutlet UITextView *alphabetTextView;
+    IBOutlet UISegmentedControl *displayType;
     UIBarButtonItem *button;
     NSString *fontName;
 }
@@ -21,5 +23,6 @@
 @property (nonatomic, copy) NSString *fontName;
 
 - (IBAction)sliderValueChanged:(id)sender;
+- (IBAction)changedDisplayType:(id)sender;
 
 @end

@@ -3,17 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1D3623260D0F684500981E51 /* FontBrowserAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* FontBrowserAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
-		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
-		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		3A011EF80ECB71F500C0477D /* NSString+FirstLetters.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A011EF70ECB71F400C0477D /* NSString+FirstLetters.m */; };
+		3A65E8650FEEC443005CA383 /* AboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A65E8640FEEC443005CA383 /* AboutController.m */; };
+		3A65E86A0FEEC4B6005CA383 /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A65E8690FEEC4B6005CA383 /* About.xib */; };
+		3A65E8DF0FEECBF2005CA383 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A65E8DE0FEECBF2005CA383 /* MessageUI.framework */; };
+		3A65E8E30FEECC15005CA383 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A65E8E20FEECC15005CA383 /* CoreGraphics.framework */; };
+		3A65E8E50FEECC15005CA383 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A65E8E40FEECC15005CA383 /* Foundation.framework */; };
+		3A65E8E70FEECC15005CA383 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A65E8E60FEECC15005CA383 /* UIKit.framework */; };
+		3A65E95F0FEED1B4005CA383 /* UIFont+FontList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A65E95E0FEED1B4005CA383 /* UIFont+FontList.m */; };
 		3A6F3D650ECAE1C50009DBF1 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A6F3D640ECAE1C50009DBF1 /* Entitlements.plist */; };
 		3AAEEC650ECACE8E00739F65 /* FontsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEEC640ECACE8E00739F65 /* FontsController.m */; };
 		3AAEECAC0ECAD03200739F65 /* FontDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEECAB0ECAD03200739F65 /* FontDetailController.m */; };
@@ -23,17 +27,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* FontBrowserAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontBrowserAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* FontBrowserAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontBrowserAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* FontBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FontBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* FontBrowser_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontBrowser_Prefix.pch; sourceTree = "<group>"; };
 		3A011EF60ECB71F400C0477D /* NSString+FirstLetters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FirstLetters.h"; sourceTree = "<group>"; };
 		3A011EF70ECB71F400C0477D /* NSString+FirstLetters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FirstLetters.m"; sourceTree = "<group>"; };
+		3A65E8630FEEC443005CA383 /* AboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutController.h; sourceTree = "<group>"; };
+		3A65E8640FEEC443005CA383 /* AboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutController.m; sourceTree = "<group>"; };
+		3A65E8690FEEC4B6005CA383 /* About.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = About.xib; sourceTree = "<group>"; };
+		3A65E8DE0FEECBF2005CA383 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		3A65E8E20FEECC15005CA383 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3A65E8E40FEECC15005CA383 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3A65E8E60FEECC15005CA383 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3A65E95D0FEED1B4005CA383 /* UIFont+FontList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+FontList.h"; sourceTree = "<group>"; };
+		3A65E95E0FEED1B4005CA383 /* UIFont+FontList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+FontList.m"; sourceTree = "<group>"; };
 		3A6F3D640ECAE1C50009DBF1 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		3AAEEC630ECACE8E00739F65 /* FontsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontsController.h; sourceTree = "<group>"; };
 		3AAEEC640ECACE8E00739F65 /* FontsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontsController.m; sourceTree = "<group>"; };
@@ -50,9 +60,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
-				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
-				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
+				3A65E8DF0FEECBF2005CA383 /* MessageUI.framework in Frameworks */,
+				3A65E8E30FEECC15005CA383 /* CoreGraphics.framework in Frameworks */,
+				3A65E8E50FEECC15005CA383 /* Foundation.framework in Frameworks */,
+				3A65E8E70FEECC15005CA383 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +81,10 @@
 				3AAEECAB0ECAD03200739F65 /* FontDetailController.m */,
 				3A011EF60ECB71F400C0477D /* NSString+FirstLetters.h */,
 				3A011EF70ECB71F400C0477D /* NSString+FirstLetters.m */,
+				3A65E8630FEEC443005CA383 /* AboutController.h */,
+				3A65E8640FEEC443005CA383 /* AboutController.m */,
+				3A65E95D0FEED1B4005CA383 /* UIFont+FontList.h */,
+				3A65E95E0FEED1B4005CA383 /* UIFont+FontList.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -109,6 +124,7 @@
 				3AD863D10ECAE96000FF9333 /* Icon.png */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				3AAEECAD0ECAD04100739F65 /* FontDetail.xib */,
+				3A65E8690FEEC4B6005CA383 /* About.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				3A6F3D640ECAE1C50009DBF1 /* Entitlements.plist */,
 				3AF1C6780F45A94B00FA0425 /* Default.png */,
@@ -119,9 +135,10 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
-				1D30AB110D05D00D00671497 /* Foundation.framework */,
-				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
+				3A65E8E20FEECC15005CA383 /* CoreGraphics.framework */,
+				3A65E8E40FEECC15005CA383 /* Foundation.framework */,
+				3A65E8E60FEECC15005CA383 /* UIKit.framework */,
+				3A65E8DE0FEECBF2005CA383 /* MessageUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -151,8 +168,11 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "akosma software";
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "FontBrowser" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 1;
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
@@ -173,6 +193,7 @@
 				3A6F3D650ECAE1C50009DBF1 /* Entitlements.plist in Resources */,
 				3AD863D20ECAE96000FF9333 /* Icon.png in Resources */,
 				3AF1C6790F45A94B00FA0425 /* Default.png in Resources */,
+				3A65E86A0FEEC4B6005CA383 /* About.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +209,8 @@
 				3AAEEC650ECACE8E00739F65 /* FontsController.m in Sources */,
 				3AAEECAC0ECAD03200739F65 /* FontDetailController.m in Sources */,
 				3A011EF80ECB71F500C0477D /* NSString+FirstLetters.m in Sources */,
+				3A65E8650FEEC443005CA383 /* AboutController.m in Sources */,
+				3A65E95F0FEED1B4005CA383 /* UIFont+FontList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,12 +247,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Adrian Kosmaczewski";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos2.1;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BB63CF9B-ACC4-4852-A7F9-182296C3629E";
+				SDKROOT = iphoneos3.0;
 			};
 			name = Distribution;
 		};
@@ -258,7 +282,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos2.1;
+				SDKROOT = iphonesimulator3.0;
 			};
 			name = Debug;
 		};
