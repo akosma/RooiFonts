@@ -67,8 +67,8 @@
         CGRect rect = CGRectMake(0.0, 0.0, 320.0, 50.0);
         cell = [[[UITableViewCell alloc] initWithFrame:rect reuseIdentifier:identifier] autorelease];
     }
-    cell.font = [UIFont fontWithName:font size:18.0];
-    cell.text =  font;
+    cell.textLabel.font = [UIFont fontWithName:font size:18.0];
+    cell.textLabel.text =  font;
     return cell;
 }
 
