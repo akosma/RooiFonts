@@ -132,12 +132,12 @@
 		3A65E9990FEED5C6005CA383 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3A65E99E0FEED5C6005CA383 /* FontsController.h */,
+				3A65E99F0FEED5C6005CA383 /* FontsController.m */,
 				3A65E99A0FEED5C6005CA383 /* AboutController.h */,
 				3A65E99B0FEED5C6005CA383 /* AboutController.m */,
 				3A65E99C0FEED5C6005CA383 /* FontDetailController.h */,
 				3A65E99D0FEED5C6005CA383 /* FontDetailController.m */,
-				3A65E99E0FEED5C6005CA383 /* FontsController.h */,
-				3A65E99F0FEED5C6005CA383 /* FontsController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

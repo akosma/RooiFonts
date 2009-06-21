@@ -17,6 +17,7 @@
 {
     if (self = [super initWithNibName:@"About" bundle:nil]) 
     {
+        self.title = @"About FontKit";
     }
     return self;
 }
@@ -31,8 +32,7 @@
 
 - (IBAction)done:(id)sender
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"HideAboutBox" 
-                                                        object:self];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark -

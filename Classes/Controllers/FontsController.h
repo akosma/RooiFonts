@@ -11,6 +11,7 @@
 #import <MessageUI/MFMailComposeViewController.h>
 
 @class FontDetailController;
+@class AboutController;
 
 @interface FontsController : UITableViewController <UIActionSheetDelegate,
                                                     MFMailComposeViewControllerDelegate>
@@ -20,6 +21,7 @@
     NSArray *familyNames;
     UINavigationController *controller;
     FontDetailController *detailController;
+    AboutController *aboutBox;
 }
 
 @property (nonatomic, retain) UINavigationController *controller;

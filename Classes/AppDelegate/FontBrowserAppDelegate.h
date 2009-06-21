@@ -9,14 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @class FontsController;
-@class AboutController;
 
 @interface FontBrowserAppDelegate : NSObject <UIApplicationDelegate> 
 {
 @private
     IBOutlet UIWindow *window;
     FontsController *viewController;
-    AboutController *aboutBox;
 }
 
 @end

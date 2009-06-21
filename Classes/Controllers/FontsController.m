@@ -6,11 +6,11 @@
 //  Copyright 2008 Adrian Kosmaczewski. All rights reserved.
 //
 
-#import <MessageUI/MFMailComposeViewController.h>
 #import "FontsController.h"
 #import "FontDetailController.h"
 #import "NSString+FirstLetters.h"
 #import "UIFont+FontList.h"
+#import "AboutController.h"
 
 @implementation FontsController
 
@@ -52,6 +52,7 @@
 
 - (void)dealloc
 {
+    [aboutBox release];
     [controller release];
     [familyNames release];
     [detailController release];
@@ -63,8 +64,11 @@
 
 - (void)about:(id)sender
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"ShowAboutBox" 
-                                                        object:self];
+    if (aboutBox == nil)
+    {
+        aboutBox = [[AboutController alloc] init];
+    }
+    [controller pushViewController:aboutBox animated:YES];
 }
 
 - (void)action:(id)sender
