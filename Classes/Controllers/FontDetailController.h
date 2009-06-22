@@ -16,6 +16,7 @@
     IBOutlet UITextView *sampleView;
     IBOutlet UITextView *alphabetTextView;
     IBOutlet UISegmentedControl *displayType;
+    IBOutlet UISegmentedControl *specialSizes;
     UIBarButtonItem *button;
     NSString *fontName;
 }
@@ -24,5 +25,6 @@
 
 - (IBAction)sliderValueChanged:(id)sender;
 - (IBAction)changedDisplayType:(id)sender;
+- (IBAction)selectedSpecialSize:(id)sender;
 
 @end

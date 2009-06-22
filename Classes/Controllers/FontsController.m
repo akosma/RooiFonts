@@ -12,6 +12,11 @@
 #import "UIFont+FontList.h"
 #import "AboutController.h"
 
+@interface FontsController (Private)
+- (void)viewCurrentlySelectedFont;
+@end
+
+
 @implementation FontsController
 
 @synthesize controller;
@@ -26,7 +31,6 @@
         familyNames = [[[UIFont familyNames] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)] retain];
         controller = [[UINavigationController alloc] initWithRootViewController:self];
         controller.toolbarHidden = NO;
-        detailController = [[FontDetailController alloc] init];
         self.tableView.rowHeight = 50;
         self.title = @"FontKit";
         
@@ -52,6 +56,7 @@
 
 - (void)dealloc
 {
+    [selectedIndexPath release];
     [aboutBox release];
     [controller release];
     [familyNames release];
@@ -125,11 +130,22 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
 {
-    NSArray *fontNames = [UIFont fontNamesForFamilyName:[familyNames objectAtIndex:indexPath.section]];
-    NSString *identifier = [fontNames objectAtIndex:indexPath.row];
-    detailController.fontName = identifier;
-    detailController.title = identifier;
-    [self.controller pushViewController:detailController animated:YES];
+    [selectedIndexPath release];
+    selectedIndexPath = [indexPath retain];
+    [self viewCurrentlySelectedFont];
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    [selectedIndexPath release];
+    selectedIndexPath = [indexPath retain];
+    accessoryActionSheet = [[UIActionSheet alloc] initWithTitle:@""
+                                                     delegate:self 
+                                            cancelButtonTitle:@"Cancel"
+                                       destructiveButtonTitle:nil
+                                            otherButtonTitles:@"Copy name", @"View", @"Compare with...", nil];
+    [accessoryActionSheet showInView:controller.view];
+    [accessoryActionSheet release];
 }
 
 #pragma mark -
@@ -162,6 +178,30 @@
                 break;
         }
     }
+    else if (actionSheet == accessoryActionSheet)
+    {
+        switch (buttonIndex) 
+        {
+            case 0:
+            {
+                NSString *familyName = [familyNames objectAtIndex:selectedIndexPath.section];
+                NSArray *fontNames = [UIFont fontNamesForFamilyName:familyName];
+                NSString *fontName = [fontNames objectAtIndex:selectedIndexPath.row];
+                UIPasteboard *board = [UIPasteboard generalPasteboard];
+                board.string = [NSString stringWithFormat:@"Family: %@; font: %@", familyName, fontName];
+                break;
+            }
+
+            case 1:
+            {
+                [self viewCurrentlySelectedFont];
+                break;
+            }
+
+            default:
+                break;
+        }
+    }
 }
 
 #pragma mark -
@@ -184,7 +224,26 @@
 
 - (void)didReceiveMemoryWarning 
 {
+    [aboutBox release];
+    [detailController release];
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark -
+#pragma mark Private methods
+
+- (void)viewCurrentlySelectedFont
+{
+    NSArray *fontNames = [UIFont fontNamesForFamilyName:[familyNames objectAtIndex:selectedIndexPath.section]];
+    NSString *fontName = [fontNames objectAtIndex:selectedIndexPath.row];
+    
+    if (detailController == nil)
+    {
+        detailController = [[FontDetailController alloc] init];
+    }
+    detailController.fontName = fontName;
+    detailController.title = fontName;
+    [self.controller pushViewController:detailController animated:YES];
 }
 
 @end

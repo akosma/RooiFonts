@@ -11,6 +11,7 @@
 @interface FontDetailController (Private)
 - (void)done:(id)sender;
 - (void)clear:(id)sender;
+- (void)setFonts;
 @end
 
 @implementation FontDetailController
@@ -69,10 +70,8 @@
 
 - (IBAction)sliderValueChanged:(id)sender
 {
-    sizeLabel.text = [NSString stringWithFormat:@"%1.0f pt", slider.value];
-    UIFont *font = [UIFont fontWithName:self.fontName size:slider.value];
-    sampleView.font = font;
-    alphabetTextView.font = font;
+    [self setFonts];
+    specialSizes.selectedSegmentIndex = -1;
 }
 
 - (IBAction)changedDisplayType:(id)sender
@@ -81,11 +80,52 @@
     {
         alphabetTextView.hidden = YES;
         sampleView.hidden = NO;
+        self.navigationItem.rightBarButtonItem = button;
     }
     else 
     {
         alphabetTextView.hidden = NO;
         sampleView.hidden = YES;
+        self.navigationItem.rightBarButtonItem = nil;
+    }
+}
+
+- (IBAction)selectedSpecialSize:(id)sender
+{
+    CGFloat value = -1.0;
+    switch (specialSizes.selectedSegmentIndex) 
+    {
+        case 0:
+        {
+            value = [UIFont smallSystemFontSize];
+            break;
+        }
+            
+        case 1:
+        {
+            value = [UIFont systemFontSize];
+            break;
+        }
+            
+        case 2:
+        {
+            value = [UIFont labelFontSize];
+            break;
+        }
+
+        case 3:
+        {
+            value = [UIFont buttonFontSize];
+            break;
+        }
+            
+        default:
+            break;
+    }
+    if (value != -1.0)
+    {
+        slider.value = value;
+        [self setFonts];
     }
 }
 
@@ -97,7 +137,7 @@
     button.title = @"Done";
     button.action = @selector(done:);
     button.style = UIBarButtonItemStyleDone;
-    sampleView.frame = CGRectMake(0.0, 50.0, 320.0, 150.0);
+    sampleView.frame = CGRectMake(0.0, 94.0, 320.0, 150.0);
     return TRUE;
 }
 
@@ -109,7 +149,7 @@
     button.title = @"Clear";
     button.action = @selector(clear:);
     button.style = UIBarButtonItemStylePlain;
-    sampleView.frame = CGRectMake(0.0, 50.0, 320.0, 430.0);
+    sampleView.frame = CGRectMake(0.0, 94.0, 320.0, 430.0);
     [sampleView resignFirstResponder];
 }
 
@@ -117,6 +157,14 @@
 {
     sampleView.text = @"";
     [sampleView becomeFirstResponder];
+}
+
+- (void)setFonts
+{
+    sizeLabel.text = [NSString stringWithFormat:@"%1.0f pt", slider.value];
+    UIFont *font = [UIFont fontWithName:self.fontName size:slider.value];
+    sampleView.font = font;
+    alphabetTextView.font = font;
 }
 
 @end

@@ -18,10 +18,12 @@
 {
 @private
     UIActionSheet *toolbarActionSheet;
+    UIActionSheet *accessoryActionSheet;
     NSArray *familyNames;
     UINavigationController *controller;
     FontDetailController *detailController;
     AboutController *aboutBox;
+    NSIndexPath *selectedIndexPath;
 }
 
 @property (nonatomic, retain) UINavigationController *controller;
