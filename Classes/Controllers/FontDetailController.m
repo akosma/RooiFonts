@@ -8,15 +8,12 @@
 
 #import "FontDetailController.h"
 #import "SizeController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface FontDetailController (Private)
 - (void)done:(id)sender;
 - (void)clear:(id)sender;
 - (UIImage *)createScreenshot;
-@end
-
-@interface CALayer
-- (void)renderInContext:(CGContextRef)context;
 @end
 
 @implementation FontDetailController
@@ -189,6 +186,10 @@
     // This code comes from 
     // http://idevkit.com/forums/tutorials-code-samples-sdk/5-uiimage-any-calayer-uiview.html
     UIGraphicsBeginImageContext(self.view.bounds.size);
+    
+    // To remove the warning, add 
+    // #import <QuartzCore/QuartzCore.h>
+    // at the top of the file. Done!
     [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
