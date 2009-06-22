@@ -7,16 +7,19 @@
 //
 
 #import "FontDetailController.h"
+#import "SizeController.h"
 
 @interface FontDetailController (Private)
 - (void)done:(id)sender;
 - (void)clear:(id)sender;
-- (void)setFonts;
 @end
 
 @implementation FontDetailController
 
 @synthesize fontName;
+
+#pragma mark -
+#pragma mark Constructors and destructors
 
 - (id)init
 {
@@ -34,13 +37,23 @@
 
 - (void)dealloc
 {
+    sizeController.delegate = nil;
+    [sizeController release];
     [button release];
     [super dealloc];
 }
 
+- (void)viewDidLoad 
+{
+    [super viewDidLoad];
+    sizeController = [[SizeController alloc] init];
+    sizeController.delegate = self;
+    [sizeView addSubview:sizeController.view];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
-    UIFont *font = [UIFont fontWithName:self.fontName size:slider.value];
+    UIFont *font = [UIFont fontWithName:self.fontName size:sizeController.size];
     sampleView.font = font;
     alphabetTextView.font = font;
 }
@@ -68,12 +81,6 @@
 #pragma mark -
 #pragma mark IBAction methods
 
-- (IBAction)sliderValueChanged:(id)sender
-{
-    [self setFonts];
-    specialSizes.selectedSegmentIndex = -1;
-}
-
 - (IBAction)changedDisplayType:(id)sender
 {
     if (displayType.selectedSegmentIndex == 0)
@@ -90,43 +97,14 @@
     }
 }
 
-- (IBAction)selectedSpecialSize:(id)sender
-{
-    CGFloat value = -1.0;
-    switch (specialSizes.selectedSegmentIndex) 
-    {
-        case 0:
-        {
-            value = [UIFont smallSystemFontSize];
-            break;
-        }
-            
-        case 1:
-        {
-            value = [UIFont systemFontSize];
-            break;
-        }
-            
-        case 2:
-        {
-            value = [UIFont labelFontSize];
-            break;
-        }
+#pragma mark -
+#pragma mark SizeControllerDelegate methods
 
-        case 3:
-        {
-            value = [UIFont buttonFontSize];
-            break;
-        }
-            
-        default:
-            break;
-    }
-    if (value != -1.0)
-    {
-        slider.value = value;
-        [self setFonts];
-    }
+- (void)sizeController:(SizeController *)sizeController didChangeSize:(CGFloat)newSize
+{
+    UIFont *font = [UIFont fontWithName:self.fontName size:newSize];
+    sampleView.font = font;
+    alphabetTextView.font = font;
 }
 
 #pragma mark -
@@ -157,14 +135,6 @@
 {
     sampleView.text = @"";
     [sampleView becomeFirstResponder];
-}
-
-- (void)setFonts
-{
-    sizeLabel.text = [NSString stringWithFormat:@"%1.0f pt", slider.value];
-    UIFont *font = [UIFont fontWithName:self.fontName size:slider.value];
-    sampleView.font = font;
-    alphabetTextView.font = font;
 }
 
 @end

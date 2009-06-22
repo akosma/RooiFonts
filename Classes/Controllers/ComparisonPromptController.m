@@ -7,6 +7,7 @@
 //
 
 #import "ComparisonPromptController.h"
+#import "ComparisonDetailController.h"
 
 @implementation ComparisonPromptController
 
@@ -36,6 +37,7 @@
 
 - (void)dealloc
 {
+    self.delegate = nil;
     [controller release];
     [super dealloc];
 }
@@ -49,10 +51,34 @@
 }
 
 #pragma mark -
+#pragma mark UIViewController methods
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait) ||
+    (interfaceOrientation == UIInterfaceOrientationLandscapeLeft) ||   
+    (interfaceOrientation == UIInterfaceOrientationLandscapeRight);
+}
+
+- (void)didReceiveMemoryWarning 
+{
+    [comparisonController release];
+    comparisonController = nil;
+    [super didReceiveMemoryWarning];
+}
+
+#pragma mark -
 #pragma mark FontsControllerDelegate methods
 
 - (void)fontsController:(FontsController *)controller rowSelectedAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (comparisonController == nil)
+    {
+        comparisonController = [[ComparisonDetailController alloc] init];
+    }
+    comparisonController.topFontName = self.title;
+    comparisonController.bottomFontName = self.currentlySelectedFontName;
+    [self.controller pushViewController:comparisonController animated:YES];
 }
 
 @end

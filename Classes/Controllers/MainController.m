@@ -54,6 +54,7 @@
 
 - (void)dealloc
 {
+    self.delegate = nil;
     [controller release];
     [detailController release];
     [aboutBox release];
@@ -189,7 +190,9 @@
 - (void)didReceiveMemoryWarning 
 {
     [aboutBox release];
+    aboutBox = nil;
     [detailController release];
+    detailController = nil;
     [super didReceiveMemoryWarning];
 }
 

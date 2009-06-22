@@ -7,24 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SizeControllerDelegate.h"
 
-@interface FontDetailController : UIViewController <UITextViewDelegate>
+@class SizeController;
+
+@interface FontDetailController : UIViewController <UITextViewDelegate,
+                                                    SizeControllerDelegate>
 {
 @private
-    IBOutlet UISlider *slider;
-    IBOutlet UILabel *sizeLabel;
     IBOutlet UITextView *sampleView;
     IBOutlet UITextView *alphabetTextView;
     IBOutlet UISegmentedControl *displayType;
-    IBOutlet UISegmentedControl *specialSizes;
+    IBOutlet UIView *sizeView;
+    SizeController *sizeController;
     UIBarButtonItem *button;
     NSString *fontName;
 }
 
 @property (nonatomic, copy) NSString *fontName;
 
-- (IBAction)sliderValueChanged:(id)sender;
 - (IBAction)changedDisplayType:(id)sender;
-- (IBAction)selectedSpecialSize:(id)sender;
 
 @end
