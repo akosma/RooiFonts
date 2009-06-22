@@ -34,6 +34,10 @@
                             @"Pchnąć w tę łódź jeża lub osiem skrzyń fig. Żywioł, jaźń, Świerk.", 
                             @"Flygande bäckasiner söka strax hwila på mjuka tuvor.",
                             @"Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.", nil];
+
+        doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                   target:self 
+                                                                   action:@selector(done:)];
     }
     return self;
 }
@@ -42,6 +46,7 @@
 {
     sizeController.delegate = nil;
     [sizeController release];
+    [doneButton release];
     [comparativeTexts release];
     [super dealloc];
 }
@@ -84,20 +89,14 @@
 - (IBAction)done:(id)sender
 {
     self.navigationItem.rightBarButtonItem = nil;
-    editButton.title = @"Clear";
-    editButton.action = @selector(clear:);
-    editButton.style = UIBarButtonItemStylePlain;
-    sampleView.frame = CGRectMake(0.0, 58.0, 320.0, 430.0);
+    sampleView.frame = CGRectMake(0.0, 58.0, 320.0, 314.0);
     [sampleView resignFirstResponder];
 }
 
 - (IBAction)clear:(id)sender
 {
-    editButton.title = @"Done";
-    editButton.action = @selector(done:);
-    editButton.style = UIBarButtonItemStyleDone;
-    self.navigationItem.rightBarButtonItem = editButton;
     [sampleView becomeFirstResponder];
+    sampleView.text = @"";
 }
 
 - (IBAction)action:(id)sender
@@ -209,6 +208,7 @@
 
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView
 {
+    self.navigationItem.rightBarButtonItem = doneButton;
     sampleView.frame = CGRectMake(0.0, 58.0, 320.0, 150.0);
     return TRUE;
 }

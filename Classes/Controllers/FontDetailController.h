@@ -21,7 +21,7 @@
 @private
     IBOutlet UITextView *sampleView;
     IBOutlet UIView *sizeView;
-    IBOutlet UIBarButtonItem *editButton;
+    UIBarButtonItem *doneButton;
     UIActionSheet *textsActionSheet;
     UIActionSheet *otherActionsSheet;
     SizeController *sizeController;
