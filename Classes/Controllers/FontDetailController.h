@@ -3,7 +3,7 @@
 //  FontKit
 //
 //  Created by Adrian on 11/12/08.
-//  Copyright 2008 Adrian Kosmaczewski. All rights reserved.
+//  Copyright 2009 akosma software. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

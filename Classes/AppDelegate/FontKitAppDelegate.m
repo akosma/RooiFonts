@@ -3,11 +3,11 @@
 //  FontKit
 //
 //  Created by Adrian on 11/12/08.
-//  Copyright Adrian Kosmaczewski 2008. All rights reserved.
+//  Copyright 2009 akosma software. All rights reserved.
 //
 
 #import "FontKitAppDelegate.h"
-#import "FontsController.h"
+#import "MainController.h"
 
 @implementation FontKitAppDelegate
 
@@ -23,7 +23,7 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application 
 {
-    viewController = [[FontsController alloc] init];
+    viewController = [[MainController alloc] init];
 
     [window addSubview:viewController.controller.view];
     [window makeKeyAndVisible];

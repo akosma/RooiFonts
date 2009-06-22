@@ -3,23 +3,20 @@
 //  FontKit
 //
 //  Created by Adrian on 11/12/08.
-//  Copyright 2008 Adrian Kosmaczewski. All rights reserved.
+//  Copyright 2009 akosma software. All rights reserved.
 //
 
 #import "FontsController.h"
-#import "FontDetailController.h"
 #import "NSString+FirstLetters.h"
-#import "UIFont+FontList.h"
-#import "AboutController.h"
-
-@interface FontsController (Private)
-- (void)viewCurrentlySelectedFont;
-@end
-
 
 @implementation FontsController
 
-@synthesize controller;
+@dynamic familyNames;
+@synthesize delegate;
+@synthesize selectedIndexPath;
+@dynamic currentlySelectedFontName;
+@dynamic currentlySelectedFontFamily;
+@dynamic accessoryType;
 
 #pragma mark -
 #pragma mark Constructor and destructor
@@ -28,28 +25,9 @@
 {
     if (self = [super initWithStyle:UITableViewStylePlain])
     {
-        familyNames = [[[UIFont familyNames] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)] retain];
-        controller = [[UINavigationController alloc] initWithRootViewController:self];
-        controller.toolbarHidden = NO;
         self.tableView.rowHeight = 50;
         self.title = @"FontKit";
-        
-        UIButton *aboutButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
-        [aboutButton addTarget:self
-                        action:@selector(about:) 
-              forControlEvents:UIControlEventTouchDown];
-        UIBarButtonItem *aboutItem = [[UIBarButtonItem alloc] initWithCustomView:aboutButton];
-        self.navigationItem.rightBarButtonItem = aboutItem;
-        [aboutItem release];
-        
-        UIBarButtonItem *actionButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction 
-                                                                                      target:self
-                                                                                      action:@selector(action:)];
-        
-        NSArray *items = [[NSArray alloc] initWithObjects:actionButton, nil];
-        self.toolbarItems = items;
-        [actionButton release];
-        [items release];
+        accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     }
     return self;
 }
@@ -57,34 +35,52 @@
 - (void)dealloc
 {
     [selectedIndexPath release];
-    [aboutBox release];
-    [controller release];
     [familyNames release];
-    [detailController release];
     [super dealloc];
 }
 
 #pragma mark -
-#pragma mark IBAction methods
+#pragma mark Property accessors
 
-- (void)about:(id)sender
+- (NSArray *)familyNames
 {
-    if (aboutBox == nil)
+    if (familyNames == nil)
     {
-        aboutBox = [[AboutController alloc] init];
+        familyNames = [[[UIFont familyNames] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)] retain];
     }
-    [controller pushViewController:aboutBox animated:YES];
+    return familyNames;
 }
 
-- (void)action:(id)sender
+- (NSString *)currentlySelectedFontName
 {
-    toolbarActionSheet = [[UIActionSheet alloc] initWithTitle:@""
-                                                     delegate:self 
-                                            cancelButtonTitle:@"Cancel"
-                                       destructiveButtonTitle:nil
-                                            otherButtonTitles:@"Copy", @"Send via e-mail", nil];
-    [toolbarActionSheet showInView:controller.view];
-    [toolbarActionSheet release];
+    NSString *fontName = nil;
+    if (selectedIndexPath != nil)
+    {
+        NSArray *fontNames = [UIFont fontNamesForFamilyName:self.currentlySelectedFontFamily];
+        fontName = [fontNames objectAtIndex:self.selectedIndexPath.row];
+    }
+    return fontName;
+}
+
+- (NSString *)currentlySelectedFontFamily
+{
+    NSString *fontFamily = nil;
+    if (selectedIndexPath != nil)
+    {
+        fontFamily = [self.familyNames objectAtIndex:self.selectedIndexPath.section];
+    }
+    return fontFamily;
+}
+
+- (void)setAccessoryType:(UITableViewCellAccessoryType)type
+{
+    accessoryType = type;
+    [self.tableView reloadData];
+}
+
+- (UITableViewCellAccessoryType)accessoryType
+{
+    return accessoryType;
 }
 
 #pragma mark -
@@ -92,28 +88,28 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView 
 {
-    return [familyNames count];
+    return [self.familyNames count];
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView 
 {
-    return [familyNames valueForKey:@"firstLetters"];
+    return [self.familyNames valueForKey:@"firstLetters"];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section 
 {
-    NSArray *fontNames = [UIFont fontNamesForFamilyName:[familyNames objectAtIndex:section]];
+    NSArray *fontNames = [UIFont fontNamesForFamilyName:[self.familyNames objectAtIndex:section]];
     return [fontNames count];
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section 
 {
-    return [familyNames objectAtIndex:section];
+    return [self.familyNames objectAtIndex:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
 {
-    NSArray *fontNames = [UIFont fontNamesForFamilyName:[familyNames objectAtIndex:indexPath.section]];
+    NSArray *fontNames = [UIFont fontNamesForFamilyName:[self.familyNames objectAtIndex:indexPath.section]];
     static NSString *identifier = @"iPhoneFontBrowser";
     NSString *font = [fontNames objectAtIndex:indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
@@ -121,7 +117,7 @@
     {
         CGRect rect = CGRectMake(0.0, 0.0, 320.0, 50.0);
         cell = [[[UITableViewCell alloc] initWithFrame:rect reuseIdentifier:identifier] autorelease];
-        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+        cell.accessoryType = accessoryType;
     }
     cell.textLabel.font = [UIFont fontWithName:font size:18.0];
     cell.textLabel.text =  font;
@@ -130,86 +126,20 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
 {
-    [selectedIndexPath release];
-    selectedIndexPath = [indexPath retain];
-    [self viewCurrentlySelectedFont];
+    self.selectedIndexPath = indexPath;
+    if ([delegate respondsToSelector:@selector(fontsController:rowSelectedAtIndexPath:)])
+    {
+        [delegate fontsController:self rowSelectedAtIndexPath:indexPath];
+    }
 }
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-    [selectedIndexPath release];
-    selectedIndexPath = [indexPath retain];
-    accessoryActionSheet = [[UIActionSheet alloc] initWithTitle:@""
-                                                     delegate:self 
-                                            cancelButtonTitle:@"Cancel"
-                                       destructiveButtonTitle:nil
-                                            otherButtonTitles:@"Copy name", @"View", @"Compare with...", nil];
-    [accessoryActionSheet showInView:controller.view];
-    [accessoryActionSheet release];
-}
-
-#pragma mark -
-#pragma mark UIActionSheetDelegate methods
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (actionSheet == toolbarActionSheet)
+    self.selectedIndexPath = indexPath;
+    if ([delegate respondsToSelector:@selector(fontsController:accessoryTappedAtIndexPath:)])
     {
-        switch (buttonIndex)
-        {
-            case 0:
-            {
-                UIPasteboard *board = [UIPasteboard generalPasteboard];
-                board.string = [UIFont fontList];
-                break;
-            }
-
-            case 1:
-            {
-                MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
-                picker.mailComposeDelegate = self;
-                [picker setMessageBody:[UIFont fontList] isHTML:NO];
-                [self presentModalViewController:picker animated:YES];
-                [picker release];        
-                break;
-            }
-                
-            default:
-                break;
-        }
+        [delegate fontsController:self accessoryTappedAtIndexPath:indexPath];
     }
-    else if (actionSheet == accessoryActionSheet)
-    {
-        switch (buttonIndex) 
-        {
-            case 0:
-            {
-                NSString *familyName = [familyNames objectAtIndex:selectedIndexPath.section];
-                NSArray *fontNames = [UIFont fontNamesForFamilyName:familyName];
-                NSString *fontName = [fontNames objectAtIndex:selectedIndexPath.row];
-                UIPasteboard *board = [UIPasteboard generalPasteboard];
-                board.string = [NSString stringWithFormat:@"Family: %@; font: %@", familyName, fontName];
-                break;
-            }
-
-            case 1:
-            {
-                [self viewCurrentlySelectedFont];
-                break;
-            }
-
-            default:
-                break;
-        }
-    }
-}
-
-#pragma mark -
-#pragma mark MFMailComposeViewControllerDelegate methods
-
-- (void)mailComposeController:(MFMailComposeViewController*)composer didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
-{
-    [composer dismissModalViewControllerAnimated:YES];
 }
 
 #pragma mark -
@@ -224,26 +154,9 @@
 
 - (void)didReceiveMemoryWarning 
 {
-    [aboutBox release];
-    [detailController release];
+    [familyNames release];
+    familyNames = nil;
     [super didReceiveMemoryWarning];
-}
-
-#pragma mark -
-#pragma mark Private methods
-
-- (void)viewCurrentlySelectedFont
-{
-    NSArray *fontNames = [UIFont fontNamesForFamilyName:[familyNames objectAtIndex:selectedIndexPath.section]];
-    NSString *fontName = [fontNames objectAtIndex:selectedIndexPath.row];
-    
-    if (detailController == nil)
-    {
-        detailController = [[FontDetailController alloc] init];
-    }
-    detailController.fontName = fontName;
-    detailController.title = fontName;
-    [self.controller pushViewController:detailController animated:YES];
 }
 
 @end

@@ -3,29 +3,26 @@
 //  FontKit
 //
 //  Created by Adrian on 11/12/08.
-//  Copyright 2008 Adrian Kosmaczewski. All rights reserved.
+//  Copyright 2009 akosma software. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import <MessageUI/MessageUI.h>
-#import <MessageUI/MFMailComposeViewController.h>
+#import "FontsControllerDelegate.h"
 
-@class FontDetailController;
-@class AboutController;
-
-@interface FontsController : UITableViewController <UIActionSheetDelegate,
-                                                    MFMailComposeViewControllerDelegate>
+@interface FontsController : UITableViewController
 {
 @private
-    UIActionSheet *toolbarActionSheet;
-    UIActionSheet *accessoryActionSheet;
     NSArray *familyNames;
-    UINavigationController *controller;
-    FontDetailController *detailController;
-    AboutController *aboutBox;
     NSIndexPath *selectedIndexPath;
+    NSObject<FontsControllerDelegate> *delegate;
+    UITableViewCellAccessoryType accessoryType;
 }
 
-@property (nonatomic, retain) UINavigationController *controller;
+@property (nonatomic, readonly) NSArray *familyNames;
+@property (nonatomic, assign) NSObject<FontsControllerDelegate> *delegate;
+@property (nonatomic, retain) NSIndexPath *selectedIndexPath;
+@property (nonatomic, readonly) NSString *currentlySelectedFontName;
+@property (nonatomic, readonly) NSString *currentlySelectedFontFamily;
+@property (nonatomic) UITableViewCellAccessoryType accessoryType;
 
 @end
