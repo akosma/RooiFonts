@@ -337,14 +337,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				CODE_SIGN_ENTITLEMENTS = Resources/Entitlements.plist;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Adrian Kosmaczewski";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = FontKit_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = FontKit;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2FFDDD00-A45F-42D3-9D40-118882F20C4A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BB63CF9B-ACC4-4852-A7F9-182296C3629E";
 			};
 			name = Distribution;
 		};
