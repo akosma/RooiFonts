@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		3A2969780FEF5A7000D0A771 /* FontKitAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2969770FEF5A7000D0A771 /* FontKitAppDelegate.m */; };
 		3A65E8DF0FEECBF2005CA383 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A65E8DE0FEECBF2005CA383 /* MessageUI.framework */; };
 		3A65E8E30FEECC15005CA383 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A65E8E20FEECC15005CA383 /* CoreGraphics.framework */; };
 		3A65E8E50FEECC15005CA383 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A65E8E40FEECC15005CA383 /* Foundation.framework */; };
 		3A65E8E70FEECC15005CA383 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A65E8E60FEECC15005CA383 /* UIKit.framework */; };
-		3A65E9A50FEED5C6005CA383 /* FontBrowserAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A65E9980FEED5C6005CA383 /* FontBrowserAppDelegate.m */; };
 		3A65E9A60FEED5C6005CA383 /* AboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A65E99B0FEED5C6005CA383 /* AboutController.m */; };
 		3A65E9A70FEED5C6005CA383 /* FontDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A65E99D0FEED5C6005CA383 /* FontDetailController.m */; };
 		3A65E9A80FEED5C6005CA383 /* FontsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A65E99F0FEED5C6005CA383 /* FontsController.m */; };
@@ -29,13 +29,13 @@
 /* Begin PBXFileReference section */
 		1D6058910D05DD3D006BFB54 /* FontKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FontKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		32CA4F630368D1EE00C91783 /* FontBrowser_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontBrowser_Prefix.pch; sourceTree = "<group>"; };
+		3A2969760FEF5A7000D0A771 /* FontKitAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontKitAppDelegate.h; sourceTree = "<group>"; };
+		3A2969770FEF5A7000D0A771 /* FontKitAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontKitAppDelegate.m; sourceTree = "<group>"; };
+		3A2969790FEF5A7D00D0A771 /* FontKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontKit_Prefix.pch; sourceTree = "<group>"; };
 		3A65E8DE0FEECBF2005CA383 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		3A65E8E20FEECC15005CA383 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3A65E8E40FEECC15005CA383 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3A65E8E60FEECC15005CA383 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		3A65E9970FEED5C6005CA383 /* FontBrowserAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontBrowserAppDelegate.h; sourceTree = "<group>"; };
-		3A65E9980FEED5C6005CA383 /* FontBrowserAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontBrowserAppDelegate.m; sourceTree = "<group>"; };
 		3A65E99A0FEED5C6005CA383 /* AboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutController.h; sourceTree = "<group>"; };
 		3A65E99B0FEED5C6005CA383 /* AboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutController.m; sourceTree = "<group>"; };
 		3A65E99C0FEED5C6005CA383 /* FontDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontDetailController.h; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				32CA4F630368D1EE00C91783 /* FontBrowser_Prefix.pch */,
+				3A2969790FEF5A7D00D0A771 /* FontKit_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			name = "Other Sources";
@@ -123,8 +123,8 @@
 		3A65E9960FEED5C6005CA383 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				3A65E9970FEED5C6005CA383 /* FontBrowserAppDelegate.h */,
-				3A65E9980FEED5C6005CA383 /* FontBrowserAppDelegate.m */,
+				3A2969760FEF5A7000D0A771 /* FontKitAppDelegate.h */,
+				3A2969770FEF5A7000D0A771 /* FontKitAppDelegate.m */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -245,12 +245,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
-				3A65E9A50FEED5C6005CA383 /* FontBrowserAppDelegate.m in Sources */,
 				3A65E9A60FEED5C6005CA383 /* AboutController.m in Sources */,
 				3A65E9A70FEED5C6005CA383 /* FontDetailController.m in Sources */,
 				3A65E9A80FEED5C6005CA383 /* FontsController.m in Sources */,
 				3A65E9A90FEED5C6005CA383 /* NSString+FirstLetters.m in Sources */,
 				3A65E9AA0FEED5C6005CA383 /* UIFont+FontList.m in Sources */,
+				3A2969780FEF5A7000D0A771 /* FontKitAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,7 +265,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = FontBrowser_Prefix.pch;
+				GCC_PREFIX_HEADER = FontKit_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = FontKit;
 			};
@@ -277,7 +277,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = FontBrowser_Prefix.pch;
+				GCC_PREFIX_HEADER = FontKit_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = FontBrowser;
 			};
@@ -305,7 +305,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Adrian Kosmaczewski";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = FontBrowser_Prefix.pch;
+				GCC_PREFIX_HEADER = FontKit_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = FontKit;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2FFDDD00-A45F-42D3-9D40-118882F20C4A";

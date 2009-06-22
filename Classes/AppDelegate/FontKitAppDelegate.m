@@ -1,15 +1,15 @@
 //
-//  FontBrowserAppDelegate.m
+//  FontKitAppDelegate.m
 //  FontKit
 //
 //  Created by Adrian on 11/12/08.
 //  Copyright Adrian Kosmaczewski 2008. All rights reserved.
 //
 
-#import "FontBrowserAppDelegate.h"
+#import "FontKitAppDelegate.h"
 #import "FontsController.h"
 
-@implementation FontBrowserAppDelegate
+@implementation FontKitAppDelegate
 
 - (void)dealloc 
 {

@@ -1,5 +1,5 @@
 //
-//  FontBrowserAppDelegate.h
+//  FontKitAppDelegate.h
 //  FontKit
 //
 //  Created by Adrian on 11/12/08.
@@ -10,7 +10,7 @@
 
 @class FontsController;
 
-@interface FontBrowserAppDelegate : NSObject <UIApplicationDelegate> 
+@interface FontKitAppDelegate : NSObject <UIApplicationDelegate> 
 {
 @private
     IBOutlet UIWindow *window;

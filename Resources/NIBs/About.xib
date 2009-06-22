@@ -43,15 +43,15 @@
 					<object class="IBUILabel" id="466617675">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">290</int>
-						<string key="NSFrameSize">{318, 180}</string>
+						<string key="NSFrame">{{1, 0}, {318, 199}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
-						<string key="IBUIText">Lorem</string>
+						<string key="IBUIText">FontKit</string>
 						<object class="NSFont" key="IBUIFont">
 							<string key="NSName">Zapfino</string>
-							<double key="NSSize">72</double>
+							<double key="NSSize">60</double>
 							<int key="NSfFlags">16</int>
 						</object>
 						<object class="NSColor" key="IBUITextColor" id="673000995">
@@ -71,7 +71,7 @@
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
-						<string key="IBUIText">FontKit 1.0</string>
+						<string key="IBUIText">version 1.0</string>
 						<object class="NSFont" key="IBUIFont">
 							<string key="NSName">Helvetica</string>
 							<double key="NSSize">24</double>
@@ -149,10 +149,10 @@
 						<reference key="object" ref="191373211"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="466617675"/>
 							<reference ref="783670205"/>
 							<reference ref="755957822"/>
 							<reference ref="998927399"/>
+							<reference ref="466617675"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -447,7 +447,7 @@
 			<integer value="3100" key="NS.object.0"/>
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
-		<string key="IBDocument.LastKnownRelativeProjectPath">FontBrowser.xcodeproj</string>
+		<string key="IBDocument.LastKnownRelativeProjectPath">../../FontKit.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<string key="IBCocoaTouchPluginVersion">3.0</string>
 	</data>
