@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MFMailComposeViewController.h>
 #import "SizeControllerDelegate.h"
 
 @class SizeController;
 
 @interface FontDetailController : UIViewController <UITextViewDelegate,
-                                                    SizeControllerDelegate>
+                                                    SizeControllerDelegate,
+                                                    UIActionSheetDelegate,
+                                                    MFMailComposeViewControllerDelegate>
 {
 @private
     IBOutlet UITextView *sampleView;
@@ -27,5 +30,6 @@
 @property (nonatomic, copy) NSString *fontName;
 
 - (IBAction)changedDisplayType:(id)sender;
+- (IBAction)action:(id)sender;
 
 @end

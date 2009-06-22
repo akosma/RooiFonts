@@ -12,6 +12,11 @@
 @interface FontDetailController (Private)
 - (void)done:(id)sender;
 - (void)clear:(id)sender;
+- (UIImage *)createScreenshot;
+@end
+
+@interface CALayer
+- (void)renderInContext:(CGContextRef)context;
 @end
 
 @implementation FontDetailController
@@ -43,6 +48,9 @@
     [super dealloc];
 }
 
+#pragma mark -
+#pragma mark UIViewController methods
+
 - (void)viewDidLoad 
 {
     [super viewDidLoad];
@@ -62,9 +70,6 @@
 {
     [self done:self];
 }
-
-#pragma mark -
-#pragma mark UIViewController methods
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -95,6 +100,27 @@
     }
 }
 
+- (IBAction)action:(id)sender
+{
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@""
+                                                       delegate:self 
+                                              cancelButtonTitle:@"Cancel"
+                                         destructiveButtonTitle:nil
+                                              otherButtonTitles:@"Screenshot via e-mail", nil];
+    [sheet showInView:self.navigationController.view];
+    [sheet release];
+}
+
+#pragma mark -
+#pragma mark MFMailComposeViewControllerDelegate methods
+
+- (void)mailComposeController:(MFMailComposeViewController *)composer 
+          didFinishWithResult:(MFMailComposeResult)result 
+                        error:(NSError *)error
+{
+    [composer dismissModalViewControllerAnimated:YES];
+}
+
 #pragma mark -
 #pragma mark SizeControllerDelegate methods
 
@@ -103,6 +129,29 @@
     UIFont *font = [UIFont fontWithName:self.fontName size:newSize];
     sampleView.font = font;
     alphabetTextView.font = font;
+}
+
+#pragma mark -
+#pragma mark UIActionSheetDelegate methods
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+    {
+        UIImage *image = [self createScreenshot];
+        MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+        picker.mailComposeDelegate = self;
+        
+        NSMutableString *message = [[NSMutableString alloc] init];
+        [message appendFormat:@"This is how %@ at %1.0f points looks like on the iPhone\n\nSent from FontKit - http://fontkitapp.com/", self.fontName, sizeController.size];
+        NSString *subject = [NSString stringWithFormat:@"%@ screenshot", self.fontName];
+        [picker setSubject:subject];
+        [picker setMessageBody:message isHTML:NO];
+        [picker addAttachmentData:UIImagePNGRepresentation(image) mimeType:@"image/png" fileName:@"image"];
+        [self presentModalViewController:picker animated:YES];
+        [picker release];
+        [message release];
+    }
 }
 
 #pragma mark -
@@ -133,6 +182,18 @@
 {
     sampleView.text = @"";
     [sampleView becomeFirstResponder];
+}
+
+- (UIImage *)createScreenshot
+{
+    // This code comes from 
+    // http://idevkit.com/forums/tutorials-code-samples-sdk/5-uiimage-any-calayer-uiview.html
+    UIGraphicsBeginImageContext(self.view.bounds.size);
+    [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+//    UIImageWriteToSavedPhotosAlbum(viewImage, self, nil, nil);
+    return viewImage;
 }
 
 @end

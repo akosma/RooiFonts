@@ -11,7 +11,7 @@
 			<string key="NS.object.0">58</string>
 		</object>
 		<array class="NSMutableArray" key="IBDocument.EditedObjectIDs">
-			<integer value="1"/>
+			<integer value="18"/>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -201,6 +201,14 @@ Nzg5MAohQCMkJV4mKigpXy0rPXt9W107J1xcOlwifDw+PywuLwo</string>
 					</object>
 					<int key="connectionID">35</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">action:</string>
+						<reference key="source" ref="739617549"/>
+						<reference key="destination" ref="372490531"/>
+					</object>
+					<int key="connectionID">36</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -299,17 +307,17 @@ Nzg5MAohQCMkJV4mKigpXy0rPXt9W107J1xcOlwifDw+PywuLwo</string>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">35</int>
+			<int key="maxID">36</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
 					<string key="className">FontDetailController</string>
 					<string key="superclassName">UIViewController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">changedDisplayType:</string>
-						<string key="NS.object.0">id</string>
-					</object>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="action:">id</string>
+						<string key="changedDisplayType:">id</string>
+					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="alphabetTextView">UITextView</string>
 						<string key="displayType">UISegmentedControl</string>
