@@ -15,7 +15,4 @@
 @required
 - (void)fontsController:(FontsController *)controller rowSelectedAtIndexPath:(NSIndexPath *)indexPath;
 
-@optional
-- (void)fontsController:(FontsController *)controller accessoryTappedAtIndexPath:(NSIndexPath *)indexPath;
-
 @end

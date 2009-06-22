@@ -15,6 +15,7 @@
 		3A296A7C0FEF786F00D0A771 /* SizeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A296A7B0FEF786F00D0A771 /* SizeController.m */; };
 		3A296A7E0FEF78BD00D0A771 /* Size.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A296A7D0FEF78BD00D0A771 /* Size.xib */; };
 		3A31F2D00FEFA40800460062 /* ComparisonDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A31F2CF0FEFA40800460062 /* ComparisonDetailController.m */; };
+		3A3F6BB20FEFE1C300F65169 /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A3F6BB10FEFE1C300F65169 /* chat.png */; };
 		3A65E8DF0FEECBF2005CA383 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A65E8DE0FEECBF2005CA383 /* MessageUI.framework */; };
 		3A65E8E30FEECC15005CA383 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A65E8E20FEECC15005CA383 /* CoreGraphics.framework */; };
 		3A65E8E50FEECC15005CA383 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A65E8E40FEECC15005CA383 /* Foundation.framework */; };
@@ -50,6 +51,7 @@
 		3A296A830FEF7A3B00D0A771 /* SizeControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SizeControllerDelegate.h; sourceTree = "<group>"; };
 		3A31F2CE0FEFA40800460062 /* ComparisonDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComparisonDetailController.h; sourceTree = "<group>"; };
 		3A31F2CF0FEFA40800460062 /* ComparisonDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComparisonDetailController.m; sourceTree = "<group>"; };
+		3A3F6BB10FEFE1C300F65169 /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat.png; sourceTree = "<group>"; };
 		3A65E8DE0FEECBF2005CA383 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		3A65E8E20FEECC15005CA383 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3A65E8E40FEECC15005CA383 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -195,6 +197,7 @@
 		3A65E9AD0FEED5F5005CA383 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3A3F6BB10FEFE1C300F65169 /* chat.png */,
 				3A65E9AE0FEED5F5005CA383 /* Default.png */,
 				3A65E9AF0FEED5F5005CA383 /* Icon.png */,
 			);
@@ -266,6 +269,7 @@
 				3A65E9B90FEED5F5005CA383 /* MainWindow.xib in Resources */,
 				3A296A660FEF727F00D0A771 /* ComparisonDetail.xib in Resources */,
 				3A296A7E0FEF78BD00D0A771 /* Size.xib in Resources */,
+				3A3F6BB20FEFE1C300F65169 /* chat.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

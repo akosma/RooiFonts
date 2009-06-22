@@ -16,7 +16,6 @@
 @synthesize selectedIndexPath;
 @dynamic currentlySelectedFontName;
 @dynamic currentlySelectedFontFamily;
-@dynamic accessoryType;
 
 #pragma mark -
 #pragma mark Constructor and destructor
@@ -27,7 +26,6 @@
     {
         self.tableView.rowHeight = 50;
         self.title = @"FontKit";
-        accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     }
     return self;
 }
@@ -72,17 +70,6 @@
     return fontFamily;
 }
 
-- (void)setAccessoryType:(UITableViewCellAccessoryType)type
-{
-    accessoryType = type;
-    [self.tableView reloadData];
-}
-
-- (UITableViewCellAccessoryType)accessoryType
-{
-    return accessoryType;
-}
-
 #pragma mark -
 #pragma mark UITableView delegate methods
 
@@ -117,7 +104,7 @@
     {
         CGRect rect = CGRectMake(0.0, 0.0, 320.0, 50.0);
         cell = [[[UITableViewCell alloc] initWithFrame:rect reuseIdentifier:identifier] autorelease];
-        cell.accessoryType = accessoryType;
+        cell.accessoryType = UITableViewCellAccessoryNone;
     }
     cell.textLabel.font = [UIFont fontWithName:font size:18.0];
     cell.textLabel.text =  font;
@@ -130,15 +117,6 @@
     if ([delegate respondsToSelector:@selector(fontsController:rowSelectedAtIndexPath:)])
     {
         [delegate fontsController:self rowSelectedAtIndexPath:indexPath];
-    }
-}
-
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
-{
-    self.selectedIndexPath = indexPath;
-    if ([delegate respondsToSelector:@selector(fontsController:accessoryTappedAtIndexPath:)])
-    {
-        [delegate fontsController:self accessoryTappedAtIndexPath:indexPath];
     }
 }
 

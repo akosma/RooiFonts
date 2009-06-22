@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
 #import "SizeControllerDelegate.h"
 
@@ -19,17 +20,22 @@
 {
 @private
     IBOutlet UITextView *sampleView;
-    IBOutlet UITextView *alphabetTextView;
-    IBOutlet UISegmentedControl *displayType;
     IBOutlet UIView *sizeView;
+    IBOutlet UIBarButtonItem *editButton;
+    UIActionSheet *textsActionSheet;
+    UIActionSheet *otherActionsSheet;
     SizeController *sizeController;
-    UIBarButtonItem *button;
     NSString *fontName;
+    NSString *fontFamilyName;
+    NSArray *comparativeTexts;
 }
 
 @property (nonatomic, copy) NSString *fontName;
+@property (nonatomic, copy) NSString *fontFamilyName;
 
-- (IBAction)changedDisplayType:(id)sender;
 - (IBAction)action:(id)sender;
+- (IBAction)done:(id)sender;
+- (IBAction)clear:(id)sender;
+- (IBAction)showComparativeTexts:(id)sender;
 
 @end

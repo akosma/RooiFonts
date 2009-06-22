@@ -10,7 +10,6 @@
 #import "FontDetailController.h"
 #import "UIFont+FontList.h"
 #import "AboutController.h"
-#import "ComparisonPromptController.h"
 
 @interface FontsController (Private)
 - (void)viewCurrentlySelectedFont;
@@ -79,7 +78,7 @@
                                                      delegate:self 
                                             cancelButtonTitle:@"Cancel"
                                        destructiveButtonTitle:nil
-                                            otherButtonTitles:@"Copy", @"Send via e-mail", nil];
+                                            otherButtonTitles:@"Copy list", @"Send list via e-mail", nil];
     [toolbarActionSheet showInView:controller.view];
     [toolbarActionSheet release];
 }
@@ -92,78 +91,32 @@
     [self viewCurrentlySelectedFont];
 }
 
-- (void)fontsController:(FontsController *)fontsController accessoryTappedAtIndexPath:(NSIndexPath *)indexPath
-{
-    accessoryActionSheet = [[UIActionSheet alloc] initWithTitle:@""
-                                                       delegate:self 
-                                              cancelButtonTitle:@"Cancel"
-                                         destructiveButtonTitle:nil
-                                              otherButtonTitles:@"Copy name", @"View", @"Compare with...", nil];
-    [accessoryActionSheet showInView:controller.view];
-    [accessoryActionSheet release];    
-}
-
 #pragma mark -
 #pragma mark UIActionSheetDelegate methods
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (actionSheet == toolbarActionSheet)
+    switch (buttonIndex)
     {
-        switch (buttonIndex)
+        case 0:
         {
-            case 0:
-            {
-                UIPasteboard *board = [UIPasteboard generalPasteboard];
-                board.string = [UIFont fontList];
-                break;
-            }
-                
-            case 1:
-            {
-                MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
-                picker.mailComposeDelegate = self;
-                [picker setMessageBody:[UIFont fontList] isHTML:NO];
-                [self presentModalViewController:picker animated:YES];
-                [picker release];        
-                break;
-            }
-                
-            default:
-                break;
+            UIPasteboard *board = [UIPasteboard generalPasteboard];
+            board.string = [UIFont fontList];
+            break;
         }
-    }
-    else if (actionSheet == accessoryActionSheet)
-    {
-        switch (buttonIndex) 
+            
+        case 1:
         {
-            case 0:
-            {
-                UIPasteboard *board = [UIPasteboard generalPasteboard];
-                board.string = [NSString stringWithFormat:@"Family: %@; font: %@", 
-                                self.currentlySelectedFontFamily, 
-                                self.currentlySelectedFontName];
-                break;
-            }
-                
-            case 1:
-            {
-                [self viewCurrentlySelectedFont];
-                break;
-            }
-
-            case 2:
-            {
-                ComparisonPromptController *comparisonPrompt = [[ComparisonPromptController alloc] init];
-                comparisonPrompt.title = self.currentlySelectedFontName;
-                [self presentModalViewController:comparisonPrompt.controller animated:YES];
-                [comparisonPrompt release];
-                break;
-            }
-                
-            default:
-                break;
+            MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+            picker.mailComposeDelegate = self;
+            [picker setMessageBody:[UIFont fontList] isHTML:NO];
+            [self presentModalViewController:picker animated:YES];
+            [picker release];        
+            break;
         }
+            
+        default:
+            break;
     }
 }
 
@@ -204,6 +157,7 @@
         detailController = [[FontDetailController alloc] init];
     }
     detailController.fontName = self.currentlySelectedFontName;
+    detailController.fontFamilyName = self.currentlySelectedFontFamily;
     detailController.title = self.currentlySelectedFontName;
     [self.controller pushViewController:detailController animated:YES];
 }

@@ -13,10 +13,7 @@
 @interface ComparisonPromptController : FontsController <FontsControllerDelegate>
 {
 @private
-    UINavigationController *controller;
     ComparisonDetailController *comparisonController;
 }
-
-@property (nonatomic, readonly) UINavigationController *controller;
 
 @end

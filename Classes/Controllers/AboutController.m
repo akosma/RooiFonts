@@ -18,6 +18,7 @@
     if (self = [super initWithNibName:@"About" bundle:nil]) 
     {
         self.title = @"About FontKit";
+        self.hidesBottomBarWhenPushed = YES;
     }
     return self;
 }

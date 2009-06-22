@@ -43,7 +43,7 @@
 					<object class="IBUITextView" id="718039669">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{0, 86}, {320, 150}}</string>
+						<string key="NSFrame">{{0, 50}, {320, 168}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">2</int>
@@ -65,7 +65,7 @@
 					<object class="IBUITextView" id="711684286">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{0, 236}, {320, 150}}</string>
+						<string key="NSFrame">{{0, 218}, {320, 168}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -83,7 +83,7 @@
 					<object class="IBUIView" id="524101245">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrameSize">{320, 86}</string>
+						<string key="NSFrameSize">{320, 50}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -156,8 +156,8 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="718039669"/>
-							<reference ref="711684286"/>
 							<reference ref="524101245"/>
+							<reference ref="711684286"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>

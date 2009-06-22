@@ -15,7 +15,6 @@
     NSArray *familyNames;
     NSIndexPath *selectedIndexPath;
     NSObject<FontsControllerDelegate> *delegate;
-    UITableViewCellAccessoryType accessoryType;
 }
 
 @property (nonatomic, readonly) NSArray *familyNames;
@@ -23,6 +22,5 @@
 @property (nonatomic, retain) NSIndexPath *selectedIndexPath;
 @property (nonatomic, readonly) NSString *currentlySelectedFontName;
 @property (nonatomic, readonly) NSString *currentlySelectedFontFamily;
-@property (nonatomic) UITableViewCellAccessoryType accessoryType;
 
 @end

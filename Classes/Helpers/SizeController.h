@@ -14,7 +14,6 @@
 @private
     IBOutlet UISlider *slider;
     IBOutlet UILabel *sizeLabel;
-    IBOutlet UISegmentedControl *specialSizes;
     NSObject<SizeControllerDelegate> *delegate;
 }
 
@@ -22,6 +21,5 @@
 @property (nonatomic, assign) NSObject<SizeControllerDelegate> *delegate;
 
 - (IBAction)sliderValueChanged:(id)sender;
-- (IBAction)selectedSpecialSize:(id)sender;
 
 @end

@@ -20,7 +20,6 @@
 {
 @private
     UIActionSheet *toolbarActionSheet;
-    UIActionSheet *accessoryActionSheet;
     UINavigationController *controller;
     FontDetailController *detailController;
     AboutController *aboutBox;    

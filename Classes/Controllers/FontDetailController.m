@@ -9,16 +9,16 @@
 #import "FontDetailController.h"
 #import "SizeController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "ComparisonPromptController.h"
 
 @interface FontDetailController (Private)
-- (void)done:(id)sender;
-- (void)clear:(id)sender;
 - (UIImage *)createScreenshot;
 @end
 
 @implementation FontDetailController
 
 @synthesize fontName;
+@synthesize fontFamilyName;
 
 #pragma mark -
 #pragma mark Constructors and destructors
@@ -27,12 +27,13 @@
 {
     if (self = [super initWithNibName:@"FontDetail" bundle:nil]) 
     {
-        button = [[UIBarButtonItem alloc] initWithTitle:@"Clear"
-                                                  style:UIBarButtonItemStylePlain
-                                                 target:self 
-                                                 action:@selector(clear:)];
-        self.navigationItem.rightBarButtonItem = button;
         self.hidesBottomBarWhenPushed = YES;
+        comparativeTexts = [[NSArray alloc] initWithObjects:@"abcdefghijklmnopqrstuvwxyz\nABCDEFGHIJKLMNOPQRSTUVWXYZ\n1234567890\n!@#$%^&*()_-+={}[];'\\:\"|<>?,./",
+                            @"The quick brown fox jumps over a lazy dog.", 
+                            @"Zwei Boxkämpfer jagen Eva quer durch Sylt.",
+                            @"Pchnąć w tę łódź jeża lub osiem skrzyń fig. Żywioł, jaźń, Świerk.", 
+                            @"Flygande bäckasiner söka strax hwila på mjuka tuvor.",
+                            @"Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.", nil];
     }
     return self;
 }
@@ -41,7 +42,7 @@
 {
     sizeController.delegate = nil;
     [sizeController release];
-    [button release];
+    [comparativeTexts release];
     [super dealloc];
 }
 
@@ -60,7 +61,6 @@
 {
     UIFont *font = [UIFont fontWithName:self.fontName size:sizeController.size];
     sampleView.font = font;
-    alphabetTextView.font = font;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -81,31 +81,52 @@
 #pragma mark -
 #pragma mark IBAction methods
 
-- (IBAction)changedDisplayType:(id)sender
+- (IBAction)done:(id)sender
 {
-    if (displayType.selectedSegmentIndex == 0)
-    {
-        alphabetTextView.hidden = YES;
-        sampleView.hidden = NO;
-        self.navigationItem.rightBarButtonItem = button;
-    }
-    else 
-    {
-        alphabetTextView.hidden = NO;
-        sampleView.hidden = YES;
-        self.navigationItem.rightBarButtonItem = nil;
-    }
+    self.navigationItem.rightBarButtonItem = nil;
+    editButton.title = @"Clear";
+    editButton.action = @selector(clear:);
+    editButton.style = UIBarButtonItemStylePlain;
+    sampleView.frame = CGRectMake(0.0, 58.0, 320.0, 430.0);
+    [sampleView resignFirstResponder];
+}
+
+- (IBAction)clear:(id)sender
+{
+    editButton.title = @"Done";
+    editButton.action = @selector(done:);
+    editButton.style = UIBarButtonItemStyleDone;
+    self.navigationItem.rightBarButtonItem = editButton;
+    [sampleView becomeFirstResponder];
 }
 
 - (IBAction)action:(id)sender
 {
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@""
-                                                       delegate:self 
-                                              cancelButtonTitle:@"Cancel"
-                                         destructiveButtonTitle:nil
-                                              otherButtonTitles:@"Screenshot via e-mail", nil];
-    [sheet showInView:self.navigationController.view];
-    [sheet release];
+    otherActionsSheet = [[UIActionSheet alloc] initWithTitle:@""
+                                                    delegate:self 
+                                           cancelButtonTitle:@"Cancel"
+                                      destructiveButtonTitle:nil
+                                           otherButtonTitles:@"Screenshot via e-mail", @"Copy name", @"Compare with...", nil];
+    [otherActionsSheet showInView:self.navigationController.view];
+    [otherActionsSheet release];
+}
+
+- (IBAction)showComparativeTexts:(id)sender
+{
+    textsActionSheet = [[UIActionSheet alloc] initWithTitle:@""
+                                                    delegate:self 
+                                           cancelButtonTitle:nil
+                                      destructiveButtonTitle:nil
+                                           otherButtonTitles:nil];
+    for (NSString *text in comparativeTexts)
+    {
+        NSString *buttonTitle = [NSString stringWithFormat:@"%@...", [text substringToIndex:20]];
+        [textsActionSheet addButtonWithTitle:buttonTitle];
+    }
+    [textsActionSheet addButtonWithTitle:@"Cancel"];
+    textsActionSheet.cancelButtonIndex = [comparativeTexts count];
+    [textsActionSheet showInView:self.navigationController.view];
+    [textsActionSheet release];
 }
 
 #pragma mark -
@@ -125,7 +146,6 @@
 {
     UIFont *font = [UIFont fontWithName:self.fontName size:newSize];
     sampleView.font = font;
-    alphabetTextView.font = font;
 }
 
 #pragma mark -
@@ -133,21 +153,54 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == 0)
+    if (actionSheet == otherActionsSheet)
     {
-        UIImage *image = [self createScreenshot];
-        MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
-        picker.mailComposeDelegate = self;
-        
-        NSMutableString *message = [[NSMutableString alloc] init];
-        [message appendFormat:@"This is how %@ at %1.0f points looks like on the iPhone\n\nSent from FontKit - http://fontkitapp.com/", self.fontName, sizeController.size];
-        NSString *subject = [NSString stringWithFormat:@"%@ screenshot", self.fontName];
-        [picker setSubject:subject];
-        [picker setMessageBody:message isHTML:NO];
-        [picker addAttachmentData:UIImagePNGRepresentation(image) mimeType:@"image/png" fileName:@"image"];
-        [self presentModalViewController:picker animated:YES];
-        [picker release];
-        [message release];
+        switch (buttonIndex) 
+        {
+            case 0:
+            {
+                UIImage *image = [self createScreenshot];
+                MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+                picker.mailComposeDelegate = self;
+
+                NSMutableString *message = [[NSMutableString alloc] init];
+                [message appendFormat:@"This is how %@ at %1.0f pt looks on the iPhone\n\nSent from FontKit - http://fontkitapp.com/", self.fontName, sizeController.size];
+                NSString *subject = [NSString stringWithFormat:@"%@ screenshot", self.fontName];
+                [picker setSubject:subject];
+                [picker setMessageBody:message isHTML:NO];
+                [picker addAttachmentData:UIImagePNGRepresentation(image) mimeType:@"image/png" fileName:@"image"];
+                [self presentModalViewController:picker animated:YES];
+                [picker release];
+                [message release];
+                break;
+            }
+
+            case 1:
+            {
+                UIPasteboard *board = [UIPasteboard generalPasteboard];
+                board.string = [NSString stringWithFormat:@"Family: %@; font: %@", self.fontFamilyName, self.fontName];
+                break;
+            }
+                
+            case 2:
+            {
+                ComparisonPromptController *comparisonPrompt = [[ComparisonPromptController alloc] init];
+                comparisonPrompt.title = self.fontName;
+                [self.navigationController pushViewController:comparisonPrompt animated:YES];
+                [comparisonPrompt release];
+                break;
+            }
+                
+            default:
+                break;
+        }
+    }
+    else if (actionSheet == textsActionSheet)
+    {
+        if (buttonIndex < [comparativeTexts count])
+        {
+            sampleView.text = [comparativeTexts objectAtIndex:buttonIndex];
+        }
     }
 }
 
@@ -156,30 +209,12 @@
 
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView
 {
-    button.title = @"Done";
-    button.action = @selector(done:);
-    button.style = UIBarButtonItemStyleDone;
-    sampleView.frame = CGRectMake(0.0, 94.0, 320.0, 150.0);
+    sampleView.frame = CGRectMake(0.0, 58.0, 320.0, 150.0);
     return TRUE;
 }
 
 #pragma mark -
 #pragma mark Private methods
-
-- (void)done:(id)sender
-{
-    button.title = @"Clear";
-    button.action = @selector(clear:);
-    button.style = UIBarButtonItemStylePlain;
-    sampleView.frame = CGRectMake(0.0, 94.0, 320.0, 430.0);
-    [sampleView resignFirstResponder];
-}
-
-- (void)clear:(id)sender
-{
-    sampleView.text = @"";
-    [sampleView becomeFirstResponder];
-}
 
 - (UIImage *)createScreenshot
 {
@@ -187,13 +222,13 @@
     // http://idevkit.com/forums/tutorials-code-samples-sdk/5-uiimage-any-calayer-uiview.html
     UIGraphicsBeginImageContext(self.view.bounds.size);
     
-    // To remove the warning, add 
+    // To remove the warning (missing renderInContext: method), add 
     // #import <QuartzCore/QuartzCore.h>
-    // at the top of the file. Done!
+    // at the top of the file.
     [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-//    UIImageWriteToSavedPhotosAlbum(viewImage, self, nil, nil);
+    // UIImageWriteToSavedPhotosAlbum(viewImage, self, nil, nil);
     return viewImage;
 }
 
