@@ -8,12 +8,15 @@
 
 #import "FontsController.h"
 #import "NSString+FirstLetters.h"
+#import "FontTableCell.h"
 
 @implementation FontsController
 
 @dynamic familyNames;
-@synthesize delegate;
-@synthesize selectedIndexPath;
+@synthesize delegate = _delegate;
+@synthesize selectedIndexPath = _selectedIndexPath;
+@synthesize showScrollingFonts = _showScrollingFonts;
+@synthesize fontHeight = _fontHeight;
 @dynamic currentlySelectedFontName;
 @dynamic currentlySelectedFontFamily;
 
@@ -24,7 +27,8 @@
 {
     if (self = [super initWithStyle:UITableViewStylePlain])
     {
-        self.tableView.rowHeight = 50;
+        _fontHeight = 18.0;
+        _showScrollingFonts = NO;
         self.title = @"FontKit";
     }
     return self;
@@ -32,27 +36,27 @@
 
 - (void)dealloc
 {
-    [selectedIndexPath release];
-    [familyNames release];
+    [_selectedIndexPath release];
+    [_familyNames release];
     [super dealloc];
 }
 
 #pragma mark -
 #pragma mark Property accessors
 
-- (NSArray *)familyNames
+- (NSArray *)_familyNames
 {
-    if (familyNames == nil)
+    if (_familyNames == nil)
     {
-        familyNames = [[[UIFont familyNames] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)] retain];
+        _familyNames = [[[UIFont familyNames] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)] retain];
     }
-    return familyNames;
+    return _familyNames;
 }
 
 - (NSString *)currentlySelectedFontName
 {
     NSString *fontName = nil;
-    if (selectedIndexPath != nil)
+    if (_selectedIndexPath != nil)
     {
         NSArray *fontNames = [UIFont fontNamesForFamilyName:self.currentlySelectedFontFamily];
         fontName = [fontNames objectAtIndex:self.selectedIndexPath.row];
@@ -63,9 +67,9 @@
 - (NSString *)currentlySelectedFontFamily
 {
     NSString *fontFamily = nil;
-    if (selectedIndexPath != nil)
+    if (_selectedIndexPath != nil)
     {
-        fontFamily = [self.familyNames objectAtIndex:self.selectedIndexPath.section];
+        fontFamily = [self._familyNames objectAtIndex:self.selectedIndexPath.section];
     }
     return fontFamily;
 }
@@ -75,48 +79,61 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView 
 {
-    return [self.familyNames count];
+    return [self._familyNames count];
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView 
 {
-    return [self.familyNames valueForKey:@"firstLetters"];
+    if (_showScrollingFonts)
+    {
+        return nil;
+    }
+    return [self._familyNames valueForKey:@"firstLetters"];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section 
 {
-    NSArray *fontNames = [UIFont fontNamesForFamilyName:[self.familyNames objectAtIndex:section]];
+    NSArray *fontNames = [UIFont fontNamesForFamilyName:[self._familyNames objectAtIndex:section]];
     return [fontNames count];
 }
 
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [self.familyNames objectAtIndex:section];
+    return _fontHeight + 40.0;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section 
+{
+    return [self._familyNames objectAtIndex:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
 {
-    NSArray *fontNames = [UIFont fontNamesForFamilyName:[self.familyNames objectAtIndex:indexPath.section]];
+    NSArray *fontNames = [UIFont fontNamesForFamilyName:[self._familyNames objectAtIndex:indexPath.section]];
     static NSString *identifier = @"iPhoneFontBrowser";
     NSString *font = [fontNames objectAtIndex:indexPath.row];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    FontTableCell *cell = (FontTableCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) 
     {
-        CGRect rect = CGRectMake(0.0, 0.0, 320.0, 50.0);
-        cell = [[[UITableViewCell alloc] initWithFrame:rect reuseIdentifier:identifier] autorelease];
-        cell.accessoryType = UITableViewCellAccessoryNone;
+        cell = [[[FontTableCell alloc] initWithReuseIdentifier:identifier] autorelease];
     }
-    cell.textLabel.font = [UIFont fontWithName:font size:18.0];
-    cell.textLabel.text =  font;
+    cell.textLabel.text = font;
+    cell.textLabel.font = [UIFont fontWithName:font size:_fontHeight];
+    cell.showScrollingText = _showScrollingFonts;
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    [self tableView:tableView didSelectRowAtIndexPath:indexPath];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
 {
     self.selectedIndexPath = indexPath;
-    if ([delegate respondsToSelector:@selector(fontsController:rowSelectedAtIndexPath:)])
+    if ([_delegate respondsToSelector:@selector(fontsController:rowSelectedAtIndexPath:)])
     {
-        [delegate fontsController:self rowSelectedAtIndexPath:indexPath];
+        [_delegate fontsController:self rowSelectedAtIndexPath:indexPath];
     }
 }
 
@@ -130,8 +147,8 @@
 
 - (void)didReceiveMemoryWarning 
 {
-    [familyNames release];
-    familyNames = nil;
+    [_familyNames release];
+    _familyNames = nil;
     [super didReceiveMemoryWarning];
 }
 

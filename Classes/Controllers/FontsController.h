@@ -12,9 +12,11 @@
 @interface FontsController : UITableViewController
 {
 @private
-    NSArray *familyNames;
-    NSIndexPath *selectedIndexPath;
-    NSObject<FontsControllerDelegate> *delegate;
+    NSArray *_familyNames;
+    NSIndexPath *_selectedIndexPath;
+    NSObject<FontsControllerDelegate> *_delegate;
+    BOOL _showScrollingFonts;
+    CGFloat _fontHeight;
 }
 
 @property (nonatomic, readonly) NSArray *familyNames;
@@ -22,5 +24,7 @@
 @property (nonatomic, retain) NSIndexPath *selectedIndexPath;
 @property (nonatomic, readonly) NSString *currentlySelectedFontName;
 @property (nonatomic, readonly) NSString *currentlySelectedFontFamily;
+@property (nonatomic) BOOL showScrollingFonts;
+@property (nonatomic) CGFloat fontHeight;
 
 @end

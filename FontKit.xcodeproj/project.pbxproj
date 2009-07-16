@@ -14,6 +14,7 @@
 		3A296A660FEF727F00D0A771 /* ComparisonDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A296A650FEF727F00D0A771 /* ComparisonDetail.xib */; };
 		3A296A7C0FEF786F00D0A771 /* SizeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A296A7B0FEF786F00D0A771 /* SizeController.m */; };
 		3A296A7E0FEF78BD00D0A771 /* Size.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A296A7D0FEF78BD00D0A771 /* Size.xib */; };
+		3A2B55B6100F81CA00EF6184 /* FontTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2B55B5100F81CA00EF6184 /* FontTableCell.m */; };
 		3A31F2D00FEFA40800460062 /* ComparisonDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A31F2CF0FEFA40800460062 /* ComparisonDetailController.m */; };
 		3A3F6BB20FEFE1C300F65169 /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A3F6BB10FEFE1C300F65169 /* chat.png */; };
 		3A65E8DF0FEECBF2005CA383 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A65E8DE0FEECBF2005CA383 /* MessageUI.framework */; };
@@ -49,6 +50,8 @@
 		3A296A7B0FEF786F00D0A771 /* SizeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SizeController.m; sourceTree = "<group>"; };
 		3A296A7D0FEF78BD00D0A771 /* Size.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Size.xib; sourceTree = "<group>"; };
 		3A296A830FEF7A3B00D0A771 /* SizeControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SizeControllerDelegate.h; sourceTree = "<group>"; };
+		3A2B55B4100F81CA00EF6184 /* FontTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontTableCell.h; sourceTree = "<group>"; };
+		3A2B55B5100F81CA00EF6184 /* FontTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontTableCell.m; sourceTree = "<group>"; };
 		3A31F2CE0FEFA40800460062 /* ComparisonDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComparisonDetailController.h; sourceTree = "<group>"; };
 		3A31F2CF0FEFA40800460062 /* ComparisonDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComparisonDetailController.m; sourceTree = "<group>"; };
 		3A3F6BB10FEFE1C300F65169 /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat.png; sourceTree = "<group>"; };
@@ -154,6 +157,8 @@
 			children = (
 				3A65E99E0FEED5C6005CA383 /* FontsController.h */,
 				3A65E99F0FEED5C6005CA383 /* FontsController.m */,
+				3A2B55B4100F81CA00EF6184 /* FontTableCell.h */,
+				3A2B55B5100F81CA00EF6184 /* FontTableCell.m */,
 				3A2969D80FEF679300D0A771 /* FontsControllerDelegate.h */,
 				3A2969D20FEF652F00D0A771 /* MainController.h */,
 				3A2969D30FEF652F00D0A771 /* MainController.m */,
@@ -291,6 +296,7 @@
 				3A296A430FEF700900D0A771 /* ComparisonPromptController.m in Sources */,
 				3A296A7C0FEF786F00D0A771 /* SizeController.m in Sources */,
 				3A31F2D00FEFA40800460062 /* ComparisonDetailController.m in Sources */,
+				3A2B55B6100F81CA00EF6184 /* FontTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +312,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = FontKit_Prefix.pch;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = FontKit;
 			};

@@ -10,6 +10,7 @@
 #import "FontDetailController.h"
 #import "UIFont+FontList.h"
 #import "AboutController.h"
+#import "SizeController.h"
 
 @interface FontsController (Private)
 - (void)viewCurrentlySelectedFont;
@@ -29,6 +30,10 @@
         controller = [[UINavigationController alloc] initWithRootViewController:self];
         controller.toolbarHidden = NO;
         
+        _sizeController = [[SizeController alloc] init];
+        _sizeController.delegate = self;
+        self.tableView.tableHeaderView = _sizeController.view;
+        
         self.delegate = self;
         
         UIButton *aboutButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
@@ -42,10 +47,36 @@
         UIBarButtonItem *actionButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction 
                                                                                       target:self
                                                                                       action:@selector(action:)];
+        UIBarButtonItem *flexibleSpace1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace 
+                                                                                        target:nil 
+                                                                                        action:nil];
+        UIBarButtonItem *flexibleSpace2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace 
+                                                                                        target:nil 
+                                                                                        action:nil];
+        UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                                                                                    target:nil 
+                                                                                    action:nil];
+        fixedSpace.width = 20;
         
-        NSArray *items = [[NSArray alloc] initWithObjects:actionButton, nil];
-        self.toolbarItems = items;
+        NSArray *viewsOptions = [[NSArray alloc] initWithObjects:@"Names", @"Samples", nil];
+        UISegmentedControl *viewsControl = [[UISegmentedControl alloc] initWithItems:viewsOptions];
+        viewsControl.segmentedControlStyle = UISegmentedControlStyleBar;
+        [viewsControl addTarget:self
+                         action:@selector(changeView:) 
+               forControlEvents:UIControlEventValueChanged];
+        viewsControl.selectedSegmentIndex = 0;
+        [viewsOptions release];
+        UIBarButtonItem *viewsItem = [[UIBarButtonItem alloc] initWithCustomView:viewsControl];
+        [viewsControl release];
+        
+        NSArray *items = [[NSArray alloc] initWithObjects:actionButton, flexibleSpace1, viewsItem, flexibleSpace2, fixedSpace, nil];
+        [viewsItem release];
+        [fixedSpace release];
+        [flexibleSpace1 release];
+        [flexibleSpace2 release];
         [actionButton release];
+
+        self.toolbarItems = items;
         [items release];
     }
     return self;
@@ -62,6 +93,13 @@
 
 #pragma mark -
 #pragma mark IBAction methods
+
+- (void)changeView:(id)sender
+{
+    UISegmentedControl *control = (UISegmentedControl *)sender;
+    self.showScrollingFonts = (control.selectedSegmentIndex == 1);
+    [self.tableView reloadData];
+}
 
 - (void)about:(id)sender
 {
@@ -118,6 +156,15 @@
         default:
             break;
     }
+}
+
+#pragma mark -
+#pragma mark SizeControllerDelegate methods
+
+- (void)sizeController:(SizeController *)sizeController didChangeSize:(CGFloat)newSize
+{
+    self.fontHeight = newSize;
+    [self.tableView reloadData];
 }
 
 #pragma mark -

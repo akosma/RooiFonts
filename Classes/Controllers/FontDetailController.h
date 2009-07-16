@@ -27,7 +27,6 @@
     SizeController *sizeController;
     NSString *fontName;
     NSString *fontFamilyName;
-    NSArray *comparativeTexts;
 }
 
 @property (nonatomic, copy) NSString *fontName;

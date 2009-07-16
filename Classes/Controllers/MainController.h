@@ -10,19 +10,23 @@
 #import "FontsControllerDelegate.h"
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
+#import "SizeControllerDelegate.h"
 
 @class FontDetailController;
 @class AboutController;
+@class SizeController;
 
 @interface MainController : FontsController <UIActionSheetDelegate,
                                              MFMailComposeViewControllerDelegate,
-                                             FontsControllerDelegate>
+                                             FontsControllerDelegate,
+                                             SizeControllerDelegate>
 {
 @private
     UIActionSheet *toolbarActionSheet;
     UINavigationController *controller;
     FontDetailController *detailController;
-    AboutController *aboutBox;    
+    AboutController *aboutBox;
+    SizeController *_sizeController;
 }
 
 @property (nonatomic, retain) UINavigationController *controller;

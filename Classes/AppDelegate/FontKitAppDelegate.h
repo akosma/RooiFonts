@@ -13,9 +13,14 @@
 @interface FontKitAppDelegate : NSObject <UIApplicationDelegate> 
 {
 @private
-    IBOutlet UIWindow *window;
-    MainController *viewController;
+    IBOutlet UIWindow *_window;
+    MainController *_viewController;
+    NSArray *_comparativeTexts;
 }
+
+@property (nonatomic, readonly) NSArray *comparativeTexts;
+
++ (FontKitAppDelegate *)sharedAppDelegate;
 
 @end
 
