@@ -14,11 +14,11 @@
 @private
     IBOutlet UISlider *slider;
     IBOutlet UILabel *sizeLabel;
-    NSObject<SizeControllerDelegate> *delegate;
+    id<SizeControllerDelegate> delegate;
 }
 
 @property (nonatomic, readonly) CGFloat size;
-@property (nonatomic, assign) NSObject<SizeControllerDelegate> *delegate;
+@property (nonatomic, assign) id<SizeControllerDelegate> delegate;
 
 - (IBAction)sliderValueChanged:(id)sender;
 

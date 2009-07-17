@@ -10,7 +10,7 @@
 
 @class SizeController;
 
-@protocol SizeControllerDelegate
+@protocol SizeControllerDelegate <NSObject>
 
 @required
 - (void)sizeController:(SizeController *)sizeController didChangeSize:(CGFloat)newSize;

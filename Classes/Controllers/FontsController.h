@@ -14,13 +14,13 @@
 @private
     NSArray *_familyNames;
     NSIndexPath *_selectedIndexPath;
-    NSObject<FontsControllerDelegate> *_delegate;
+    id<FontsControllerDelegate> _delegate;
     BOOL _showScrollingFonts;
     CGFloat _fontHeight;
 }
 
 @property (nonatomic, readonly) NSArray *familyNames;
-@property (nonatomic, assign) NSObject<FontsControllerDelegate> *delegate;
+@property (nonatomic, assign) id<FontsControllerDelegate> delegate;
 @property (nonatomic, retain) NSIndexPath *selectedIndexPath;
 @property (nonatomic, readonly) NSString *currentlySelectedFontName;
 @property (nonatomic, readonly) NSString *currentlySelectedFontFamily;

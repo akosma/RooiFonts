@@ -157,9 +157,9 @@
 			children = (
 				3A65E99E0FEED5C6005CA383 /* FontsController.h */,
 				3A65E99F0FEED5C6005CA383 /* FontsController.m */,
+				3A2969D80FEF679300D0A771 /* FontsControllerDelegate.h */,
 				3A2B55B4100F81CA00EF6184 /* FontTableCell.h */,
 				3A2B55B5100F81CA00EF6184 /* FontTableCell.m */,
-				3A2969D80FEF679300D0A771 /* FontsControllerDelegate.h */,
 				3A2969D20FEF652F00D0A771 /* MainController.h */,
 				3A2969D30FEF652F00D0A771 /* MainController.m */,
 				3A65E99A0FEED5C6005CA383 /* AboutController.h */,
