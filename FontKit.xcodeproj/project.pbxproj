@@ -35,7 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1D6058910D05DD3D006BFB54 /* FontKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FontKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* RooiFonts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RooiFonts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3A2969760FEF5A7000D0A771 /* FontKitAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontKitAppDelegate.h; sourceTree = "<group>"; };
 		3A2969770FEF5A7000D0A771 /* FontKitAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontKitAppDelegate.m; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* FontKit.app */,
+				1D6058910D05DD3D006BFB54 /* RooiFonts.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -224,9 +224,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* FontKit */ = {
+		1D6058900D05DD3D006BFB54 /* RooiFonts */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "FontKit" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "RooiFonts" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -236,9 +236,9 @@
 			);
 			dependencies = (
 			);
-			name = FontKit;
+			name = RooiFonts;
 			productName = FontBrowser;
-			productReference = 1D6058910D05DD3D006BFB54 /* FontKit.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* RooiFonts.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -265,7 +265,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* FontKit */,
+				1D6058900D05DD3D006BFB54 /* RooiFonts */,
 			);
 		};
 /* End PBXProject section */
@@ -335,7 +335,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = FontKit_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				PRODUCT_NAME = FontKit;
+				PRODUCT_NAME = RooiFonts;
 			};
 			name = Debug;
 		};
@@ -347,7 +347,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = FontKit_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				PRODUCT_NAME = FontBrowser;
+				PRODUCT_NAME = RooiFonts;
 			};
 			name = Release;
 		};
@@ -375,7 +375,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = FontKit_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				PRODUCT_NAME = FontKit;
+				PRODUCT_NAME = RooiFonts;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "429F1EFD-9759-4036-A7B4-5EC3B528FEA1";
 			};
 			name = Distribution;
@@ -410,7 +410,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "FontKit" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "RooiFonts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,

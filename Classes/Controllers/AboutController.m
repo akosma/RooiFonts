@@ -17,7 +17,7 @@
 {
     if (self = [super initWithNibName:@"About" bundle:nil]) 
     {
-        NSString *titleText = NSLocalizedString(@"About FontKit", @"Title of the about screen");
+        NSString *titleText = NSLocalizedString(@"About RooiFonts", @"Title of the about screen");
         self.title = titleText;
         self.hidesBottomBarWhenPushed = YES;
     }

@@ -1,6 +1,6 @@
 //
 //  FontsController.m
-//  FontKit
+//  RooiFonts
 //
 //  Created by Adrian on 11/12/08.
 //  Copyright 2009 akosma software. All rights reserved.
@@ -25,7 +25,7 @@
     if (self = [super initWithStyle:UITableViewStylePlain])
     {
         self.tableView.rowHeight = 50;
-        self.title = @"FontKit";
+        self.title = @"RooiFonts";
     }
     return self;
 }

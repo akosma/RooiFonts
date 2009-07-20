@@ -1,5 +1,5 @@
 /* Title of the about screen */
-"About FontKit" = "A propos de FontKit";
+"About RooiFonts" = "A propos de RooiFonts";
 
 /* Back button title for the comparison screen */
 "Back" = "Retour";
@@ -33,4 +33,4 @@
 
 /* Text sent via e-mail, below the font image. */
 "EMAIL_GREETING" = "Voici comment %1$@ à %2$.0f points apparaît sur l'iPhone \
-\n\nEnvoyé par FontKit - http://fontkitapp.com/";
+\n\nEnvoyé par RooiFonts - http://fontkitapp.com/";
