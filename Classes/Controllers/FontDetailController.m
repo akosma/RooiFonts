@@ -13,6 +13,7 @@
 
 @interface FontDetailController (Private)
 - (UIImage *)createScreenshot;
+- (UIImage*)imageByCropping:(UIImage *)imageToCrop toRect:(CGRect)rect;
 @end
 
 @implementation FontDetailController
@@ -101,11 +102,20 @@
 
 - (IBAction)action:(id)sender
 {
+    NSString *screenshotOption = NSLocalizedString(@"Screenshot via e-mail", 
+                                                   @"'Screenshot' entry of the action menu in the detail screen");
+    NSString *copyOption = NSLocalizedString(@"Copy name", 
+                                             @"'Copy' entry of the action menu in the detail screen");
+    NSString *compareOption = NSLocalizedString(@"Compare with...", 
+                                                @"'Compare' option of the action menu in the detail screen");
+    NSString *cancelButtonText = NSLocalizedString(@"Cancel", 
+                                                @"'Cancel' button in action menus");
+    
     otherActionsSheet = [[UIActionSheet alloc] initWithTitle:@""
                                                     delegate:self 
-                                           cancelButtonTitle:@"Cancel"
+                                           cancelButtonTitle:cancelButtonText
                                       destructiveButtonTitle:nil
-                                           otherButtonTitles:@"Screenshot via e-mail", @"Copy name", @"Compare with...", nil];
+                                           otherButtonTitles:screenshotOption, copyOption, compareOption, nil];
     [otherActionsSheet showInView:self.navigationController.view];
     [otherActionsSheet release];
 }
@@ -122,7 +132,11 @@
         NSString *buttonTitle = [NSString stringWithFormat:@"%@...", [text substringToIndex:20]];
         [textsActionSheet addButtonWithTitle:buttonTitle];
     }
-    [textsActionSheet addButtonWithTitle:@"Cancel"];
+
+    NSString *cancelButtonText = NSLocalizedString(@"Cancel", 
+                                                   @"'Cancel' button in action menus");
+
+    [textsActionSheet addButtonWithTitle:cancelButtonText];
     textsActionSheet.cancelButtonIndex = [comparativeTexts count];
     [textsActionSheet showInView:self.navigationController.view];
     [textsActionSheet release];
@@ -163,7 +177,8 @@
                 picker.mailComposeDelegate = self;
 
                 NSMutableString *message = [[NSMutableString alloc] init];
-                [message appendFormat:@"This is how %@ at %1.0f pt looks on the iPhone\n\nSent from FontKit - http://fontkitapp.com/", self.fontName, sizeController.size];
+                NSString *messageBody = NSLocalizedString(@"EMAIL_GREETING", @"Text sent via e-mail, below the font image.");
+                [message appendFormat:messageBody, self.fontName, sizeController.size];
                 NSString *subject = [NSString stringWithFormat:@"%@ screenshot", self.fontName];
                 [picker setSubject:subject];
                 [picker setMessageBody:message isHTML:NO];
@@ -177,7 +192,8 @@
             case 1:
             {
                 UIPasteboard *board = [UIPasteboard generalPasteboard];
-                board.string = [NSString stringWithFormat:@"Family: %@; font: %@", self.fontFamilyName, self.fontName];
+                NSString *textToCopy = NSLocalizedString(@"Family: %@; font: %@", @"Text to be copied in the pasteboard");
+                board.string = [NSString stringWithFormat:textToCopy, self.fontFamilyName, self.fontName];
                 break;
             }
                 
@@ -228,8 +244,53 @@
     [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    // UIImageWriteToSavedPhotosAlbum(viewImage, self, nil, nil);
-    return viewImage;
+    
+    // Save to local photo album
+    UIImageWriteToSavedPhotosAlbum(viewImage, self, nil, nil);
+    
+    // Crop image to remove UI widgets and return
+    CGRect rect = CGRectMake(0.0, 90.0, 320.0, 280.0);
+    return [self imageByCropping:viewImage toRect:rect];
+}
+
+// This code comes from 
+// http://www.hive05.com/2008/11/crop-an-image-using-the-iphone-sdk/
+- (UIImage*)imageByCropping:(UIImage *)imageToCrop toRect:(CGRect)rect
+{
+    //create a context to do our clipping in
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef currentContext = UIGraphicsGetCurrentContext();
+    
+    //create a rect with the size we want to crop the image to
+    //the X and Y here are zero so we start at the beginning of our
+    //newly created context
+    CGRect clippedRect = CGRectMake(0, 0, rect.size.width, rect.size.height);
+    CGContextClipToRect( currentContext, clippedRect);
+    
+    //create a rect equivalent to the full size of the image
+    //offset the rect by the X and Y we want to start the crop
+    //from in order to cut off anything before them
+    CGRect drawRect = CGRectMake(rect.origin.x * -1,
+                                 rect.origin.y * -1,
+                                 imageToCrop.size.width,
+                                 imageToCrop.size.height);
+
+    // This fix comes from one of the comments in page where this
+    // code was copied from...
+    CGContextTranslateCTM(currentContext, 0.0, rect.size.height);
+    CGContextScaleCTM(currentContext, 1.0, -1.0);
+
+    //draw the image to our clipped context using our offset rect
+    CGContextDrawImage(currentContext, drawRect, imageToCrop.CGImage);
+    
+    //pull the image from our cropped context
+    UIImage *cropped = UIGraphicsGetImageFromCurrentImageContext();
+    
+    //pop the context to get back to the default
+    UIGraphicsEndImageContext();
+    
+    //Note: this is autoreleased
+    return cropped;
 }
 
 @end

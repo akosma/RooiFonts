@@ -18,7 +18,9 @@
 {
     if (self = [super init])
     {
-        self.navigationItem.prompt = @"Select a font to compare with";
+        NSString *prompt = NSLocalizedString(@"Select a font to compare with", 
+                                             @"Prompts the user to choose another font");
+        self.navigationItem.prompt = prompt;
         self.delegate = self;
     }
     return self;

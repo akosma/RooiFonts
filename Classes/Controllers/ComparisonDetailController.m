@@ -55,9 +55,11 @@
     topView.font = topFont;
     bottomView.font = bottomFont;
     
-    self.navigationItem.prompt = [NSString stringWithFormat:@"Comparing %@ with", topFontName];
+    NSString *comparingWith = NSLocalizedString(@"Comparing %@ with", @"Prompt for the comparison screen");
+    self.navigationItem.prompt = [NSString stringWithFormat:comparingWith, topFontName];
     self.title = bottomFontName;
-    self.navigationItem.backBarButtonItem.title = @"Back";
+    NSString *backButtonTitle = NSLocalizedString(@"Back", @"Back button title for the comparison screen");
+    self.navigationItem.backBarButtonItem.title = backButtonTitle;
 }
 
 - (void)viewDidLoad 

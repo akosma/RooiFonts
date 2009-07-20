@@ -1,0 +1,36 @@
+/* Title of the about screen */
+"About FontKit" = "Acerca de FontKit";
+
+/* Back button title for the comparison screen */
+"Back" = "Atrás";
+
+/* 'Cancel' button in action menus */
+"Cancel" = "Cancelar";
+
+/* 'Compare' option of the action menu in the detail screen */
+"Compare with..." = "Comparar con...";
+
+/* Prompt for the comparison screen */
+"Comparing %@ with" = "Comparando %@ con";
+
+/* 'Copy list' entry of the action menu in the MainController class */
+"Copy list" = "Copiar lista";
+
+/* 'Copy' entry of the action menu in the detail screen */
+"Copy name" = "Copiar nombre";
+
+/* Text to be copied in the pasteboard */
+"Family: %@; font: %@" = "Familia: %1$@; font: %2$@";
+
+/* 'Screenshot' entry of the action menu in the detail screen */
+"Screenshot via e-mail" = "Pantalla por e-mail";
+
+/* Prompts the user to choose another font */
+"Select a font to compare with" = "Elegir otra font para comparar";
+
+/* 'Send list via e-mail' entry of the action menu in the MainController class */
+"Send list via e-mail" = "Enviar lista por e-mail";
+
+/* Text sent via e-mail, below the font image. */
+"EMAIL_GREETING" = "Así se ve %1$@ a %2$.0f puntos en el iPhone \
+\n\nEnviado por FontKit - http://fontkitapp.com/";

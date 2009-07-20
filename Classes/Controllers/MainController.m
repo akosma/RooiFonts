@@ -74,11 +74,18 @@
 
 - (void)action:(id)sender
 {
+    NSString *copyListEntry = NSLocalizedString(@"Copy list", 
+                                                @"'Copy list' entry of the action menu in the MainController class");
+    NSString *sendMailEntry = NSLocalizedString(@"Send list via e-mail", 
+                                                @"'Send list via e-mail' entry of the action menu in the MainController class");
+    NSString *cancelButtonText = NSLocalizedString(@"Cancel", 
+                                                   @"'Cancel' button in action menus");
+    
     toolbarActionSheet = [[UIActionSheet alloc] initWithTitle:@""
                                                      delegate:self 
-                                            cancelButtonTitle:@"Cancel"
+                                            cancelButtonTitle:cancelButtonText
                                        destructiveButtonTitle:nil
-                                            otherButtonTitles:@"Copy list", @"Send list via e-mail", nil];
+                                            otherButtonTitles:copyListEntry, sendMailEntry, nil];
     [toolbarActionSheet showInView:controller.view];
     [toolbarActionSheet release];
 }
