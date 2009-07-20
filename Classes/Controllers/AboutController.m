@@ -37,6 +37,18 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (IBAction)akosma:(id)sender
+{
+    NSURL *url = [NSURL URLWithString:@"http://akosma.com/"];
+    [[UIApplication sharedApplication] openURL:url];
+}
+
+- (IBAction)bluewoki:(id)sender
+{
+    NSURL *url = [NSURL URLWithString:@"http://bluewoki.com/"];
+    [[UIApplication sharedApplication] openURL:url];
+}
+
 #pragma mark -
 #pragma mark UIViewController methods
 

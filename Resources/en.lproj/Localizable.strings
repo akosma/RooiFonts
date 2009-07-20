@@ -33,5 +33,5 @@
 
 /* Text sent via e-mail, below the font image. */
 "EMAIL_GREETING" = "This is how %1$@ at %2$.0f points looks on the iPhone \
-\n\nSent from RooiFonts - http://fontkitapp.com/";
+\n\nSent from RooiFonts - http://rooifonts.com/";
 
