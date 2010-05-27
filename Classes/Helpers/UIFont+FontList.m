@@ -12,8 +12,8 @@
 
 + (NSString *)fontList
 {
-    NSMutableString *fonts = [[NSMutableString alloc] init];
-    NSArray *familyNames = [[[UIFont familyNames] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)] retain];
+    NSMutableString *fonts = [NSMutableString string];
+    NSArray *familyNames = [[UIFont familyNames] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
     for (NSString *familyName in familyNames)
     {
         [fonts appendFormat:@"Family %@: \n", familyName];
@@ -24,8 +24,7 @@
         }
         [fonts appendString:@"\n"];
     }
-    [familyNames release];
-    return [fonts autorelease];
+    return fonts;
 }
 
 @end

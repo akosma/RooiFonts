@@ -9,7 +9,16 @@
 #import "ComparisonPromptController.h"
 #import "ComparisonDetailController.h"
 
+@interface ComparisonPromptController ()
+
+@property (nonatomic, retain) ComparisonDetailController *comparisonController;
+
+@end
+
+
 @implementation ComparisonPromptController
+
+@synthesize comparisonController = _comparisonController;
 
 #pragma mark -
 #pragma mark Constructor and destructor
@@ -29,6 +38,7 @@
 - (void)dealloc
 {
     self.delegate = nil;
+    self.comparisonController = nil;
     [super dealloc];
 }
 
@@ -37,14 +47,13 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return interfaceOrientation == UIInterfaceOrientationPortrait;
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning 
 {
-    [comparisonController release];
-    comparisonController = nil;
     [super didReceiveMemoryWarning];
+    self.comparisonController = nil;
 }
 
 #pragma mark -
@@ -52,13 +61,13 @@
 
 - (void)fontsController:(FontsController *)controller rowSelectedAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (comparisonController == nil)
+    if (self.comparisonController == nil)
     {
-        comparisonController = [[ComparisonDetailController alloc] init];
+        self.comparisonController = [[[ComparisonDetailController alloc] init] autorelease];
     }
-    comparisonController.topFontName = self.title;
-    comparisonController.bottomFontName = self.currentlySelectedFontName;
-    [self.navigationController pushViewController:comparisonController animated:YES];
+    self.comparisonController.topFontName = self.title;
+    self.comparisonController.bottomFontName = self.currentlySelectedFontName;
+    [self.navigationController pushViewController:self.comparisonController animated:YES];
 }
 
 @end

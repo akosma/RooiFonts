@@ -13,7 +13,7 @@
 @interface ComparisonPromptController : FontsController <FontsControllerDelegate>
 {
 @private
-    ComparisonDetailController *comparisonController;
+    ComparisonDetailController *_comparisonController;
 }
 
 @end

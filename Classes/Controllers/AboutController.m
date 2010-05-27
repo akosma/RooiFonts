@@ -34,7 +34,7 @@
 
 - (IBAction)done:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (IBAction)akosma:(id)sender
@@ -54,7 +54,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return interfaceOrientation == UIInterfaceOrientationPortrait;
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning 

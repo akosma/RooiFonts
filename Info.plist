@@ -8,8 +8,6 @@
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIconFile</key>
-	<string>Icon.png</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.akosma.RooiFonts</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -26,7 +24,16 @@
 	<true/>
 	<key>NSMainNibFile</key>
 	<string>MainWindow</string>
+	<key>NSMainNibFile~ipad</key>
+	<string>MainWindow-iPad</string>
 	<key>UIPrerenderedIcon</key>
 	<true/>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>Icon.png</string>
+		<string>Icon-ipad.png</string>
+		<string>Icon-Small.png</string>
+		<string>Icon-Small-50.png</string>
+	</array>
 </dict>
 </plist>

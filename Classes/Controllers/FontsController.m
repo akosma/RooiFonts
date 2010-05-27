@@ -9,11 +9,19 @@
 #import "FontsController.h"
 #import "NSString+FirstLetters.h"
 
+@interface FontsController ()
+
+@property (nonatomic, retain) NSArray *familyNames;
+@property (nonatomic, retain) NSIndexPath *selectedIndexPath;
+
+@end
+
+
 @implementation FontsController
 
-@dynamic familyNames;
-@synthesize delegate;
-@synthesize selectedIndexPath;
+@synthesize familyNames = _familyNames;
+@synthesize delegate = _delegate;
+@synthesize selectedIndexPath = _selectedIndexPath;
 @dynamic currentlySelectedFontName;
 @dynamic currentlySelectedFontFamily;
 
@@ -26,33 +34,25 @@
     {
         self.tableView.rowHeight = 50;
         self.title = @"RooiFonts";
+        self.familyNames = [[UIFont familyNames] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
     }
     return self;
 }
 
 - (void)dealloc
 {
-    [selectedIndexPath release];
-    [familyNames release];
+    self.selectedIndexPath = nil;
+    self.familyNames = nil;
     [super dealloc];
 }
 
 #pragma mark -
 #pragma mark Property accessors
 
-- (NSArray *)familyNames
-{
-    if (familyNames == nil)
-    {
-        familyNames = [[[UIFont familyNames] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)] retain];
-    }
-    return familyNames;
-}
-
 - (NSString *)currentlySelectedFontName
 {
     NSString *fontName = nil;
-    if (selectedIndexPath != nil)
+    if (self.selectedIndexPath != nil)
     {
         NSArray *fontNames = [UIFont fontNamesForFamilyName:self.currentlySelectedFontFamily];
         fontName = [fontNames objectAtIndex:self.selectedIndexPath.row];
@@ -63,7 +63,7 @@
 - (NSString *)currentlySelectedFontFamily
 {
     NSString *fontFamily = nil;
-    if (selectedIndexPath != nil)
+    if (self.selectedIndexPath != nil)
     {
         fontFamily = [self.familyNames objectAtIndex:self.selectedIndexPath.section];
     }
@@ -114,9 +114,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
 {
     self.selectedIndexPath = indexPath;
-    if ([delegate respondsToSelector:@selector(fontsController:rowSelectedAtIndexPath:)])
+    if ([self.delegate respondsToSelector:@selector(fontsController:rowSelectedAtIndexPath:)])
     {
-        [delegate fontsController:self rowSelectedAtIndexPath:indexPath];
+        [self.delegate fontsController:self rowSelectedAtIndexPath:indexPath];
     }
 }
 
@@ -125,14 +125,13 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return interfaceOrientation == UIInterfaceOrientationPortrait;
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning 
 {
-    [familyNames release];
-    familyNames = nil;
     [super didReceiveMemoryWarning];
+    self.familyNames = nil;
 }
 
 @end

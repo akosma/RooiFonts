@@ -19,10 +19,10 @@
                                              FontsControllerDelegate>
 {
 @private
-    UIActionSheet *toolbarActionSheet;
-    UINavigationController *controller;
-    FontDetailController *detailController;
-    AboutController *aboutBox;    
+    UIActionSheet *_toolbarActionSheet;
+    UINavigationController *_controller;
+    FontDetailController *_detailController;
+    AboutController *_aboutBox;    
 }
 
 @property (nonatomic, retain) UINavigationController *controller;

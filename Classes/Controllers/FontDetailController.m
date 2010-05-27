@@ -11,15 +11,30 @@
 #import <QuartzCore/QuartzCore.h>
 #import "ComparisonPromptController.h"
 
-@interface FontDetailController (Private)
+@interface FontDetailController ()
+
+@property (nonatomic, retain) UIBarButtonItem *doneButton;
+@property (nonatomic, retain) UIActionSheet *textsActionSheet;
+@property (nonatomic, retain) UIActionSheet *otherActionsSheet;
+@property (nonatomic, retain) SizeController *sizeController;
+@property (nonatomic, retain) NSArray *comparativeTexts;
+
 - (UIImage *)createScreenshot;
 - (UIImage*)imageByCropping:(UIImage *)imageToCrop toRect:(CGRect)rect;
+
 @end
 
 @implementation FontDetailController
 
-@synthesize fontName;
-@synthesize fontFamilyName;
+@synthesize fontName = _fontName;
+@synthesize fontFamilyName = _fontFamilyName;
+@synthesize sizeView = _sizeView;
+@synthesize sampleView = _sampleView;
+@synthesize doneButton = _doneButton;
+@synthesize textsActionSheet = _textsActionSheet;
+@synthesize otherActionsSheet = _otherActionsSheet;
+@synthesize sizeController = _sizeController;
+@synthesize comparativeTexts = _comparativeTexts;
 
 #pragma mark -
 #pragma mark Constructors and destructors
@@ -29,26 +44,32 @@
     if (self = [super initWithNibName:@"FontDetail" bundle:nil]) 
     {
         self.hidesBottomBarWhenPushed = YES;
-        comparativeTexts = [[NSArray alloc] initWithObjects:@"abcdefghijklmnopqrstuvwxyz\nABCDEFGHIJKLMNOPQRSTUVWXYZ\n1234567890\n!@#$%^&*()_-+={}[];'\\:\"|<>?,./",
-                            @"The quick brown fox jumps over a lazy dog.", 
-                            @"Zwei Boxkämpfer jagen Eva quer durch Sylt.",
-                            @"Pchnąć w tę łódź jeża lub osiem skrzyń fig. Żywioł, jaźń, Świerk.", 
-                            @"Flygande bäckasiner söka strax hwila på mjuka tuvor.",
-                            @"Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.", nil];
+        self.comparativeTexts = [NSArray arrayWithObjects:@"abcdefghijklmnopqrstuvwxyz\nABCDEFGHIJKLMNOPQRSTUVWXYZ\n1234567890\n!@#$%^&*()_-+={}[];'\\:\"|<>?,./",
+                                 @"The quick brown fox jumps over a lazy dog.", 
+                                 @"Zwei Boxkämpfer jagen Eva quer durch Sylt.",
+                                 @"Pchnąć w tę łódź jeża lub osiem skrzyń fig. Żywioł, jaźń, Świerk.", 
+                                 @"Flygande bäckasiner söka strax hwila på mjuka tuvor.",
+                                 @"Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.", nil];
 
-        doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                                                   target:self 
-                                                                   action:@selector(done:)];
+        self.doneButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                         target:self 
+                                                                         action:@selector(done:)] autorelease];
     }
     return self;
 }
 
 - (void)dealloc
 {
-    sizeController.delegate = nil;
-    [sizeController release];
-    [doneButton release];
-    [comparativeTexts release];
+    self.fontName = nil;
+    self.fontFamilyName = nil;
+    self.sizeView = nil;
+    self.sampleView = nil;
+    self.sizeController.delegate = nil;
+    self.sizeController = nil;
+    self.doneButton = nil;
+    self.textsActionSheet = nil;
+    self.otherActionsSheet = nil;
+    self.comparativeTexts = nil;
     [super dealloc];
 }
 
@@ -58,15 +79,15 @@
 - (void)viewDidLoad 
 {
     [super viewDidLoad];
-    sizeController = [[SizeController alloc] init];
-    sizeController.delegate = self;
-    [sizeView addSubview:sizeController.view];
+    self.sizeController = [[[SizeController alloc] init] autorelease];
+    self.sizeController.delegate = self;
+    [self.sizeView addSubview:self.sizeController.view];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    UIFont *font = [UIFont fontWithName:self.fontName size:sizeController.size];
-    sampleView.font = font;
+    UIFont *font = [UIFont fontWithName:self.fontName size:self.sizeController.size];
+    self.sampleView.font = font;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -76,7 +97,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return interfaceOrientation == UIInterfaceOrientationPortrait;
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning 
@@ -90,56 +111,60 @@
 - (IBAction)done:(id)sender
 {
     self.navigationItem.rightBarButtonItem = nil;
-    sampleView.frame = CGRectMake(0.0, 58.0, 320.0, 314.0);
-    [sampleView resignFirstResponder];
+    self.sampleView.frame = CGRectMake(0.0, 58.0, self.view.frame.size.width, self.view.frame.size.height - 166.0);
+    [self.sampleView resignFirstResponder];
 }
 
 - (IBAction)clear:(id)sender
 {
-    [sampleView becomeFirstResponder];
-    sampleView.text = @"";
+    [self.sampleView becomeFirstResponder];
+    self.sampleView.text = @"";
 }
 
 - (IBAction)action:(id)sender
 {
-    NSString *screenshotOption = NSLocalizedString(@"Screenshot via e-mail", 
-                                                   @"'Screenshot' entry of the action menu in the detail screen");
-    NSString *copyOption = NSLocalizedString(@"Copy name", 
-                                             @"'Copy' entry of the action menu in the detail screen");
-    NSString *compareOption = NSLocalizedString(@"Compare with...", 
-                                                @"'Compare' option of the action menu in the detail screen");
-    NSString *cancelButtonText = NSLocalizedString(@"Cancel", 
-                                                @"'Cancel' button in action menus");
-    
-    otherActionsSheet = [[UIActionSheet alloc] initWithTitle:@""
-                                                    delegate:self 
-                                           cancelButtonTitle:cancelButtonText
-                                      destructiveButtonTitle:nil
-                                           otherButtonTitles:screenshotOption, copyOption, compareOption, nil];
-    [otherActionsSheet showInView:self.navigationController.view];
-    [otherActionsSheet release];
+    if (self.otherActionsSheet == nil)
+    {
+        NSString *screenshotOption = NSLocalizedString(@"Screenshot via e-mail", 
+                                                       @"'Screenshot' entry of the action menu in the detail screen");
+        NSString *copyOption = NSLocalizedString(@"Copy name", 
+                                                 @"'Copy' entry of the action menu in the detail screen");
+        NSString *compareOption = NSLocalizedString(@"Compare with...", 
+                                                    @"'Compare' option of the action menu in the detail screen");
+        NSString *cancelButtonText = NSLocalizedString(@"Cancel", 
+                                                    @"'Cancel' button in action menus");
+        
+        self.otherActionsSheet = [[[UIActionSheet alloc] initWithTitle:@""
+                                                        delegate:self 
+                                                     cancelButtonTitle:cancelButtonText
+                                                destructiveButtonTitle:nil
+                                                     otherButtonTitles:screenshotOption, copyOption, compareOption, nil] autorelease];
+    }
+    [self.otherActionsSheet showInView:self.navigationController.view];
 }
 
 - (IBAction)showComparativeTexts:(id)sender
 {
-    textsActionSheet = [[UIActionSheet alloc] initWithTitle:@""
-                                                    delegate:self 
-                                           cancelButtonTitle:nil
-                                      destructiveButtonTitle:nil
-                                           otherButtonTitles:nil];
-    for (NSString *text in comparativeTexts)
+    if (self.textsActionSheet == nil)
     {
-        NSString *buttonTitle = [NSString stringWithFormat:@"%@...", [text substringToIndex:20]];
-        [textsActionSheet addButtonWithTitle:buttonTitle];
+        self.textsActionSheet = [[[UIActionSheet alloc] initWithTitle:@""
+                                                             delegate:self 
+                                                    cancelButtonTitle:nil
+                                               destructiveButtonTitle:nil
+                                                    otherButtonTitles:nil] autorelease];
+        for (NSString *text in self.comparativeTexts)
+        {
+            NSString *buttonTitle = [NSString stringWithFormat:@"%@...", [text substringToIndex:20]];
+            [self.textsActionSheet addButtonWithTitle:buttonTitle];
+        }
+
+        NSString *cancelButtonText = NSLocalizedString(@"Cancel", 
+                                                       @"'Cancel' button in action menus");
+
+        [self.textsActionSheet addButtonWithTitle:cancelButtonText];
+        self.textsActionSheet.cancelButtonIndex = [self.comparativeTexts count];
     }
-
-    NSString *cancelButtonText = NSLocalizedString(@"Cancel", 
-                                                   @"'Cancel' button in action menus");
-
-    [textsActionSheet addButtonWithTitle:cancelButtonText];
-    textsActionSheet.cancelButtonIndex = [comparativeTexts count];
-    [textsActionSheet showInView:self.navigationController.view];
-    [textsActionSheet release];
+    [self.textsActionSheet showInView:self.navigationController.view];
 }
 
 #pragma mark -
@@ -158,7 +183,7 @@
 - (void)sizeController:(SizeController *)sizeController didChangeSize:(CGFloat)newSize
 {
     UIFont *font = [UIFont fontWithName:self.fontName size:newSize];
-    sampleView.font = font;
+    self.sampleView.font = font;
 }
 
 #pragma mark -
@@ -166,7 +191,7 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (actionSheet == otherActionsSheet)
+    if (actionSheet == self.otherActionsSheet)
     {
         switch (buttonIndex) 
         {
@@ -178,7 +203,7 @@
 
                 NSMutableString *message = [[NSMutableString alloc] init];
                 NSString *messageBody = NSLocalizedString(@"EMAIL_GREETING", @"Text sent via e-mail, below the font image.");
-                [message appendFormat:messageBody, self.fontName, sizeController.size];
+                [message appendFormat:messageBody, self.fontName, self.sizeController.size];
                 NSString *subject = [NSString stringWithFormat:@"%@ screenshot", self.fontName];
                 [picker setSubject:subject];
                 [picker setMessageBody:message isHTML:NO];
@@ -210,11 +235,11 @@
                 break;
         }
     }
-    else if (actionSheet == textsActionSheet)
+    else if (actionSheet == self.textsActionSheet)
     {
-        if (buttonIndex < [comparativeTexts count])
+        if (buttonIndex < [self.comparativeTexts count])
         {
-            sampleView.text = [comparativeTexts objectAtIndex:buttonIndex];
+            self.sampleView.text = [self.comparativeTexts objectAtIndex:buttonIndex];
         }
     }
 }
@@ -224,8 +249,8 @@
 
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView
 {
-    self.navigationItem.rightBarButtonItem = doneButton;
-    sampleView.frame = CGRectMake(0.0, 58.0, 320.0, 150.0);
+    self.navigationItem.rightBarButtonItem = self.doneButton;
+    self.sampleView.frame = CGRectMake(0.0, 58.0, 320.0, 150.0);
     return TRUE;
 }
 

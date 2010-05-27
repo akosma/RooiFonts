@@ -10,7 +10,7 @@
 
 @class FontsController;
 
-@protocol FontsControllerDelegate
+@protocol FontsControllerDelegate <NSObject>
 
 @required
 - (void)fontsController:(FontsController *)controller rowSelectedAtIndexPath:(NSIndexPath *)indexPath;

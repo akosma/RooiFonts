@@ -19,17 +19,19 @@
                                                     MFMailComposeViewControllerDelegate>
 {
 @private
-    IBOutlet UITextView *sampleView;
-    IBOutlet UIView *sizeView;
-    UIBarButtonItem *doneButton;
-    UIActionSheet *textsActionSheet;
-    UIActionSheet *otherActionsSheet;
-    SizeController *sizeController;
-    NSString *fontName;
-    NSString *fontFamilyName;
-    NSArray *comparativeTexts;
+    IBOutlet UITextView *_sampleView;
+    IBOutlet UIView *_sizeView;
+    UIBarButtonItem *_doneButton;
+    UIActionSheet *_textsActionSheet;
+    UIActionSheet *_otherActionsSheet;
+    SizeController *_sizeController;
+    NSString *_fontName;
+    NSString *_fontFamilyName;
+    NSArray *_comparativeTexts;
 }
 
+@property (nonatomic, retain) IBOutlet UIView *sizeView;
+@property (nonatomic, retain) IBOutlet UITextView *sampleView;
 @property (nonatomic, copy) NSString *fontName;
 @property (nonatomic, copy) NSString *fontFamilyName;
 

@@ -13,9 +13,13 @@
 @interface FontKitAppDelegate : NSObject <UIApplicationDelegate> 
 {
 @private
-    IBOutlet UIWindow *window;
-    MainController *viewController;
+    UIWindow *_window;
+    MainController *_viewController;
+    id _splitViewController;
 }
 
-@end
+@property (nonatomic, retain) IBOutlet id splitViewController;
+@property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, readonly) BOOL userInterfaceIdiomPad;
 
+@end

@@ -12,13 +12,16 @@
 @interface SizeController : UIViewController 
 {
 @private
-    IBOutlet UISlider *slider;
-    IBOutlet UILabel *sizeLabel;
-    NSObject<SizeControllerDelegate> *delegate;
+    UISlider *_slider;
+    UILabel *_sizeLabel;
+    id<SizeControllerDelegate> _delegate;
 }
 
+@property (nonatomic, retain) IBOutlet UISlider *slider;
+@property (nonatomic, retain) IBOutlet UILabel *sizeLabel;
+
 @property (nonatomic, readonly) CGFloat size;
-@property (nonatomic, assign) NSObject<SizeControllerDelegate> *delegate;
+@property (nonatomic, assign) id<SizeControllerDelegate> delegate;
 
 - (IBAction)sliderValueChanged:(id)sender;
 
