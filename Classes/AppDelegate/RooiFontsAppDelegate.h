@@ -1,5 +1,5 @@
 //
-//  FontKitAppDelegate.h
+//  RooiFontsAppDelegate.h
 //  RooiFonts
 //
 //  Created by Adrian on 11/12/08.
@@ -10,7 +10,7 @@
 
 @class MainController;
 
-@interface FontKitAppDelegate : NSObject <UIApplicationDelegate> 
+@interface RooiFontsAppDelegate : NSObject <UIApplicationDelegate> 
 {
 @private
     UIWindow *_window;
@@ -21,5 +21,7 @@
 @property (nonatomic, retain) IBOutlet id splitViewController;
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, readonly) BOOL userInterfaceIdiomPad;
+
++ (RooiFontsAppDelegate *)sharedAppDelegate;
 
 @end

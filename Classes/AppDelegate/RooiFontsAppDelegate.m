@@ -1,27 +1,32 @@
 //
-//  FontKitAppDelegate.m
+//  RooiFontsAppDelegate.m
 //  RooiFonts
 //
 //  Created by Adrian on 11/12/08.
 //  Copyright 2009 akosma software. All rights reserved.
 //
 
-#import "FontKitAppDelegate.h"
+#import "RooiFontsAppDelegate.h"
 #import "MainController.h"
 
-@interface FontKitAppDelegate ()
+@interface RooiFontsAppDelegate ()
 
 @property (nonatomic, retain) MainController *viewController;
 
 @end
 
 
-@implementation FontKitAppDelegate
+@implementation RooiFontsAppDelegate
 
 @synthesize splitViewController = _splitViewController;
 @synthesize window = _window;
 @synthesize viewController = _viewController;
 @dynamic userInterfaceIdiomPad;
+
++ (RooiFontsAppDelegate *)sharedAppDelegate
+{
+    return (RooiFontsAppDelegate *)[UIApplication sharedApplication].delegate;
+}
 
 - (void)dealloc 
 {

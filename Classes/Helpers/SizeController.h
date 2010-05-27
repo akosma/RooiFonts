@@ -19,9 +19,9 @@
 
 @property (nonatomic, retain) IBOutlet UISlider *slider;
 @property (nonatomic, retain) IBOutlet UILabel *sizeLabel;
+@property (nonatomic, assign) IBOutlet id<SizeControllerDelegate> delegate;
 
 @property (nonatomic, readonly) CGFloat size;
-@property (nonatomic, assign) id<SizeControllerDelegate> delegate;
 
 - (IBAction)sliderValueChanged:(id)sender;
 

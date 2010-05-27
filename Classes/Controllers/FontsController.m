@@ -8,11 +8,14 @@
 
 #import "FontsController.h"
 #import "NSString+FirstLetters.h"
+#import "RooiFontsAppDelegate.h"
 
 @interface FontsController ()
 
 @property (nonatomic, retain) NSArray *familyNames;
 @property (nonatomic, retain) NSIndexPath *selectedIndexPath;
+
+- (void)setup;
 
 @end
 
@@ -28,15 +31,29 @@
 #pragma mark -
 #pragma mark Constructor and destructor
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if (self = [super initWithCoder:aDecoder])
+    {
+        [self setup];
+    }
+    return self;
+}
+
 - (id)init
 {
     if (self = [super initWithStyle:UITableViewStylePlain])
     {
-        self.tableView.rowHeight = 50;
-        self.title = @"RooiFonts";
-        self.familyNames = [[UIFont familyNames] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
+        [self setup];
     }
     return self;
+}
+
+- (void)setup
+{
+    self.tableView.rowHeight = 50;
+    self.title = @"RooiFonts";
+    self.familyNames = [[UIFont familyNames] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
 }
 
 - (void)dealloc
@@ -125,7 +142,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return YES;
+    return [RooiFontsAppDelegate sharedAppDelegate].userInterfaceIdiomPad;
 }
 
 - (void)didReceiveMemoryWarning 

@@ -10,6 +10,7 @@
 #import "FontDetailController.h"
 #import "UIFont+FontList.h"
 #import "AboutController.h"
+#import "RooiFontsAppDelegate.h"
 
 @interface MainController ()
 
@@ -156,7 +157,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return YES;
+    return [RooiFontsAppDelegate sharedAppDelegate].userInterfaceIdiomPad;
 }
 
 - (void)didReceiveMemoryWarning 
@@ -174,7 +175,8 @@
 {
     if (self.detailController == nil)
     {
-        self.detailController = [[FontDetailController alloc] init];
+        self.detailController = [[FontDetailController alloc] initWithNibName:@"FontDetail" bundle:nil];
+        self.detailController.hidesBottomBarWhenPushed = YES;
     }
     self.detailController.fontName = self.currentlySelectedFontName;
     self.detailController.fontFamilyName = self.currentlySelectedFontFamily;

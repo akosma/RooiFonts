@@ -17,7 +17,7 @@
     id<FontsControllerDelegate> _delegate;
 }
 
-@property (nonatomic, assign) id<FontsControllerDelegate> delegate;
+@property (nonatomic, assign) IBOutlet id<FontsControllerDelegate> delegate;
 @property (nonatomic, readonly) NSString *currentlySelectedFontName;
 @property (nonatomic, readonly) NSString *currentlySelectedFontFamily;
 

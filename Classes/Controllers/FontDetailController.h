@@ -19,8 +19,8 @@
                                                     MFMailComposeViewControllerDelegate>
 {
 @private
-    IBOutlet UITextView *_sampleView;
-    IBOutlet UIView *_sizeView;
+    UITextView *_sampleView;
+    UIView *_sizeView;
     UIBarButtonItem *_doneButton;
     UIActionSheet *_textsActionSheet;
     UIActionSheet *_otherActionsSheet;
@@ -30,6 +30,7 @@
     NSArray *_comparativeTexts;
 }
 
+@property (nonatomic, retain) IBOutlet SizeController *sizeController;
 @property (nonatomic, retain) IBOutlet UIView *sizeView;
 @property (nonatomic, retain) IBOutlet UITextView *sampleView;
 @property (nonatomic, copy) NSString *fontName;
@@ -39,5 +40,6 @@
 - (IBAction)done:(id)sender;
 - (IBAction)clear:(id)sender;
 - (IBAction)showComparativeTexts:(id)sender;
+- (void)refresh;
 
 @end

@@ -22,7 +22,7 @@
     UIActionSheet *_toolbarActionSheet;
     UINavigationController *_controller;
     FontDetailController *_detailController;
-    AboutController *_aboutBox;    
+    AboutController *_aboutBox;
 }
 
 @property (nonatomic, retain) UINavigationController *controller;

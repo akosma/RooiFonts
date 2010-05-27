@@ -8,6 +8,7 @@
 
 #import "ComparisonDetailController.h"
 #import "SizeController.h"
+#import "RooiFontsAppDelegate.h"
 
 @interface ComparisonDetailController ()
 
@@ -86,7 +87,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
 {
-    return YES;
+    return [RooiFontsAppDelegate sharedAppDelegate].userInterfaceIdiomPad;
 }
 
 - (void)didReceiveMemoryWarning 

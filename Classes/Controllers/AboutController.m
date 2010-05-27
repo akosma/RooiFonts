@@ -7,6 +7,7 @@
 //
 
 #import "AboutController.h"
+#import "RooiFontsAppDelegate.h"
 
 @implementation AboutController
 
@@ -19,7 +20,6 @@
     {
         NSString *titleText = NSLocalizedString(@"About RooiFonts", @"Title of the about screen");
         self.title = titleText;
-        self.hidesBottomBarWhenPushed = YES;
     }
     return self;
 }
@@ -54,7 +54,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return YES;
+    return [RooiFontsAppDelegate sharedAppDelegate].userInterfaceIdiomPad;
 }
 
 - (void)didReceiveMemoryWarning 

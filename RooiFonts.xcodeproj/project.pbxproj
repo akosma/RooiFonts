@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
-		3A2969780FEF5A7000D0A771 /* FontKitAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2969770FEF5A7000D0A771 /* FontKitAppDelegate.m */; };
+		3A2969780FEF5A7000D0A771 /* RooiFontsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2969770FEF5A7000D0A771 /* RooiFontsAppDelegate.m */; };
 		3A2969D40FEF652F00D0A771 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2969D30FEF652F00D0A771 /* MainController.m */; };
 		3A296A430FEF700900D0A771 /* ComparisonPromptController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A296A420FEF700900D0A771 /* ComparisonPromptController.m */; };
 		3A296A660FEF727F00D0A771 /* ComparisonDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A296A650FEF727F00D0A771 /* ComparisonDetail.xib */; };
@@ -33,6 +33,8 @@
 		3A65E9B60FEED5F5005CA383 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A65E9AF0FEED5F5005CA383 /* Icon.png */; };
 		3A65E9B80FEED5F5005CA383 /* FontDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A65E9B20FEED5F5005CA383 /* FontDetail.xib */; };
 		3A65E9B90FEED5F5005CA383 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A65E9B30FEED5F5005CA383 /* MainWindow.xib */; };
+		3A66C03011AF008D0029BCE2 /* SplitController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A66C02F11AF008D0029BCE2 /* SplitController.m */; };
+		3A66C07611AF03BE0029BCE2 /* FontDetail-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A66C07511AF03BE0029BCE2 /* FontDetail-iPad.xib */; };
 		3A7C75DE11AED16400FA4065 /* Icon-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7C75D911AED16400FA4065 /* Icon-ipad.png */; };
 		3A7C75DF11AED16400FA4065 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7C75DA11AED16400FA4065 /* Icon-Small-50.png */; };
 		3A7C75E011AED16400FA4065 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7C75DB11AED16400FA4065 /* Icon-Small.png */; };
@@ -42,8 +44,8 @@
 /* Begin PBXFileReference section */
 		1D6058910D05DD3D006BFB54 /* RooiFonts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RooiFonts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3A2969760FEF5A7000D0A771 /* FontKitAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontKitAppDelegate.h; sourceTree = "<group>"; };
-		3A2969770FEF5A7000D0A771 /* FontKitAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontKitAppDelegate.m; sourceTree = "<group>"; };
+		3A2969760FEF5A7000D0A771 /* RooiFontsAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RooiFontsAppDelegate.h; sourceTree = "<group>"; };
+		3A2969770FEF5A7000D0A771 /* RooiFontsAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RooiFontsAppDelegate.m; sourceTree = "<group>"; };
 		3A2969790FEF5A7D00D0A771 /* RooiFonts_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RooiFonts_Prefix.pch; sourceTree = "<group>"; };
 		3A2969D20FEF652F00D0A771 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
 		3A2969D30FEF652F00D0A771 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
@@ -84,6 +86,9 @@
 		3A65E9AF0FEED5F5005CA383 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		3A65E9B20FEED5F5005CA383 /* FontDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FontDetail.xib; sourceTree = "<group>"; };
 		3A65E9B30FEED5F5005CA383 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		3A66C02E11AF008D0029BCE2 /* SplitController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitController.h; sourceTree = "<group>"; };
+		3A66C02F11AF008D0029BCE2 /* SplitController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitController.m; sourceTree = "<group>"; };
+		3A66C07511AF03BE0029BCE2 /* FontDetail-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "FontDetail-iPad.xib"; sourceTree = "<group>"; };
 		3A7C75D911AED16400FA4065 /* Icon-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-ipad.png"; sourceTree = "<group>"; };
 		3A7C75DA11AED16400FA4065 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
 		3A7C75DB11AED16400FA4065 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
@@ -159,8 +164,8 @@
 		3A65E9960FEED5C6005CA383 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				3A2969760FEF5A7000D0A771 /* FontKitAppDelegate.h */,
-				3A2969770FEF5A7000D0A771 /* FontKitAppDelegate.m */,
+				3A2969760FEF5A7000D0A771 /* RooiFontsAppDelegate.h */,
+				3A2969770FEF5A7000D0A771 /* RooiFontsAppDelegate.m */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -181,6 +186,8 @@
 				3A296A420FEF700900D0A771 /* ComparisonPromptController.m */,
 				3A31F2CE0FEFA40800460062 /* ComparisonDetailController.h */,
 				3A31F2CF0FEFA40800460062 /* ComparisonDetailController.m */,
+				3A66C02E11AF008D0029BCE2 /* SplitController.h */,
+				3A66C02F11AF008D0029BCE2 /* SplitController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -258,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				3A7C75DD11AED16400FA4065 /* MainWindow-iPad.xib */,
+				3A66C07511AF03BE0029BCE2 /* FontDetail-iPad.xib */,
 			);
 			path = NIBs;
 			sourceTree = "<group>";
@@ -331,6 +339,7 @@
 				3A7C75DF11AED16400FA4065 /* Icon-Small-50.png in Resources */,
 				3A7C75E011AED16400FA4065 /* Icon-Small.png in Resources */,
 				3A7C75E111AED16400FA4065 /* MainWindow-iPad.xib in Resources */,
+				3A66C07611AF03BE0029BCE2 /* FontDetail-iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,11 +356,12 @@
 				3A65E9A80FEED5C6005CA383 /* FontsController.m in Sources */,
 				3A65E9A90FEED5C6005CA383 /* NSString+FirstLetters.m in Sources */,
 				3A65E9AA0FEED5C6005CA383 /* UIFont+FontList.m in Sources */,
-				3A2969780FEF5A7000D0A771 /* FontKitAppDelegate.m in Sources */,
+				3A2969780FEF5A7000D0A771 /* RooiFontsAppDelegate.m in Sources */,
 				3A2969D40FEF652F00D0A771 /* MainController.m in Sources */,
 				3A296A430FEF700900D0A771 /* ComparisonPromptController.m in Sources */,
 				3A296A7C0FEF786F00D0A771 /* SizeController.m in Sources */,
 				3A31F2D00FEFA40800460062 /* ComparisonDetailController.m in Sources */,
+				3A66C03011AF008D0029BCE2 /* SplitController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
