@@ -1,5 +1,5 @@
 //
-//  FontDetailController.h
+//  RFFontDetailController.h
 //  RooiFonts
 //
 //  Created by Adrian on 11/12/08.

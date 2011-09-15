@@ -1,5 +1,5 @@
 //
-//  FontDetailController.m
+//  RFFontDetailController.m
 //  RooiFonts
 //
 //  Created by Adrian on 11/12/08.
@@ -9,7 +9,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "RFFontDetailController.h"
 #import "RFSizeController.h"
-#import "ComparisonPromptController.h"
+#import "RFComparisonPromptController.h"
 
 @interface RFFontDetailController ()
 
@@ -235,10 +235,9 @@
                 
             case 2:
             {
-                ComparisonPromptController *comparisonPrompt = [[ComparisonPromptController alloc] init];
+                RFComparisonPromptController *comparisonPrompt = [[[RFComparisonPromptController alloc] init] autorelease];
                 comparisonPrompt.title = self.fontName;
                 [self.navigationController pushViewController:comparisonPrompt animated:YES];
-                [comparisonPrompt release];
                 break;
             }
                 

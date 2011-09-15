@@ -1,22 +1,22 @@
 //
-//  ComparisonDetailController.m
+//  RFComparisonDetailController.m
 //  RooiFonts
 //
 //  Created by Adrian on 6/22/09.
 //  Copyright 2009 akosma software. All rights reserved.
 //
 
-#import "ComparisonDetailController.h"
+#import "RFComparisonDetailController.h"
 #import "RFSizeController.h"
 
-@interface ComparisonDetailController ()
+@interface RFComparisonDetailController ()
 
 @property (nonatomic, retain) RFSizeController *sizeController;
 
 @end
 
 
-@implementation ComparisonDetailController
+@implementation RFComparisonDetailController
 
 @synthesize topFontName = _topFontName;
 @synthesize bottomFontName = _bottomFontName;
@@ -25,28 +25,15 @@
 @synthesize bottomView = _bottomView;
 @synthesize sizeController = _sizeController;
 
-#pragma mark -
-#pragma mark Constructors and destructors
-
-- (id)init
-{
-    if (self = [super initWithNibName:@"ComparisonDetail" bundle:nil]) 
-    {
-        self.sizeController = [[[RFSizeController alloc] init] autorelease];
-        self.sizeController.delegate = self;
-    }
-    return self;
-}
-
 - (void)dealloc 
 {
-    self.sizeController.delegate = nil;
-    self.sizeController = nil;
-    self.topFontName = nil;
-    self.bottomFontName = nil;
-    self.sizeView = nil;
-    self.topView = nil;
-    self.bottomView = nil;
+    _sizeController.delegate = nil;
+    [_sizeController release];
+    [_topFontName release];
+    [_bottomFontName release];
+    [_sizeView release];
+    [_topView release];
+    [_bottomView release];
     [super dealloc];
 }
 
@@ -81,12 +68,10 @@
 - (void)viewDidLoad 
 {
     [super viewDidLoad];
-    [self.sizeView addSubview:self.sizeController.view];
-}
 
-- (void)didReceiveMemoryWarning 
-{
-    [super didReceiveMemoryWarning];
+    self.sizeController = [[[RFSizeController alloc] init] autorelease];
+    self.sizeController.delegate = self;
+    [self.sizeView addSubview:self.sizeController.view];
 }
 
 @end

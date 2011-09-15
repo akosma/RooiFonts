@@ -1,5 +1,5 @@
 //
-//  AboutController.h
+//  RFAboutController.h
 //  FontBrowser
 //
 //  Created by Adrian on 6/21/09.

@@ -1,5 +1,5 @@
 //
-//  ComparisonDetailController.h
+//  RFComparisonDetailController.h
 //  RooiFonts
 //
 //  Created by Adrian on 6/22/09.
@@ -9,19 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "RFSizeControllerDelegate.h"
 
-@class RFSizeController;
-
-@interface ComparisonDetailController : UIViewController <RFSizeControllerDelegate>
-{
-@private
-    IBOutlet UIView *_sizeView;
-    IBOutlet UITextView *_topView;
-    IBOutlet UITextView *_bottomView;
-    RFSizeController *_sizeController;
-    
-    NSString *_topFontName;
-    NSString *_bottomFontName;
-}
+@interface RFComparisonDetailController : UIViewController <RFSizeControllerDelegate>
 
 @property (nonatomic, retain) IBOutlet UIView *sizeView;
 @property (nonatomic, retain) IBOutlet UITextView *topView;

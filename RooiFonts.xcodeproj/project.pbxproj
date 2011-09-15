@@ -10,9 +10,9 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		3A2969780FEF5A7000D0A771 /* RFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2969770FEF5A7000D0A771 /* RFAppDelegate.m */; };
 		3A2969D40FEF652F00D0A771 /* RFMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2969D30FEF652F00D0A771 /* RFMainController.m */; };
-		3A296A430FEF700900D0A771 /* ComparisonPromptController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A296A420FEF700900D0A771 /* ComparisonPromptController.m */; };
+		3A296A430FEF700900D0A771 /* RFComparisonPromptController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A296A420FEF700900D0A771 /* RFComparisonPromptController.m */; };
 		3A296A7C0FEF786F00D0A771 /* RFSizeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A296A7B0FEF786F00D0A771 /* RFSizeController.m */; };
-		3A31F2D00FEFA40800460062 /* ComparisonDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A31F2CF0FEFA40800460062 /* ComparisonDetailController.m */; };
+		3A31F2D00FEFA40800460062 /* RFComparisonDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A31F2CF0FEFA40800460062 /* RFComparisonDetailController.m */; };
 		3A3F6BB20FEFE1C300F65169 /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A3F6BB10FEFE1C300F65169 /* chat.png */; };
 		3A4CA95B1014BFD70050FF99 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A4CA95A1014BFD70050FF99 /* Localizable.strings */; };
 		3A4CA9B11014D1590050FF99 /* bluewoki.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A4CA9B01014D1590050FF99 /* bluewoki.png */; };
@@ -34,7 +34,7 @@
 		3A7C75E011AED16400FA4065 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7C75DB11AED16400FA4065 /* Icon-Small.png */; };
 		3A7C75E111AED16400FA4065 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7C75DD11AED16400FA4065 /* MainWindow-iPad.xib */; };
 		3AAC5F781422453900C65725 /* Entitlements.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 3AAC5F771422453900C65725 /* Entitlements.entitlements */; };
-		3AAC5F8E14224B9C00C65725 /* ComparisonDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AAC5F8614224B9C00C65725 /* ComparisonDetail.xib */; };
+		3AAC5F8E14224B9C00C65725 /* RFComparisonDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AAC5F8614224B9C00C65725 /* RFComparisonDetailController.xib */; };
 		3AAC5F8F14224B9C00C65725 /* RFAboutController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AAC5F8714224B9C00C65725 /* RFAboutController.xib */; };
 		3AAC5F9014224B9C00C65725 /* RFFontDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AAC5F8A14224B9C00C65725 /* RFFontDetailController.xib */; };
 		3AAC5F9114224B9C00C65725 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AAC5F8C14224B9C00C65725 /* MainWindow.xib */; };
@@ -50,13 +50,13 @@
 		3A2969D20FEF652F00D0A771 /* RFMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = RFMainController.h; sourceTree = "<group>"; };
 		3A2969D30FEF652F00D0A771 /* RFMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFMainController.m; sourceTree = "<group>"; };
 		3A2969D80FEF679300D0A771 /* RFFontsControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; path = RFFontsControllerDelegate.h; sourceTree = "<group>"; };
-		3A296A410FEF700900D0A771 /* ComparisonPromptController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComparisonPromptController.h; sourceTree = "<group>"; };
-		3A296A420FEF700900D0A771 /* ComparisonPromptController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComparisonPromptController.m; sourceTree = "<group>"; };
+		3A296A410FEF700900D0A771 /* RFComparisonPromptController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = RFComparisonPromptController.h; sourceTree = "<group>"; };
+		3A296A420FEF700900D0A771 /* RFComparisonPromptController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFComparisonPromptController.m; sourceTree = "<group>"; };
 		3A296A7A0FEF786F00D0A771 /* RFSizeController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = RFSizeController.h; sourceTree = "<group>"; };
 		3A296A7B0FEF786F00D0A771 /* RFSizeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFSizeController.m; sourceTree = "<group>"; };
 		3A296A830FEF7A3B00D0A771 /* RFSizeControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; path = RFSizeControllerDelegate.h; sourceTree = "<group>"; };
-		3A31F2CE0FEFA40800460062 /* ComparisonDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComparisonDetailController.h; sourceTree = "<group>"; };
-		3A31F2CF0FEFA40800460062 /* ComparisonDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComparisonDetailController.m; sourceTree = "<group>"; };
+		3A31F2CE0FEFA40800460062 /* RFComparisonDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = RFComparisonDetailController.h; sourceTree = "<group>"; };
+		3A31F2CF0FEFA40800460062 /* RFComparisonDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFComparisonDetailController.m; sourceTree = "<group>"; };
 		3A3F6BB10FEFE1C300F65169 /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat.png; sourceTree = "<group>"; };
 		3A4CA95E1014C07A0050FF99 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3A4CA96F1014C1240050FF99 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 		3A7C75DB11AED16400FA4065 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
 		3A7C75DD11AED16400FA4065 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		3AAC5F771422453900C65725 /* Entitlements.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Entitlements.entitlements; sourceTree = "<group>"; };
-		3AAC5F8614224B9C00C65725 /* ComparisonDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComparisonDetail.xib; sourceTree = "<group>"; };
+		3AAC5F8614224B9C00C65725 /* RFComparisonDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RFComparisonDetailController.xib; sourceTree = "<group>"; };
 		3AAC5F8814224B9C00C65725 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RFAboutController.xib; sourceTree = "<group>"; };
 		3AAC5F8914224B9C00C65725 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/RFAboutController.xib; sourceTree = "<group>"; };
 		3AAC5F8A14224B9C00C65725 /* RFFontDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RFFontDetailController.xib; sourceTree = "<group>"; };
@@ -182,10 +182,10 @@
 				3A65E99B0FEED5C6005CA383 /* RFAboutController.m */,
 				3A65E99C0FEED5C6005CA383 /* RFFontDetailController.h */,
 				3A65E99D0FEED5C6005CA383 /* RFFontDetailController.m */,
-				3A296A410FEF700900D0A771 /* ComparisonPromptController.h */,
-				3A296A420FEF700900D0A771 /* ComparisonPromptController.m */,
-				3A31F2CE0FEFA40800460062 /* ComparisonDetailController.h */,
-				3A31F2CF0FEFA40800460062 /* ComparisonDetailController.m */,
+				3A296A410FEF700900D0A771 /* RFComparisonPromptController.h */,
+				3A296A420FEF700900D0A771 /* RFComparisonPromptController.m */,
+				3A31F2CE0FEFA40800460062 /* RFComparisonDetailController.h */,
+				3A31F2CF0FEFA40800460062 /* RFComparisonDetailController.m */,
 				3A66C02E11AF008D0029BCE2 /* SplitController.h */,
 				3A66C02F11AF008D0029BCE2 /* SplitController.m */,
 			);
@@ -261,10 +261,10 @@
 		3AAC5F8514224B9C00C65725 /* NIBs */ = {
 			isa = PBXGroup;
 			children = (
-				3AAC5F8614224B9C00C65725 /* ComparisonDetail.xib */,
+				3AAC5F8C14224B9C00C65725 /* MainWindow.xib */,
+				3AAC5F8614224B9C00C65725 /* RFComparisonDetailController.xib */,
 				3AAC5F8714224B9C00C65725 /* RFAboutController.xib */,
 				3AAC5F8A14224B9C00C65725 /* RFFontDetailController.xib */,
-				3AAC5F8C14224B9C00C65725 /* MainWindow.xib */,
 				3AAC5F8D14224B9C00C65725 /* RFSizeController.xib */,
 			);
 			path = NIBs;
@@ -337,7 +337,7 @@
 				3A7C75E111AED16400FA4065 /* MainWindow-iPad.xib in Resources */,
 				3A66C07611AF03BE0029BCE2 /* FontDetail-iPad.xib in Resources */,
 				3AAC5F781422453900C65725 /* Entitlements.entitlements in Resources */,
-				3AAC5F8E14224B9C00C65725 /* ComparisonDetail.xib in Resources */,
+				3AAC5F8E14224B9C00C65725 /* RFComparisonDetailController.xib in Resources */,
 				3AAC5F8F14224B9C00C65725 /* RFAboutController.xib in Resources */,
 				3AAC5F9014224B9C00C65725 /* RFFontDetailController.xib in Resources */,
 				3AAC5F9114224B9C00C65725 /* MainWindow.xib in Resources */,
@@ -360,9 +360,9 @@
 				3A65E9AA0FEED5C6005CA383 /* UIFont+FontList.m in Sources */,
 				3A2969780FEF5A7000D0A771 /* RFAppDelegate.m in Sources */,
 				3A2969D40FEF652F00D0A771 /* RFMainController.m in Sources */,
-				3A296A430FEF700900D0A771 /* ComparisonPromptController.m in Sources */,
+				3A296A430FEF700900D0A771 /* RFComparisonPromptController.m in Sources */,
 				3A296A7C0FEF786F00D0A771 /* RFSizeController.m in Sources */,
-				3A31F2D00FEFA40800460062 /* ComparisonDetailController.m in Sources */,
+				3A31F2D00FEFA40800460062 /* RFComparisonDetailController.m in Sources */,
 				3A66C03011AF008D0029BCE2 /* SplitController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
