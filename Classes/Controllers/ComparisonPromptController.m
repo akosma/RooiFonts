@@ -54,7 +54,7 @@
 #pragma mark -
 #pragma mark FontsControllerDelegate methods
 
-- (void)fontsController:(FontsController *)controller rowSelectedAtIndexPath:(NSIndexPath *)indexPath
+- (void)fontsController:(RFFontsController *)controller rowSelectedAtIndexPath:(NSIndexPath *)indexPath
 {
     if (self.comparisonController == nil)
     {

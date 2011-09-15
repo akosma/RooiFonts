@@ -7,7 +7,7 @@
 //
 
 #import "SplitController.h"
-#import "FontsController.h"
+#import "RFFontsController.h"
 #import "FontDetailController.h"
 
 @implementation SplitController
@@ -40,7 +40,7 @@
 #pragma mark -
 #pragma mark FontsControllerDelegate methods
 
-- (void)fontsController:(FontsController *)controller rowSelectedAtIndexPath:(NSIndexPath *)indexPath
+- (void)fontsController:(RFFontsController *)controller rowSelectedAtIndexPath:(NSIndexPath *)indexPath
 {
     self.fontDetailController.fontName = self.fontsController.currentlySelectedFontName;
     self.fontDetailController.fontFamilyName = self.fontsController.currentlySelectedFontFamily;

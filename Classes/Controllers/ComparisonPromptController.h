@@ -6,11 +6,11 @@
 //  Copyright 2009 akosma software. All rights reserved.
 //
 
-#import "FontsController.h"
+#import "RFFontsController.h"
 
 @class ComparisonDetailController;
 
-@interface ComparisonPromptController : FontsController <FontsControllerDelegate>
+@interface ComparisonPromptController : RFFontsController <RFFontsControllerDelegate>
 {
 @private
     ComparisonDetailController *_comparisonController;

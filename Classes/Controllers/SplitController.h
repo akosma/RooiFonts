@@ -7,19 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FontsControllerDelegate.h"
+#import "RFFontsControllerDelegate.h"
 
-@class FontsController;
+@class RFFontsController;
 @class FontDetailController;
 
-@interface SplitController : UIViewController <FontsControllerDelegate>
+@interface SplitController : UIViewController <RFFontsControllerDelegate>
 {
 @private
-    FontsController *_fontsController;
+    RFFontsController *_fontsController;
     FontDetailController *_fontDetailController;
 }
 
-@property (nonatomic, retain) IBOutlet FontsController *fontsController;
+@property (nonatomic, retain) IBOutlet RFFontsController *fontsController;
 @property (nonatomic, retain) IBOutlet FontDetailController *fontDetailController;
 
 @end

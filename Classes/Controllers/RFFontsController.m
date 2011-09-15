@@ -1,15 +1,15 @@
 //
-//  FontsController.m
+//  RFFontsController.m
 //  RooiFonts
 //
 //  Created by Adrian on 11/12/08.
 //  Copyright 2009 akosma software. All rights reserved.
 //
 
-#import "FontsController.h"
+#import "RFFontsController.h"
 #import "NSString+FirstLetters.h"
 
-@interface FontsController ()
+@interface RFFontsController ()
 
 @property (nonatomic, retain) NSArray *familyNames;
 @property (nonatomic, retain) NSIndexPath *selectedIndexPath;
@@ -17,7 +17,7 @@
 @end
 
 
-@implementation FontsController
+@implementation RFFontsController
 
 @synthesize familyNames = _familyNames;
 @synthesize delegate = _delegate;

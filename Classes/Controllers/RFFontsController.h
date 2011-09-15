@@ -1,5 +1,5 @@
 //
-//  FontsController.h
+//  RFFontsController.h
 //  RooiFonts
 //
 //  Created by Adrian on 11/12/08.
@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FontsControllerDelegate.h"
+#import "RFFontsControllerDelegate.h"
 
-@interface FontsController : UITableViewController
+@interface RFFontsController : UITableViewController
 
-@property (nonatomic, assign) IBOutlet id<FontsControllerDelegate> delegate;
+@property (nonatomic, assign) IBOutlet id<RFFontsControllerDelegate> delegate;
 @property (nonatomic, readonly) NSString *currentlySelectedFontName;
 @property (nonatomic, readonly) NSString *currentlySelectedFontFamily;
 

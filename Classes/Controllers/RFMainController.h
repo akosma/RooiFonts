@@ -8,11 +8,11 @@
 
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
-#import "FontsController.h"
+#import "RFFontsController.h"
 
-@interface RFMainController : FontsController <UIActionSheetDelegate,
-                                             MFMailComposeViewControllerDelegate,
-                                             FontsControllerDelegate>
+@interface RFMainController : RFFontsController <UIActionSheetDelegate,
+                                                 MFMailComposeViewControllerDelegate,
+                                                 RFFontsControllerDelegate>
 
 - (IBAction)about:(id)sender;
 - (IBAction)action:(id)sender;
