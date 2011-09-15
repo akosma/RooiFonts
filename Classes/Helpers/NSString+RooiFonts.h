@@ -1,5 +1,5 @@
 //
-//  NSString+FirstLetters.h
+//  NSString+RooiFonts.h
 //  RooiFonts
 //
 //  Created by Adrian on 11/12/08.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NSString (FirstLetter)
+@interface NSString (RooiFonts)
 
 - (NSString *)firstLetters;
 

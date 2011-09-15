@@ -7,7 +7,7 @@
 //
 
 #import "RFFontsController.h"
-#import "NSString+FirstLetters.h"
+#import "NSString+RooiFonts.h"
 
 @interface RFFontsController ()
 

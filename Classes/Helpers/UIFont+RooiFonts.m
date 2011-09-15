@@ -1,14 +1,14 @@
 //
-//  UIFont+FontList.m
-//  FontBrowser
+//  UIFont+RooiFonts.m
+//  RooiFonts
 //
 //  Created by Adrian on 6/21/09.
 //  Copyright 2009 akosma software. All rights reserved.
 //
 
-#import "UIFont+FontList.h"
+#import "UIFont+RooiFonts.h"
 
-@implementation UIFont (FontList)
+@implementation UIFont (RooiFonts)
 
 + (NSString *)fontList
 {
