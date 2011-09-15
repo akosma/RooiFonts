@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		3A21C0561422868B00700A04 /* RFFontsControllerPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A21C0551422868B00700A04 /* RFFontsControllerPad.m */; };
+		3A21C05A14228F2000700A04 /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A21C05814228F2000700A04 /* Default-Landscape.png */; };
+		3A21C05B14228F2000700A04 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A21C05914228F2000700A04 /* Default-Portrait.png */; };
 		3A2969780FEF5A7000D0A771 /* RFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2969770FEF5A7000D0A771 /* RFAppDelegate.m */; };
 		3A2969D40FEF652F00D0A771 /* RFMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2969D30FEF652F00D0A771 /* RFMainController.m */; };
 		3A296A430FEF700900D0A771 /* RFComparisonPromptController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A296A420FEF700900D0A771 /* RFComparisonPromptController.m */; };
@@ -46,6 +49,10 @@
 /* Begin PBXFileReference section */
 		1D6058910D05DD3D006BFB54 /* RooiFonts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RooiFonts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3A21C0541422868B00700A04 /* RFFontsControllerPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFFontsControllerPad.h; sourceTree = "<group>"; };
+		3A21C0551422868B00700A04 /* RFFontsControllerPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFFontsControllerPad.m; sourceTree = "<group>"; };
+		3A21C05814228F2000700A04 /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape.png"; sourceTree = "<group>"; };
+		3A21C05914228F2000700A04 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
 		3A2969760FEF5A7000D0A771 /* RFAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFAppDelegate.h; sourceTree = "<group>"; };
 		3A2969770FEF5A7000D0A771 /* RFAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFAppDelegate.m; sourceTree = "<group>"; };
 		3A2969790FEF5A7D00D0A771 /* RooiFonts_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RooiFonts_Prefix.pch; sourceTree = "<group>"; };
@@ -247,6 +254,8 @@
 		3A7C75D811AED16400FA4065 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3A21C05814228F2000700A04 /* Default-Landscape.png */,
+				3A21C05914228F2000700A04 /* Default-Portrait.png */,
 				3A7C75D911AED16400FA4065 /* Icon-ipad.png */,
 				3A7C75DA11AED16400FA4065 /* Icon-Small-50.png */,
 				3A7C75DB11AED16400FA4065 /* Icon-Small.png */,
@@ -298,6 +307,8 @@
 			children = (
 				3AAC5F99142259D700C65725 /* RFSplitController.h */,
 				3AAC5F9A142259D700C65725 /* RFSplitController.m */,
+				3A21C0541422868B00700A04 /* RFFontsControllerPad.h */,
+				3A21C0551422868B00700A04 /* RFFontsControllerPad.m */,
 				3AAC5FD214225B6000C65725 /* RFFontDetailControllerPad.h */,
 				3AAC5FD314225B6000C65725 /* RFFontDetailControllerPad.m */,
 			);
@@ -376,6 +387,8 @@
 				3AAC5F9014224B9C00C65725 /* RFFontDetailController.xib in Resources */,
 				3AAC5F9114224B9C00C65725 /* MainWindow.xib in Resources */,
 				3AAC5F9214224B9C00C65725 /* RFSizeController.xib in Resources */,
+				3A21C05A14228F2000700A04 /* Default-Landscape.png in Resources */,
+				3A21C05B14228F2000700A04 /* Default-Portrait.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +413,7 @@
 				3AAC5F98142258BA00C65725 /* RFAppDelegatePad.m in Sources */,
 				3AAC5F9B142259D700C65725 /* RFSplitController.m in Sources */,
 				3AAC5FD414225B6100C65725 /* RFFontDetailControllerPad.m in Sources */,
+				3A21C0561422868B00700A04 /* RFFontsControllerPad.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +448,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				CODE_SIGN_ENTITLEMENTS = Resources/Entitlements.entitlements;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -454,6 +469,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				CODE_SIGN_ENTITLEMENTS = Resources/Entitlements.entitlements;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = RooiFonts_Prefix.pch;
@@ -485,7 +501,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
-				CODE_SIGN_ENTITLEMENTS = Resources/Entitlements.plist;
+				CODE_SIGN_ENTITLEMENTS = Resources/Entitlements.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Adrian Kosmaczewski";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -519,7 +535,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
-				CODE_SIGN_ENTITLEMENTS = Resources/Entitlements.plist;
+				CODE_SIGN_ENTITLEMENTS = Resources/Entitlements.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Adrian Kosmaczewski";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
