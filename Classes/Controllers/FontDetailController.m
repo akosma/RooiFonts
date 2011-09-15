@@ -10,9 +10,6 @@
 #import "SizeController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "ComparisonPromptController.h"
-<<<<<<< HEAD
-#import "FontKitAppDelegate.h"
-=======
 #import "RooiFontsAppDelegate.h"
 
 @interface FontDetailController ()
@@ -21,7 +18,6 @@
 @property (nonatomic, retain) UIActionSheet *textsActionSheet;
 @property (nonatomic, retain) UIActionSheet *otherActionsSheet;
 @property (nonatomic, retain) NSArray *comparativeTexts;
->>>>>>> standard
 
 - (UIImage *)createScreenshot;
 - (UIImage*)imageByCropping:(UIImage *)imageToCrop toRect:(CGRect)rect;
@@ -43,26 +39,6 @@
 #pragma mark -
 #pragma mark Constructors and destructors
 
-<<<<<<< HEAD
-- (id)init
-{
-    if (self = [super initWithNibName:@"FontDetail" bundle:nil]) 
-    {
-        self.hidesBottomBarWhenPushed = YES;
-
-        doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                                                   target:self 
-                                                                   action:@selector(done:)];
-    }
-    return self;
-}
-
-- (void)dealloc
-{
-    sizeController.delegate = nil;
-    [sizeController release];
-    [doneButton release];
-=======
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -76,7 +52,6 @@
     self.textsActionSheet = nil;
     self.otherActionsSheet = nil;
     self.comparativeTexts = nil;
->>>>>>> standard
     [super dealloc];
 }
 
@@ -207,18 +182,7 @@
 
 - (IBAction)showComparativeTexts:(id)sender
 {
-<<<<<<< HEAD
-    textsActionSheet = [[UIActionSheet alloc] initWithTitle:@""
-                                                    delegate:self 
-                                           cancelButtonTitle:nil
-                                      destructiveButtonTitle:nil
-                                           otherButtonTitles:nil];
-    
-    NSArray *comparativeTexts = [FontKitAppDelegate sharedAppDelegate].comparativeTexts;
-    for (NSString *text in comparativeTexts)
-=======
     if (self.textsActionSheet == nil)
->>>>>>> standard
     {
         self.textsActionSheet = [[[UIActionSheet alloc] initWithTitle:@""
                                                              delegate:self 
@@ -309,12 +273,7 @@
     }
     else if (actionSheet == self.textsActionSheet)
     {
-<<<<<<< HEAD
-        NSArray *comparativeTexts = [FontKitAppDelegate sharedAppDelegate].comparativeTexts;
-        if (buttonIndex < [comparativeTexts count])
-=======
         if (buttonIndex < [self.comparativeTexts count])
->>>>>>> standard
         {
             self.sampleView.text = [self.comparativeTexts objectAtIndex:buttonIndex];
         }

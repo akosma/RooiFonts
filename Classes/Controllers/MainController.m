@@ -10,9 +10,6 @@
 #import "FontDetailController.h"
 #import "UIFont+FontList.h"
 #import "AboutController.h"
-<<<<<<< HEAD
-#import "SizeController.h"
-=======
 #import "RooiFontsAppDelegate.h"
 
 @interface MainController ()
@@ -20,7 +17,6 @@
 @property (nonatomic, retain) UIActionSheet *toolbarActionSheet;
 @property (nonatomic, retain) AboutController *aboutBox;
 @property (nonatomic, retain) FontDetailController *detailController;
->>>>>>> standard
 
 - (void)viewCurrentlySelectedFont;
 
@@ -45,10 +41,6 @@
         self.controller.toolbarHidden = NO;
         self.controller.toolbar.barStyle = UIBarStyleBlackOpaque;
         
-        _sizeController = [[SizeController alloc] init];
-        _sizeController.delegate = self;
-        self.tableView.tableHeaderView = _sizeController.view;
-        
         self.delegate = self;
         
         UIButton *aboutButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
@@ -58,49 +50,12 @@
         UIBarButtonItem *aboutItem = [[[UIBarButtonItem alloc] initWithCustomView:aboutButton] autorelease];
         self.navigationItem.rightBarButtonItem = aboutItem;
         
-<<<<<<< HEAD
-        UIBarButtonItem *actionButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction 
-                                                                                      target:self
-                                                                                      action:@selector(action:)];
-        UIBarButtonItem *flexibleSpace1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace 
-                                                                                        target:nil 
-                                                                                        action:nil];
-        UIBarButtonItem *flexibleSpace2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace 
-                                                                                        target:nil 
-                                                                                        action:nil];
-        UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
-                                                                                    target:nil 
-                                                                                    action:nil];
-        fixedSpace.width = 20;
-        
-        NSArray *viewsOptions = [[NSArray alloc] initWithObjects:@"Names", @"Samples", nil];
-        UISegmentedControl *viewsControl = [[UISegmentedControl alloc] initWithItems:viewsOptions];
-        viewsControl.segmentedControlStyle = UISegmentedControlStyleBar;
-        [viewsControl addTarget:self
-                         action:@selector(changeView:) 
-               forControlEvents:UIControlEventValueChanged];
-        viewsControl.selectedSegmentIndex = 0;
-        [viewsOptions release];
-        UIBarButtonItem *viewsItem = [[UIBarButtonItem alloc] initWithCustomView:viewsControl];
-        [viewsControl release];
-        
-        NSArray *items = [[NSArray alloc] initWithObjects:actionButton, flexibleSpace1, viewsItem, flexibleSpace2, fixedSpace, nil];
-        [viewsItem release];
-        [fixedSpace release];
-        [flexibleSpace1 release];
-        [flexibleSpace2 release];
-        [actionButton release];
-
-        self.toolbarItems = items;
-        [items release];
-=======
         UIBarButtonItem *actionButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction 
                                                                                        target:self
                                                                                        action:@selector(action:)] autorelease];
         
         NSArray *items = [NSArray arrayWithObject:actionButton];
         self.toolbarItems = items;
->>>>>>> standard
     }
     return self;
 }
@@ -117,13 +72,6 @@
 
 #pragma mark -
 #pragma mark IBAction methods
-
-- (void)changeView:(id)sender
-{
-    UISegmentedControl *control = (UISegmentedControl *)sender;
-    self.showScrollingFonts = (control.selectedSegmentIndex == 1);
-    [self.tableView reloadData];
-}
 
 - (void)about:(id)sender
 {
@@ -192,15 +140,6 @@
                 break;
         }
     }
-}
-
-#pragma mark -
-#pragma mark SizeControllerDelegate methods
-
-- (void)sizeController:(SizeController *)sizeController didChangeSize:(CGFloat)newSize
-{
-    self.fontHeight = newSize;
-    [self.tableView reloadData];
 }
 
 #pragma mark -
