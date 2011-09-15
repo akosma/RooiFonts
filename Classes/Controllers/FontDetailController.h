@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
-#import "SizeControllerDelegate.h"
+#import "RFSizeControllerDelegate.h"
 
 @class RFSizeController;
 
 @interface FontDetailController : UIViewController <UITextViewDelegate,
-                                                    SizeControllerDelegate,
+                                                    RFSizeControllerDelegate,
                                                     UIActionSheetDelegate,
                                                     MFMailComposeViewControllerDelegate>
 {

@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SizeControllerDelegate.h"
+#import "RFSizeControllerDelegate.h"
 
 @class RFSizeController;
 
-@interface ComparisonDetailController : UIViewController <SizeControllerDelegate>
+@interface ComparisonDetailController : UIViewController <RFSizeControllerDelegate>
 {
 @private
     IBOutlet UIView *_sizeView;

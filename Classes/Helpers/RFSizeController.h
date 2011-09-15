@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SizeControllerDelegate.h"
+#import "RFSizeControllerDelegate.h"
 
 @interface RFSizeController : UIViewController 
 
 @property (nonatomic, retain) IBOutlet UISlider *slider;
 @property (nonatomic, retain) IBOutlet UILabel *sizeLabel;
-@property (nonatomic, assign) IBOutlet id<SizeControllerDelegate> delegate;
+@property (nonatomic, assign) IBOutlet id<RFSizeControllerDelegate> delegate;
 
 @property (nonatomic, readonly) CGFloat size;
 

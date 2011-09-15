@@ -1,5 +1,5 @@
 //
-//  SizeControllerDelegate.h
+//  RFSizeControllerDelegate.h
 //  RooiFonts
 //
 //  Created by Adrian on 6/22/09.
@@ -10,7 +10,7 @@
 
 @class RFSizeController;
 
-@protocol SizeControllerDelegate <NSObject>
+@protocol RFSizeControllerDelegate <NSObject>
 
 @required
 - (void)sizeController:(RFSizeController *)sizeController didChangeSize:(CGFloat)newSize;

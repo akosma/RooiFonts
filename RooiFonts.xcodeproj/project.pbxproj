@@ -54,7 +54,7 @@
 		3A296A420FEF700900D0A771 /* ComparisonPromptController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComparisonPromptController.m; sourceTree = "<group>"; };
 		3A296A7A0FEF786F00D0A771 /* RFSizeController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = RFSizeController.h; sourceTree = "<group>"; };
 		3A296A7B0FEF786F00D0A771 /* RFSizeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFSizeController.m; sourceTree = "<group>"; };
-		3A296A830FEF7A3B00D0A771 /* SizeControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SizeControllerDelegate.h; sourceTree = "<group>"; };
+		3A296A830FEF7A3B00D0A771 /* RFSizeControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; path = RFSizeControllerDelegate.h; sourceTree = "<group>"; };
 		3A31F2CE0FEFA40800460062 /* ComparisonDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComparisonDetailController.h; sourceTree = "<group>"; };
 		3A31F2CF0FEFA40800460062 /* ComparisonDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComparisonDetailController.m; sourceTree = "<group>"; };
 		3A3F6BB10FEFE1C300F65169 /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat.png; sourceTree = "<group>"; };
@@ -201,7 +201,7 @@
 				3A65E9A40FEED5C6005CA383 /* UIFont+FontList.m */,
 				3A296A7A0FEF786F00D0A771 /* RFSizeController.h */,
 				3A296A7B0FEF786F00D0A771 /* RFSizeController.m */,
-				3A296A830FEF7A3B00D0A771 /* SizeControllerDelegate.h */,
+				3A296A830FEF7A3B00D0A771 /* RFSizeControllerDelegate.h */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
