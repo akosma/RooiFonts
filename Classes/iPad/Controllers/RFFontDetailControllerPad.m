@@ -31,6 +31,7 @@
     [super viewDidLoad];
     self.sizeController.slider.value = 35.0;
     self.sizeController.sizeLabel.text = @"35.0";
+    self.sizeController.slider.maximumValue = 200.0;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
