@@ -7,7 +7,7 @@
 //
 
 #import "RFAppDelegate.h"
-#import "MainController.h"
+#import "RFMainController.h"
 
 
 @implementation RFAppDelegate

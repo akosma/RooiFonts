@@ -1,17 +1,17 @@
 //
-//  MainController.m
+//  RFMainController.m
 //  RooiFonts
 //
 //  Created by Adrian on 6/22/09.
 //  Copyright 2009 akosma software. All rights reserved.
 //
 
-#import "MainController.h"
+#import "RFMainController.h"
 #import "FontDetailController.h"
 #import "UIFont+FontList.h"
 #import "AboutController.h"
 
-@interface MainController ()
+@interface RFMainController ()
 
 @property (nonatomic, retain) UIActionSheet *toolbarActionSheet;
 @property (nonatomic, retain) AboutController *aboutBox;
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation MainController
+@implementation RFMainController
 
 @synthesize aboutBox = _aboutBox;
 @synthesize toolbarActionSheet = _toolbarActionSheet;
