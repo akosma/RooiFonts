@@ -1,16 +1,16 @@
 //
-//  RooiFontsAppDelegate.m
+//  RFAppDelegate.m
 //  RooiFonts
 //
 //  Created by Adrian on 11/12/08.
 //  Copyright 2009 akosma software. All rights reserved.
 //
 
-#import "RooiFontsAppDelegate.h"
+#import "RFAppDelegate.h"
 #import "MainController.h"
 
 
-@implementation RooiFontsAppDelegate
+@implementation RFAppDelegate
 
 @synthesize window = _window;
 @synthesize mainController = _mainController;

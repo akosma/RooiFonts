@@ -7,7 +7,6 @@
 //
 
 #import "AboutController.h"
-#import "RooiFontsAppDelegate.h"
 
 @implementation AboutController
 

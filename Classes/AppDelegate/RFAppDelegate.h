@@ -1,5 +1,5 @@
 //
-//  RooiFontsAppDelegate.h
+//  RFAppDelegate.h
 //  RooiFonts
 //
 //  Created by Adrian on 11/12/08.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RooiFontsAppDelegate : NSObject <UIApplicationDelegate> 
+@interface RFAppDelegate : NSObject <UIApplicationDelegate> 
 
 @property (nonatomic, retain) IBOutlet UINavigationController *mainController;
 @property (nonatomic, retain) IBOutlet UIWindow *window;

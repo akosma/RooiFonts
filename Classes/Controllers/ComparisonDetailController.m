@@ -8,7 +8,6 @@
 
 #import "ComparisonDetailController.h"
 #import "SizeController.h"
-#import "RooiFontsAppDelegate.h"
 
 @interface ComparisonDetailController ()
 

@@ -10,7 +10,6 @@
 #import "SizeController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "ComparisonPromptController.h"
-#import "RooiFontsAppDelegate.h"
 
 @interface FontDetailController ()
 

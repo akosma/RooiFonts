@@ -10,7 +10,6 @@
 #import "FontDetailController.h"
 #import "UIFont+FontList.h"
 #import "AboutController.h"
-#import "RooiFontsAppDelegate.h"
 
 @interface MainController ()
 

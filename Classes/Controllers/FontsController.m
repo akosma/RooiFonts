@@ -8,7 +8,6 @@
 
 #import "FontsController.h"
 #import "NSString+FirstLetters.h"
-#import "RooiFontsAppDelegate.h"
 
 @interface FontsController ()
 

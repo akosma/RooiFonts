@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
-		3A2969780FEF5A7000D0A771 /* RooiFontsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2969770FEF5A7000D0A771 /* RooiFontsAppDelegate.m */; };
+		3A2969780FEF5A7000D0A771 /* RFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2969770FEF5A7000D0A771 /* RFAppDelegate.m */; };
 		3A2969D40FEF652F00D0A771 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2969D30FEF652F00D0A771 /* MainController.m */; };
 		3A296A430FEF700900D0A771 /* ComparisonPromptController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A296A420FEF700900D0A771 /* ComparisonPromptController.m */; };
 		3A296A7C0FEF786F00D0A771 /* SizeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A296A7B0FEF786F00D0A771 /* SizeController.m */; };
@@ -44,8 +44,8 @@
 /* Begin PBXFileReference section */
 		1D6058910D05DD3D006BFB54 /* RooiFonts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RooiFonts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3A2969760FEF5A7000D0A771 /* RooiFontsAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RooiFontsAppDelegate.h; sourceTree = "<group>"; };
-		3A2969770FEF5A7000D0A771 /* RooiFontsAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RooiFontsAppDelegate.m; sourceTree = "<group>"; };
+		3A2969760FEF5A7000D0A771 /* RFAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; path = RFAppDelegate.h; sourceTree = "<group>"; };
+		3A2969770FEF5A7000D0A771 /* RFAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFAppDelegate.m; sourceTree = "<group>"; };
 		3A2969790FEF5A7D00D0A771 /* RooiFonts_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RooiFonts_Prefix.pch; sourceTree = "<group>"; };
 		3A2969D20FEF652F00D0A771 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
 		3A2969D30FEF652F00D0A771 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
@@ -164,8 +164,8 @@
 		3A65E9960FEED5C6005CA383 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				3A2969760FEF5A7000D0A771 /* RooiFontsAppDelegate.h */,
-				3A2969770FEF5A7000D0A771 /* RooiFontsAppDelegate.m */,
+				3A2969760FEF5A7000D0A771 /* RFAppDelegate.h */,
+				3A2969770FEF5A7000D0A771 /* RFAppDelegate.m */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -358,7 +358,7 @@
 				3A65E9A80FEED5C6005CA383 /* FontsController.m in Sources */,
 				3A65E9A90FEED5C6005CA383 /* NSString+FirstLetters.m in Sources */,
 				3A65E9AA0FEED5C6005CA383 /* UIFont+FontList.m in Sources */,
-				3A2969780FEF5A7000D0A771 /* RooiFontsAppDelegate.m in Sources */,
+				3A2969780FEF5A7000D0A771 /* RFAppDelegate.m in Sources */,
 				3A2969D40FEF652F00D0A771 /* MainController.m in Sources */,
 				3A296A430FEF700900D0A771 /* ComparisonPromptController.m in Sources */,
 				3A296A7C0FEF786F00D0A771 /* SizeController.m in Sources */,

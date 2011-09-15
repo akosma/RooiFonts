@@ -8,7 +8,6 @@
 
 #import "ComparisonPromptController.h"
 #import "ComparisonDetailController.h"
-#import "RooiFontsAppDelegate.h"
 
 @interface ComparisonPromptController ()
 
