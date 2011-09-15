@@ -38,7 +38,7 @@
 		3AAC5F8F14224B9C00C65725 /* AboutController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AAC5F8714224B9C00C65725 /* AboutController.xib */; };
 		3AAC5F9014224B9C00C65725 /* FontDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AAC5F8A14224B9C00C65725 /* FontDetail.xib */; };
 		3AAC5F9114224B9C00C65725 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AAC5F8C14224B9C00C65725 /* MainWindow.xib */; };
-		3AAC5F9214224B9C00C65725 /* Size.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AAC5F8D14224B9C00C65725 /* Size.xib */; };
+		3AAC5F9214224B9C00C65725 /* RFSizeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AAC5F8D14224B9C00C65725 /* RFSizeController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,7 +92,7 @@
 		3AAC5F8A14224B9C00C65725 /* FontDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FontDetail.xib; sourceTree = "<group>"; };
 		3AAC5F8B14224B9C00C65725 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/AboutController.xib; sourceTree = "<group>"; };
 		3AAC5F8C14224B9C00C65725 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
-		3AAC5F8D14224B9C00C65725 /* Size.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Size.xib; sourceTree = "<group>"; };
+		3AAC5F8D14224B9C00C65725 /* RFSizeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RFSizeController.xib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -265,7 +265,7 @@
 				3AAC5F8714224B9C00C65725 /* AboutController.xib */,
 				3AAC5F8A14224B9C00C65725 /* FontDetail.xib */,
 				3AAC5F8C14224B9C00C65725 /* MainWindow.xib */,
-				3AAC5F8D14224B9C00C65725 /* Size.xib */,
+				3AAC5F8D14224B9C00C65725 /* RFSizeController.xib */,
 			);
 			path = NIBs;
 			sourceTree = "<group>";
@@ -341,7 +341,7 @@
 				3AAC5F8F14224B9C00C65725 /* AboutController.xib in Resources */,
 				3AAC5F9014224B9C00C65725 /* FontDetail.xib in Resources */,
 				3AAC5F9114224B9C00C65725 /* MainWindow.xib in Resources */,
-				3AAC5F9214224B9C00C65725 /* Size.xib in Resources */,
+				3AAC5F9214224B9C00C65725 /* RFSizeController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

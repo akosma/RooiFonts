@@ -10,12 +10,6 @@
 #import "SizeControllerDelegate.h"
 
 @interface RFSizeController : UIViewController 
-{
-@private
-    UISlider *_slider;
-    UILabel *_sizeLabel;
-    id<SizeControllerDelegate> _delegate;
-}
 
 @property (nonatomic, retain) IBOutlet UISlider *slider;
 @property (nonatomic, retain) IBOutlet UILabel *sizeLabel;
