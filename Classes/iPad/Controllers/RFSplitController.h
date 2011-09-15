@@ -18,4 +18,6 @@
 @property (nonatomic, retain) IBOutlet RFFontDetailControllerPad *detailController;
 @property (nonatomic, retain) IBOutlet RFFontsController *fontsController;
 
+- (IBAction)about:(id)sender;
+
 @end
