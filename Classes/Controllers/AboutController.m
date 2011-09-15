@@ -11,26 +11,7 @@
 
 @implementation AboutController
 
-#pragma mark -
-#pragma mark Constructor and destructor
-
-- (id)init
-{
-    if (self = [super initWithNibName:@"About" bundle:nil]) 
-    {
-        NSString *titleText = NSLocalizedString(@"About RooiFonts", @"Title of the about screen");
-        self.title = titleText;
-    }
-    return self;
-}
-
-- (void)dealloc 
-{
-    [super dealloc];
-}
-
-#pragma mark -
-#pragma mark IBAction methods
+#pragma mark - IBAction methods
 
 - (IBAction)done:(id)sender
 {
@@ -49,8 +30,14 @@
     [[UIApplication sharedApplication] openURL:url];
 }
 
-#pragma mark -
-#pragma mark UIViewController methods
+#pragma mark - UIViewController methods
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    NSString *titleText = NSLocalizedString(@"About RooiFonts", @"Title of the about screen");
+    self.title = titleText;
+}
 
 - (void)didReceiveMemoryWarning 
 {
