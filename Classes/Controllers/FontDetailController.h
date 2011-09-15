@@ -11,7 +11,7 @@
 #import <MessageUI/MFMailComposeViewController.h>
 #import "SizeControllerDelegate.h"
 
-@class SizeController;
+@class RFSizeController;
 
 @interface FontDetailController : UIViewController <UITextViewDelegate,
                                                     SizeControllerDelegate,
@@ -24,13 +24,13 @@
     UIBarButtonItem *_doneButton;
     UIActionSheet *_textsActionSheet;
     UIActionSheet *_otherActionsSheet;
-    SizeController *_sizeController;
+    RFSizeController *_sizeController;
     NSString *_fontName;
     NSString *_fontFamilyName;
     NSArray *_comparativeTexts;
 }
 
-@property (nonatomic, retain) IBOutlet SizeController *sizeController;
+@property (nonatomic, retain) IBOutlet RFSizeController *sizeController;
 @property (nonatomic, retain) IBOutlet UIView *sizeView;
 @property (nonatomic, retain) IBOutlet UITextView *sampleView;
 @property (nonatomic, copy) NSString *fontName;

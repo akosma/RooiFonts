@@ -1,19 +1,19 @@
 //
-//  SizeController.m
+//  RFSizeController.m
 //  RooiFonts
 //
 //  Created by Adrian on 6/22/09.
 //  Copyright 2009 akosma software. All rights reserved.
 //
 
-#import "SizeController.h"
+#import "RFSizeController.h"
 
-@interface SizeController ()
+@interface RFSizeController ()
 
 @end
 
 
-@implementation SizeController
+@implementation RFSizeController
 
 @synthesize delegate = _delegate;
 @synthesize slider = _slider;

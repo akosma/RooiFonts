@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SizeControllerDelegate.h"
 
-@class SizeController;
+@class RFSizeController;
 
 @interface ComparisonDetailController : UIViewController <SizeControllerDelegate>
 {
@@ -17,7 +17,7 @@
     IBOutlet UIView *_sizeView;
     IBOutlet UITextView *_topView;
     IBOutlet UITextView *_bottomView;
-    SizeController *_sizeController;
+    RFSizeController *_sizeController;
     
     NSString *_topFontName;
     NSString *_bottomFontName;

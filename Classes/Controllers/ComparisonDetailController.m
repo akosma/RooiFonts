@@ -7,11 +7,11 @@
 //
 
 #import "ComparisonDetailController.h"
-#import "SizeController.h"
+#import "RFSizeController.h"
 
 @interface ComparisonDetailController ()
 
-@property (nonatomic, retain) SizeController *sizeController;
+@property (nonatomic, retain) RFSizeController *sizeController;
 
 @end
 
@@ -32,7 +32,7 @@
 {
     if (self = [super initWithNibName:@"ComparisonDetail" bundle:nil]) 
     {
-        self.sizeController = [[[SizeController alloc] init] autorelease];
+        self.sizeController = [[[RFSizeController alloc] init] autorelease];
         self.sizeController.delegate = self;
     }
     return self;
@@ -53,7 +53,7 @@
 #pragma mark -
 #pragma mark SizeControllerDelegate methods
 
-- (void)sizeController:(SizeController *)sizeController didChangeSize:(CGFloat)newSize
+- (void)sizeController:(RFSizeController *)sizeController didChangeSize:(CGFloat)newSize
 {
     UIFont *topFont = [UIFont fontWithName:self.topFontName size:newSize];
     UIFont *bottomFont = [UIFont fontWithName:self.bottomFontName size:newSize];

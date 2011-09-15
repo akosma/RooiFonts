@@ -7,7 +7,7 @@
 //
 
 #import "FontDetailController.h"
-#import "SizeController.h"
+#import "RFSizeController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "ComparisonPromptController.h"
 
@@ -211,7 +211,7 @@
 #pragma mark -
 #pragma mark SizeControllerDelegate methods
 
-- (void)sizeController:(SizeController *)sizeController didChangeSize:(CGFloat)newSize
+- (void)sizeController:(RFSizeController *)sizeController didChangeSize:(CGFloat)newSize
 {
     [self refresh];
 }

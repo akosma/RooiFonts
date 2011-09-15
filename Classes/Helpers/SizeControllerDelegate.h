@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@class SizeController;
+@class RFSizeController;
 
 @protocol SizeControllerDelegate <NSObject>
 
 @required
-- (void)sizeController:(SizeController *)sizeController didChangeSize:(CGFloat)newSize;
+- (void)sizeController:(RFSizeController *)sizeController didChangeSize:(CGFloat)newSize;
 
 @end

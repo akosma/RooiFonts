@@ -1,5 +1,5 @@
 //
-//  SizeController.h
+//  RFSizeController.h
 //  RooiFonts
 //
 //  Created by Adrian on 6/22/09.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SizeControllerDelegate.h"
 
-@interface SizeController : UIViewController 
+@interface RFSizeController : UIViewController 
 {
 @private
     UISlider *_slider;
