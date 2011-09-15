@@ -17,14 +17,8 @@
 @interface MainController : FontsController <UIActionSheetDelegate,
                                              MFMailComposeViewControllerDelegate,
                                              FontsControllerDelegate>
-{
-@private
-    UIActionSheet *_toolbarActionSheet;
-    UINavigationController *_controller;
-    FontDetailController *_detailController;
-    AboutController *_aboutBox;
-}
 
-@property (nonatomic, retain) UINavigationController *controller;
+- (IBAction)about:(id)sender;
+- (IBAction)action:(id)sender;
 
 @end

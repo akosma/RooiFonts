@@ -101,11 +101,6 @@
     [self done:self];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return [RooiFontsAppDelegate sharedAppDelegate].userInterfaceIdiomPad;
-}
-
 - (void)didReceiveMemoryWarning 
 {
     [super didReceiveMemoryWarning];

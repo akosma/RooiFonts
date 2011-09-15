@@ -28,7 +28,6 @@
 		3A65E9A80FEED5C6005CA383 /* FontsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A65E99F0FEED5C6005CA383 /* FontsController.m */; };
 		3A65E9A90FEED5C6005CA383 /* NSString+FirstLetters.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A65E9A20FEED5C6005CA383 /* NSString+FirstLetters.m */; };
 		3A65E9AA0FEED5C6005CA383 /* UIFont+FontList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A65E9A40FEED5C6005CA383 /* UIFont+FontList.m */; };
-		3A65E9B40FEED5F5005CA383 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A65E9AC0FEED5F5005CA383 /* Entitlements.plist */; };
 		3A65E9B50FEED5F5005CA383 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A65E9AE0FEED5F5005CA383 /* Default.png */; };
 		3A65E9B60FEED5F5005CA383 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A65E9AF0FEED5F5005CA383 /* Icon.png */; };
 		3A65E9B80FEED5F5005CA383 /* FontDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A65E9B20FEED5F5005CA383 /* FontDetail.xib */; };
@@ -39,6 +38,7 @@
 		3A7C75DF11AED16400FA4065 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7C75DA11AED16400FA4065 /* Icon-Small-50.png */; };
 		3A7C75E011AED16400FA4065 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7C75DB11AED16400FA4065 /* Icon-Small.png */; };
 		3A7C75E111AED16400FA4065 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7C75DD11AED16400FA4065 /* MainWindow-iPad.xib */; };
+		3AAC5F781422453900C65725 /* Entitlements.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 3AAC5F771422453900C65725 /* Entitlements.entitlements */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,7 +81,6 @@
 		3A65E9A20FEED5C6005CA383 /* NSString+FirstLetters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FirstLetters.m"; sourceTree = "<group>"; };
 		3A65E9A30FEED5C6005CA383 /* UIFont+FontList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+FontList.h"; sourceTree = "<group>"; };
 		3A65E9A40FEED5C6005CA383 /* UIFont+FontList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+FontList.m"; sourceTree = "<group>"; };
-		3A65E9AC0FEED5F5005CA383 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		3A65E9AE0FEED5F5005CA383 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		3A65E9AF0FEED5F5005CA383 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		3A65E9B20FEED5F5005CA383 /* FontDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FontDetail.xib; sourceTree = "<group>"; };
@@ -93,6 +92,7 @@
 		3A7C75DA11AED16400FA4065 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
 		3A7C75DB11AED16400FA4065 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
 		3A7C75DD11AED16400FA4065 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		3AAC5F771422453900C65725 /* Entitlements.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Entitlements.entitlements; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,11 +173,11 @@
 		3A65E9990FEED5C6005CA383 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3A2969D20FEF652F00D0A771 /* MainController.h */,
+				3A2969D30FEF652F00D0A771 /* MainController.m */,
 				3A65E99E0FEED5C6005CA383 /* FontsController.h */,
 				3A65E99F0FEED5C6005CA383 /* FontsController.m */,
 				3A2969D80FEF679300D0A771 /* FontsControllerDelegate.h */,
-				3A2969D20FEF652F00D0A771 /* MainController.h */,
-				3A2969D30FEF652F00D0A771 /* MainController.m */,
 				3A65E99A0FEED5C6005CA383 /* AboutController.h */,
 				3A65E99B0FEED5C6005CA383 /* AboutController.m */,
 				3A65E99C0FEED5C6005CA383 /* FontDetailController.h */,
@@ -211,7 +211,7 @@
 			children = (
 				3A4CA95A1014BFD70050FF99 /* Localizable.strings */,
 				8D1107310486CEB800E47090 /* Info.plist */,
-				3A65E9AC0FEED5F5005CA383 /* Entitlements.plist */,
+				3AAC5F771422453900C65725 /* Entitlements.entitlements */,
 				3A65E9AD0FEED5F5005CA383 /* Images */,
 				3A65E9B00FEED5F5005CA383 /* NIBs */,
 				3A7C75D711AED16400FA4065 /* iPad */,
@@ -326,7 +326,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A65E9B40FEED5F5005CA383 /* Entitlements.plist in Resources */,
 				3A65E9B50FEED5F5005CA383 /* Default.png in Resources */,
 				3A65E9B60FEED5F5005CA383 /* Icon.png in Resources */,
 				3A346D421014EA9500B84748 /* About.xib in Resources */,
@@ -342,6 +341,7 @@
 				3A7C75E011AED16400FA4065 /* Icon-Small.png in Resources */,
 				3A7C75E111AED16400FA4065 /* MainWindow-iPad.xib in Resources */,
 				3A66C07611AF03BE0029BCE2 /* FontDetail-iPad.xib in Resources */,
+				3AAC5F781422453900C65725 /* Entitlements.entitlements in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,56 +24,43 @@
 
 @implementation MainController
 
-@synthesize controller = _controller;
 @synthesize aboutBox = _aboutBox;
 @synthesize toolbarActionSheet = _toolbarActionSheet;
 @synthesize detailController = _detailController;
 
-#pragma mark -
-#pragma mark Constructor and destructor
-
-- (id)init
-{
-    if (self = [super init])
-    {
-        self.controller = [[[UINavigationController alloc] initWithRootViewController:self] autorelease];
-        self.controller.navigationBar.barStyle = UIBarStyleBlackOpaque;
-        self.controller.toolbarHidden = NO;
-        self.controller.toolbar.barStyle = UIBarStyleBlackOpaque;
-        
-        self.delegate = self;
-        
-        UIButton *aboutButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
-        [aboutButton addTarget:self
-                        action:@selector(about:) 
-              forControlEvents:UIControlEventTouchDown];
-        UIBarButtonItem *aboutItem = [[[UIBarButtonItem alloc] initWithCustomView:aboutButton] autorelease];
-        self.navigationItem.rightBarButtonItem = aboutItem;
-        
-        UIBarButtonItem *actionButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction 
-                                                                                       target:self
-                                                                                       action:@selector(action:)] autorelease];
-        
-        NSArray *items = [NSArray arrayWithObject:actionButton];
-        self.toolbarItems = items;
-    }
-    return self;
-}
-
 - (void)dealloc
 {
-    self.delegate = nil;
-    self.controller = nil;
-    self.toolbarActionSheet = nil;
-    self.aboutBox = nil;
-    self.detailController = nil;
+    [_toolbarActionSheet release];
+    [_aboutBox release];
+    [_detailController release];
     [super dealloc];
 }
 
-#pragma mark -
-#pragma mark IBAction methods
+#pragma mark - View lifecycle
 
-- (void)about:(id)sender
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+    UIButton *aboutButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    [aboutButton addTarget:self
+                    action:@selector(about:) 
+          forControlEvents:UIControlEventTouchDown];
+    UIBarButtonItem *aboutItem = [[[UIBarButtonItem alloc] initWithCustomView:aboutButton] autorelease];
+    self.navigationItem.rightBarButtonItem = aboutItem;
+}
+
+- (void)didReceiveMemoryWarning 
+{
+    self.aboutBox = nil;
+    self.toolbarActionSheet = nil;
+    self.detailController = nil;
+    [super didReceiveMemoryWarning];
+}
+
+#pragma mark - IBAction methods
+
+- (IBAction)about:(id)sender
 {
     if (self.aboutBox == nil)
     {
@@ -82,7 +69,7 @@
     [self presentModalViewController:self.aboutBox animated:YES];
 }
 
-- (void)action:(id)sender
+- (IBAction)action:(id)sender
 {
     if (self.toolbarActionSheet == nil)
     {
@@ -99,19 +86,17 @@
                                                  destructiveButtonTitle:nil
                                                       otherButtonTitles:copyListEntry, sendMailEntry, nil] autorelease];
     }
-    [self.toolbarActionSheet showInView:self.controller.view];
+    [self.toolbarActionSheet showInView:self.navigationController.view];
 }
 
-#pragma mark -
-#pragma mark FontsControllerDelegate methods
+#pragma mark - FontsControllerDelegate methods
 
 - (void)fontsController:(FontsController *)controller rowSelectedAtIndexPath:(NSIndexPath *)indexPath
 {
     [self viewCurrentlySelectedFont];
 }
 
-#pragma mark -
-#pragma mark UIActionSheetDelegate methods
+#pragma mark - UIActionSheetDelegate methods
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
@@ -142,8 +127,7 @@
     }
 }
 
-#pragma mark -
-#pragma mark MFMailComposeViewControllerDelegate methods
+#pragma mark - MFMailComposeViewControllerDelegate methods
 
 - (void)mailComposeController:(MFMailComposeViewController *)composer 
           didFinishWithResult:(MFMailComposeResult)result 
@@ -152,24 +136,7 @@
     [composer dismissModalViewControllerAnimated:YES];
 }
 
-#pragma mark -
-#pragma mark UIViewController methods
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return [RooiFontsAppDelegate sharedAppDelegate].userInterfaceIdiomPad;
-}
-
-- (void)didReceiveMemoryWarning 
-{
-    self.aboutBox = nil;
-    self.toolbarActionSheet = nil;
-    self.detailController = nil;
-    [super didReceiveMemoryWarning];
-}
-
-#pragma mark -
-#pragma mark Private methods
+#pragma mark - Private methods
 
 - (void)viewCurrentlySelectedFont
 {
@@ -181,7 +148,7 @@
     self.detailController.fontName = self.currentlySelectedFontName;
     self.detailController.fontFamilyName = self.currentlySelectedFontFamily;
     self.detailController.title = self.currentlySelectedFontName;
-    [self.controller pushViewController:self.detailController animated:YES];
+    [self.navigationController pushViewController:self.detailController animated:YES];
 }
 
 @end

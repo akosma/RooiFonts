@@ -46,11 +46,6 @@
 #pragma mark -
 #pragma mark UIViewController methods
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return [RooiFontsAppDelegate sharedAppDelegate].userInterfaceIdiomPad;
-}
-
 - (void)didReceiveMemoryWarning 
 {
     [super didReceiveMemoryWarning];

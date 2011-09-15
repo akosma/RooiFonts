@@ -85,11 +85,6 @@
     [self.sizeView addSubview:self.sizeController.view];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
-{
-    return [RooiFontsAppDelegate sharedAppDelegate].userInterfaceIdiomPad;
-}
-
 - (void)didReceiveMemoryWarning 
 {
     [super didReceiveMemoryWarning];
