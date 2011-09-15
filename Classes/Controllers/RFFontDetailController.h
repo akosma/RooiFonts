@@ -14,9 +14,9 @@
 @class RFSizeController;
 
 @interface RFFontDetailController : UIViewController <UITextViewDelegate,
-                                                    RFSizeControllerDelegate,
-                                                    UIActionSheetDelegate,
-                                                    MFMailComposeViewControllerDelegate>
+                                                      RFSizeControllerDelegate,
+                                                      UIActionSheetDelegate,
+                                                      MFMailComposeViewControllerDelegate>
 
 @property (nonatomic, retain) IBOutlet RFSizeController *sizeController;
 @property (nonatomic, retain) IBOutlet UIView *sizeView;
