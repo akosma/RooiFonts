@@ -10,12 +10,6 @@
 #import "FontsControllerDelegate.h"
 
 @interface FontsController : UITableViewController
-{
-@private
-    NSArray *_familyNames;
-    NSIndexPath *_selectedIndexPath;
-    id<FontsControllerDelegate> _delegate;
-}
 
 @property (nonatomic, assign) IBOutlet id<FontsControllerDelegate> delegate;
 @property (nonatomic, readonly) NSString *currentlySelectedFontName;
