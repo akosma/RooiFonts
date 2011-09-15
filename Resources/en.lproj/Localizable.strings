@@ -1,0 +1,37 @@
+/* Title of the about screen */
+"About RooiFonts" = "About RooiFonts";
+
+/* Back button title for the comparison screen */
+"Back" = "Back";
+
+/* 'Cancel' button in action menus */
+"Cancel" = "Cancel";
+
+/* 'Compare' option of the action menu in the detail screen */
+"Compare with..." = "Compare with...";
+
+/* Prompt for the comparison screen */
+"Comparing %@ with" = "Comparing %@ with";
+
+/* 'Copy list' entry of the action menu in the MainController class */
+"Copy list" = "Copy list";
+
+/* 'Copy' entry of the action menu in the detail screen */
+"Copy name" = "Copy name";
+
+/* Text to be copied in the pasteboard */
+"Family: %@; font: %@" = "Family: %1$@; font: %2$@";
+
+/* 'Screenshot' entry of the action menu in the detail screen */
+"Screenshot via e-mail" = "Screenshot via e-mail";
+
+/* Prompts the user to choose another font */
+"Select a font to compare with" = "Select a font to compare with";
+
+/* 'Send list via e-mail' entry of the action menu in the MainController class */
+"Send list via e-mail" = "Send list via e-mail";
+
+/* Text sent via e-mail, below the font image. */
+"EMAIL_GREETING" = "This is how %1$@ at %2$.0f points looks on the iPhone \
+\n\nSent from RooiFonts - http://rooifonts.com/";
+

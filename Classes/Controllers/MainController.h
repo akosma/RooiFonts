@@ -1,6 +1,6 @@
 //
 //  MainController.h
-//  FontKit
+//  RooiFonts
 //
 //  Created by Adrian on 6/22/09.
 //  Copyright 2009 akosma software. All rights reserved.
@@ -22,11 +22,18 @@
                                              SizeControllerDelegate>
 {
 @private
+<<<<<<< HEAD
     UIActionSheet *toolbarActionSheet;
     UINavigationController *controller;
     FontDetailController *detailController;
     AboutController *aboutBox;
     SizeController *_sizeController;
+=======
+    UIActionSheet *_toolbarActionSheet;
+    UINavigationController *_controller;
+    FontDetailController *_detailController;
+    AboutController *_aboutBox;
+>>>>>>> standard
 }
 
 @property (nonatomic, retain) UINavigationController *controller;

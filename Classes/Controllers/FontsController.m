@@ -1,6 +1,6 @@
 //
 //  FontsController.m
-//  FontKit
+//  RooiFonts
 //
 //  Created by Adrian on 11/12/08.
 //  Copyright 2009 akosma software. All rights reserved.
@@ -8,6 +8,7 @@
 
 #import "FontsController.h"
 #import "NSString+FirstLetters.h"
+<<<<<<< HEAD
 #import "FontTableCell.h"
 
 @implementation FontsController
@@ -17,33 +18,78 @@
 @synthesize selectedIndexPath = _selectedIndexPath;
 @synthesize showScrollingFonts = _showScrollingFonts;
 @synthesize fontHeight = _fontHeight;
+=======
+#import "RooiFontsAppDelegate.h"
+
+@interface FontsController ()
+
+@property (nonatomic, retain) NSArray *familyNames;
+@property (nonatomic, retain) NSIndexPath *selectedIndexPath;
+
+- (void)setup;
+
+@end
+
+
+@implementation FontsController
+
+@synthesize familyNames = _familyNames;
+@synthesize delegate = _delegate;
+@synthesize selectedIndexPath = _selectedIndexPath;
+>>>>>>> standard
 @dynamic currentlySelectedFontName;
 @dynamic currentlySelectedFontFamily;
 
 #pragma mark -
 #pragma mark Constructor and destructor
 
-- (id)init
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    if (self = [super initWithStyle:UITableViewStylePlain])
+    if (self = [super initWithCoder:aDecoder])
     {
-        _fontHeight = 18.0;
-        _showScrollingFonts = NO;
-        self.title = @"FontKit";
+        [self setup];
     }
     return self;
 }
 
+- (id)init
+{
+    if (self = [super initWithStyle:UITableViewStylePlain])
+    {
+<<<<<<< HEAD
+        _fontHeight = 18.0;
+        _showScrollingFonts = NO;
+        self.title = @"FontKit";
+=======
+        [self setup];
+>>>>>>> standard
+    }
+    return self;
+}
+
+- (void)setup
+{
+    self.tableView.rowHeight = 50;
+    self.title = @"RooiFonts";
+    self.familyNames = [[UIFont familyNames] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
+}
+
 - (void)dealloc
 {
+<<<<<<< HEAD
     [_selectedIndexPath release];
     [_familyNames release];
+=======
+    self.selectedIndexPath = nil;
+    self.familyNames = nil;
+>>>>>>> standard
     [super dealloc];
 }
 
 #pragma mark -
 #pragma mark Property accessors
 
+<<<<<<< HEAD
 - (NSArray *)_familyNames
 {
     if (_familyNames == nil)
@@ -57,6 +103,12 @@
 {
     NSString *fontName = nil;
     if (_selectedIndexPath != nil)
+=======
+- (NSString *)currentlySelectedFontName
+{
+    NSString *fontName = nil;
+    if (self.selectedIndexPath != nil)
+>>>>>>> standard
     {
         NSArray *fontNames = [UIFont fontNamesForFamilyName:self.currentlySelectedFontFamily];
         fontName = [fontNames objectAtIndex:self.selectedIndexPath.row];
@@ -67,7 +119,11 @@
 - (NSString *)currentlySelectedFontFamily
 {
     NSString *fontFamily = nil;
+<<<<<<< HEAD
     if (_selectedIndexPath != nil)
+=======
+    if (self.selectedIndexPath != nil)
+>>>>>>> standard
     {
         fontFamily = [self._familyNames objectAtIndex:self.selectedIndexPath.section];
     }
@@ -131,9 +187,15 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
 {
     self.selectedIndexPath = indexPath;
+<<<<<<< HEAD
     if ([_delegate respondsToSelector:@selector(fontsController:rowSelectedAtIndexPath:)])
     {
         [_delegate fontsController:self rowSelectedAtIndexPath:indexPath];
+=======
+    if ([self.delegate respondsToSelector:@selector(fontsController:rowSelectedAtIndexPath:)])
+    {
+        [self.delegate fontsController:self rowSelectedAtIndexPath:indexPath];
+>>>>>>> standard
     }
 }
 
@@ -142,14 +204,18 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return interfaceOrientation == UIInterfaceOrientationPortrait;
+    return [RooiFontsAppDelegate sharedAppDelegate].userInterfaceIdiomPad;
 }
 
 - (void)didReceiveMemoryWarning 
 {
+<<<<<<< HEAD
     [_familyNames release];
     _familyNames = nil;
+=======
+>>>>>>> standard
     [super didReceiveMemoryWarning];
+    self.familyNames = nil;
 }
 
 @end

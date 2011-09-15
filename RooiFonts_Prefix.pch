@@ -1,5 +1,5 @@
 //
-// Prefix header for all source files of the 'FontKit' target in the 'FontKit' project
+// Prefix header for all source files of the 'RooiFonts' target in the 'RooiFonts' project
 //
 
 #ifdef __OBJC__

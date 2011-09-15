@@ -1,6 +1,6 @@
 //
 //  SizeController.m
-//  FontKit
+//  RooiFonts
 //
 //  Created by Adrian on 6/22/09.
 //  Copyright 2009 akosma software. All rights reserved.
@@ -8,10 +8,17 @@
 
 #import "SizeController.h"
 
+@interface SizeController ()
+
+@end
+
+
 @implementation SizeController
 
+@synthesize delegate = _delegate;
+@synthesize slider = _slider;
+@synthesize sizeLabel = _sizeLabel;
 @dynamic size;
-@synthesize delegate;
 
 #pragma mark -
 #pragma mark Constructor and destructor
@@ -34,7 +41,7 @@
 
 - (CGFloat)size
 {
-    return slider.value;
+    return self.slider.value;
 }
 
 #pragma mark -
@@ -42,10 +49,10 @@
 
 - (IBAction)sliderValueChanged:(id)sender
 {
-    sizeLabel.text = [NSString stringWithFormat:@"%1.0f pt", slider.value];
-    if ([delegate respondsToSelector:@selector(sizeController:didChangeSize:)])
+    self.sizeLabel.text = [NSString stringWithFormat:@"%1.0f pt", self.slider.value];
+    if ([self.delegate respondsToSelector:@selector(sizeController:didChangeSize:)])
     {
-        [delegate sizeController:self didChangeSize:slider.value];
+        [self.delegate sizeController:self didChangeSize:self.slider.value];
     }
 }
 
@@ -59,7 +66,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return interfaceOrientation == UIInterfaceOrientationPortrait;
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning 

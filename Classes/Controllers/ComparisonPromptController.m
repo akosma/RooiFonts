@@ -1,6 +1,6 @@
 //
 //  ComparisonPromptController.m
-//  FontKit
+//  RooiFonts
 //
 //  Created by Adrian on 6/22/09.
 //  Copyright 2009 akosma software. All rights reserved.
@@ -8,8 +8,18 @@
 
 #import "ComparisonPromptController.h"
 #import "ComparisonDetailController.h"
+#import "RooiFontsAppDelegate.h"
+
+@interface ComparisonPromptController ()
+
+@property (nonatomic, retain) ComparisonDetailController *comparisonController;
+
+@end
+
 
 @implementation ComparisonPromptController
+
+@synthesize comparisonController = _comparisonController;
 
 #pragma mark -
 #pragma mark Constructor and destructor
@@ -18,7 +28,9 @@
 {
     if (self = [super init])
     {
-        self.navigationItem.prompt = @"Select a font to compare with";
+        NSString *prompt = NSLocalizedString(@"Select a font to compare with", 
+                                             @"Prompts the user to choose another font");
+        self.navigationItem.prompt = prompt;
         self.delegate = self;
     }
     return self;
@@ -27,6 +39,7 @@
 - (void)dealloc
 {
     self.delegate = nil;
+    self.comparisonController = nil;
     [super dealloc];
 }
 
@@ -35,14 +48,13 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return interfaceOrientation == UIInterfaceOrientationPortrait;
+    return [RooiFontsAppDelegate sharedAppDelegate].userInterfaceIdiomPad;
 }
 
 - (void)didReceiveMemoryWarning 
 {
-    [comparisonController release];
-    comparisonController = nil;
     [super didReceiveMemoryWarning];
+    self.comparisonController = nil;
 }
 
 #pragma mark -
@@ -50,13 +62,13 @@
 
 - (void)fontsController:(FontsController *)controller rowSelectedAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (comparisonController == nil)
+    if (self.comparisonController == nil)
     {
-        comparisonController = [[ComparisonDetailController alloc] init];
+        self.comparisonController = [[[ComparisonDetailController alloc] init] autorelease];
     }
-    comparisonController.topFontName = self.title;
-    comparisonController.bottomFontName = self.currentlySelectedFontName;
-    [self.navigationController pushViewController:comparisonController animated:YES];
+    self.comparisonController.topFontName = self.title;
+    self.comparisonController.bottomFontName = self.currentlySelectedFontName;
+    [self.navigationController pushViewController:self.comparisonController animated:YES];
 }
 
 @end

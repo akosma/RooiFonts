@@ -7,6 +7,7 @@
 //
 
 #import "AboutController.h"
+#import "RooiFontsAppDelegate.h"
 
 @implementation AboutController
 
@@ -17,8 +18,8 @@
 {
     if (self = [super initWithNibName:@"About" bundle:nil]) 
     {
-        self.title = @"About FontKit";
-        self.hidesBottomBarWhenPushed = YES;
+        NSString *titleText = NSLocalizedString(@"About RooiFonts", @"Title of the about screen");
+        self.title = titleText;
     }
     return self;
 }
@@ -33,7 +34,19 @@
 
 - (IBAction)done:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+- (IBAction)akosma:(id)sender
+{
+    NSURL *url = [NSURL URLWithString:@"http://akosma.com/"];
+    [[UIApplication sharedApplication] openURL:url];
+}
+
+- (IBAction)bluewoki:(id)sender
+{
+    NSURL *url = [NSURL URLWithString:@"http://bluewoki.com/"];
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 #pragma mark -
@@ -41,7 +54,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return interfaceOrientation == UIInterfaceOrientationPortrait;
+    return [RooiFontsAppDelegate sharedAppDelegate].userInterfaceIdiomPad;
 }
 
 - (void)didReceiveMemoryWarning 

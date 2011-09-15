@@ -1,6 +1,6 @@
 //
 //  ComparisonPromptController.h
-//  FontKit
+//  RooiFonts
 //
 //  Created by Adrian on 6/22/09.
 //  Copyright 2009 akosma software. All rights reserved.
@@ -13,7 +13,7 @@
 @interface ComparisonPromptController : FontsController <FontsControllerDelegate>
 {
 @private
-    ComparisonDetailController *comparisonController;
+    ComparisonDetailController *_comparisonController;
 }
 
 @end

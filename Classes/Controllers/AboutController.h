@@ -14,5 +14,7 @@
 }
 
 - (IBAction)done:(id)sender;
+- (IBAction)akosma:(id)sender;
+- (IBAction)bluewoki:(id)sender;
 
 @end

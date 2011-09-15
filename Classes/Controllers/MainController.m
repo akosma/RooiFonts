@@ -1,6 +1,6 @@
 //
 //  MainController.m
-//  FontKit
+//  RooiFonts
 //
 //  Created by Adrian on 6/22/09.
 //  Copyright 2009 akosma software. All rights reserved.
@@ -10,15 +10,28 @@
 #import "FontDetailController.h"
 #import "UIFont+FontList.h"
 #import "AboutController.h"
+<<<<<<< HEAD
 #import "SizeController.h"
+=======
+#import "RooiFontsAppDelegate.h"
 
-@interface FontsController (Private)
+@interface MainController ()
+
+@property (nonatomic, retain) UIActionSheet *toolbarActionSheet;
+@property (nonatomic, retain) AboutController *aboutBox;
+@property (nonatomic, retain) FontDetailController *detailController;
+>>>>>>> standard
+
 - (void)viewCurrentlySelectedFont;
+
 @end
 
 @implementation MainController
 
-@synthesize controller;
+@synthesize controller = _controller;
+@synthesize aboutBox = _aboutBox;
+@synthesize toolbarActionSheet = _toolbarActionSheet;
+@synthesize detailController = _detailController;
 
 #pragma mark -
 #pragma mark Constructor and destructor
@@ -27,8 +40,10 @@
 {
     if (self = [super init])
     {
-        controller = [[UINavigationController alloc] initWithRootViewController:self];
-        controller.toolbarHidden = NO;
+        self.controller = [[[UINavigationController alloc] initWithRootViewController:self] autorelease];
+        self.controller.navigationBar.barStyle = UIBarStyleBlackOpaque;
+        self.controller.toolbarHidden = NO;
+        self.controller.toolbar.barStyle = UIBarStyleBlackOpaque;
         
         _sizeController = [[SizeController alloc] init];
         _sizeController.delegate = self;
@@ -40,10 +55,10 @@
         [aboutButton addTarget:self
                         action:@selector(about:) 
               forControlEvents:UIControlEventTouchDown];
-        UIBarButtonItem *aboutItem = [[UIBarButtonItem alloc] initWithCustomView:aboutButton];
+        UIBarButtonItem *aboutItem = [[[UIBarButtonItem alloc] initWithCustomView:aboutButton] autorelease];
         self.navigationItem.rightBarButtonItem = aboutItem;
-        [aboutItem release];
         
+<<<<<<< HEAD
         UIBarButtonItem *actionButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction 
                                                                                       target:self
                                                                                       action:@selector(action:)];
@@ -78,6 +93,14 @@
 
         self.toolbarItems = items;
         [items release];
+=======
+        UIBarButtonItem *actionButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction 
+                                                                                       target:self
+                                                                                       action:@selector(action:)] autorelease];
+        
+        NSArray *items = [NSArray arrayWithObject:actionButton];
+        self.toolbarItems = items;
+>>>>>>> standard
     }
     return self;
 }
@@ -85,9 +108,10 @@
 - (void)dealloc
 {
     self.delegate = nil;
-    [controller release];
-    [detailController release];
-    [aboutBox release];
+    self.controller = nil;
+    self.toolbarActionSheet = nil;
+    self.aboutBox = nil;
+    self.detailController = nil;
     [super dealloc];
 }
 
@@ -103,22 +127,31 @@
 
 - (void)about:(id)sender
 {
-    if (aboutBox == nil)
+    if (self.aboutBox == nil)
     {
-        aboutBox = [[AboutController alloc] init];
+        self.aboutBox = [[[AboutController alloc] init] autorelease];
     }
-    [controller pushViewController:aboutBox animated:YES];
+    [self presentModalViewController:self.aboutBox animated:YES];
 }
 
 - (void)action:(id)sender
 {
-    toolbarActionSheet = [[UIActionSheet alloc] initWithTitle:@""
-                                                     delegate:self 
-                                            cancelButtonTitle:@"Cancel"
-                                       destructiveButtonTitle:nil
-                                            otherButtonTitles:@"Copy list", @"Send list via e-mail", nil];
-    [toolbarActionSheet showInView:controller.view];
-    [toolbarActionSheet release];
+    if (self.toolbarActionSheet == nil)
+    {
+        NSString *copyListEntry = NSLocalizedString(@"Copy list", 
+                                                    @"'Copy list' entry of the action menu in the MainController class");
+        NSString *sendMailEntry = NSLocalizedString(@"Send list via e-mail", 
+                                                    @"'Send list via e-mail' entry of the action menu in the MainController class");
+        NSString *cancelButtonText = NSLocalizedString(@"Cancel", 
+                                                       @"'Cancel' button in action menus");
+        
+        self.toolbarActionSheet = [[[UIActionSheet alloc] initWithTitle:@""
+                                                               delegate:self 
+                                                      cancelButtonTitle:cancelButtonText
+                                                 destructiveButtonTitle:nil
+                                                      otherButtonTitles:copyListEntry, sendMailEntry, nil] autorelease];
+    }
+    [self.toolbarActionSheet showInView:self.controller.view];
 }
 
 #pragma mark -
@@ -134,27 +167,30 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    switch (buttonIndex)
+    if (actionSheet == self.toolbarActionSheet)
     {
-        case 0:
+        switch (buttonIndex)
         {
-            UIPasteboard *board = [UIPasteboard generalPasteboard];
-            board.string = [UIFont fontList];
-            break;
+            case 0:
+            {
+                UIPasteboard *board = [UIPasteboard generalPasteboard];
+                board.string = [UIFont fontList];
+                break;
+            }
+                
+            case 1:
+            {
+                MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+                picker.mailComposeDelegate = self;
+                [picker setMessageBody:[UIFont fontList] isHTML:NO];
+                [self presentModalViewController:picker animated:YES];
+                [picker release];        
+                break;
+            }
+                
+            default:
+                break;
         }
-            
-        case 1:
-        {
-            MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
-            picker.mailComposeDelegate = self;
-            [picker setMessageBody:[UIFont fontList] isHTML:NO];
-            [self presentModalViewController:picker animated:YES];
-            [picker release];        
-            break;
-        }
-            
-        default:
-            break;
     }
 }
 
@@ -182,15 +218,14 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return interfaceOrientation == UIInterfaceOrientationPortrait;
+    return [RooiFontsAppDelegate sharedAppDelegate].userInterfaceIdiomPad;
 }
 
 - (void)didReceiveMemoryWarning 
 {
-    [aboutBox release];
-    aboutBox = nil;
-    [detailController release];
-    detailController = nil;
+    self.aboutBox = nil;
+    self.toolbarActionSheet = nil;
+    self.detailController = nil;
     [super didReceiveMemoryWarning];
 }
 
@@ -199,14 +234,15 @@
 
 - (void)viewCurrentlySelectedFont
 {
-    if (detailController == nil)
+    if (self.detailController == nil)
     {
-        detailController = [[FontDetailController alloc] init];
+        self.detailController = [[FontDetailController alloc] initWithNibName:@"FontDetail" bundle:nil];
+        self.detailController.hidesBottomBarWhenPushed = YES;
     }
-    detailController.fontName = self.currentlySelectedFontName;
-    detailController.fontFamilyName = self.currentlySelectedFontFamily;
-    detailController.title = self.currentlySelectedFontName;
-    [self.controller pushViewController:detailController animated:YES];
+    self.detailController.fontName = self.currentlySelectedFontName;
+    self.detailController.fontFamilyName = self.currentlySelectedFontFamily;
+    self.detailController.title = self.currentlySelectedFontName;
+    [self.controller pushViewController:self.detailController animated:YES];
 }
 
 @end

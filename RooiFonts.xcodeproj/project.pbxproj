@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
-		3A2969780FEF5A7000D0A771 /* FontKitAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2969770FEF5A7000D0A771 /* FontKitAppDelegate.m */; };
+		3A2969780FEF5A7000D0A771 /* RooiFontsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2969770FEF5A7000D0A771 /* RooiFontsAppDelegate.m */; };
 		3A2969D40FEF652F00D0A771 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2969D30FEF652F00D0A771 /* MainController.m */; };
 		3A296A430FEF700900D0A771 /* ComparisonPromptController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A296A420FEF700900D0A771 /* ComparisonPromptController.m */; };
 		3A296A660FEF727F00D0A771 /* ComparisonDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A296A650FEF727F00D0A771 /* ComparisonDetail.xib */; };
@@ -16,7 +16,10 @@
 		3A296A7E0FEF78BD00D0A771 /* Size.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A296A7D0FEF78BD00D0A771 /* Size.xib */; };
 		3A2B55B6100F81CA00EF6184 /* FontTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2B55B5100F81CA00EF6184 /* FontTableCell.m */; };
 		3A31F2D00FEFA40800460062 /* ComparisonDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A31F2CF0FEFA40800460062 /* ComparisonDetailController.m */; };
+		3A346D421014EA9500B84748 /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A346D411014EA9500B84748 /* About.xib */; };
 		3A3F6BB20FEFE1C300F65169 /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A3F6BB10FEFE1C300F65169 /* chat.png */; };
+		3A4CA95B1014BFD70050FF99 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A4CA95A1014BFD70050FF99 /* Localizable.strings */; };
+		3A4CA9B11014D1590050FF99 /* bluewoki.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A4CA9B01014D1590050FF99 /* bluewoki.png */; };
 		3A65E8DF0FEECBF2005CA383 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A65E8DE0FEECBF2005CA383 /* MessageUI.framework */; };
 		3A65E8E30FEECC15005CA383 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A65E8E20FEECC15005CA383 /* CoreGraphics.framework */; };
 		3A65E8E50FEECC15005CA383 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A65E8E40FEECC15005CA383 /* Foundation.framework */; };
@@ -29,17 +32,22 @@
 		3A65E9B40FEED5F5005CA383 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A65E9AC0FEED5F5005CA383 /* Entitlements.plist */; };
 		3A65E9B50FEED5F5005CA383 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A65E9AE0FEED5F5005CA383 /* Default.png */; };
 		3A65E9B60FEED5F5005CA383 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A65E9AF0FEED5F5005CA383 /* Icon.png */; };
-		3A65E9B70FEED5F5005CA383 /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A65E9B10FEED5F5005CA383 /* About.xib */; };
 		3A65E9B80FEED5F5005CA383 /* FontDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A65E9B20FEED5F5005CA383 /* FontDetail.xib */; };
 		3A65E9B90FEED5F5005CA383 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A65E9B30FEED5F5005CA383 /* MainWindow.xib */; };
+		3A66C03011AF008D0029BCE2 /* SplitController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A66C02F11AF008D0029BCE2 /* SplitController.m */; };
+		3A66C07611AF03BE0029BCE2 /* FontDetail-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A66C07511AF03BE0029BCE2 /* FontDetail-iPad.xib */; };
+		3A7C75DE11AED16400FA4065 /* Icon-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7C75D911AED16400FA4065 /* Icon-ipad.png */; };
+		3A7C75DF11AED16400FA4065 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7C75DA11AED16400FA4065 /* Icon-Small-50.png */; };
+		3A7C75E011AED16400FA4065 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7C75DB11AED16400FA4065 /* Icon-Small.png */; };
+		3A7C75E111AED16400FA4065 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7C75DD11AED16400FA4065 /* MainWindow-iPad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1D6058910D05DD3D006BFB54 /* FontKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FontKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* RooiFonts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RooiFonts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3A2969760FEF5A7000D0A771 /* FontKitAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontKitAppDelegate.h; sourceTree = "<group>"; };
-		3A2969770FEF5A7000D0A771 /* FontKitAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontKitAppDelegate.m; sourceTree = "<group>"; };
-		3A2969790FEF5A7D00D0A771 /* FontKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontKit_Prefix.pch; sourceTree = "<group>"; };
+		3A2969760FEF5A7000D0A771 /* RooiFontsAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RooiFontsAppDelegate.h; sourceTree = "<group>"; };
+		3A2969770FEF5A7000D0A771 /* RooiFontsAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RooiFontsAppDelegate.m; sourceTree = "<group>"; };
+		3A2969790FEF5A7D00D0A771 /* RooiFonts_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RooiFonts_Prefix.pch; sourceTree = "<group>"; };
 		3A2969D20FEF652F00D0A771 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
 		3A2969D30FEF652F00D0A771 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
 		3A2969D80FEF679300D0A771 /* FontsControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontsControllerDelegate.h; sourceTree = "<group>"; };
@@ -54,7 +62,14 @@
 		3A2B55B5100F81CA00EF6184 /* FontTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontTableCell.m; sourceTree = "<group>"; };
 		3A31F2CE0FEFA40800460062 /* ComparisonDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComparisonDetailController.h; sourceTree = "<group>"; };
 		3A31F2CF0FEFA40800460062 /* ComparisonDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComparisonDetailController.m; sourceTree = "<group>"; };
+		3A346D431014EA9D00B84748 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/About.xib; sourceTree = "<group>"; };
+		3A346D441014EAA000B84748 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/About.xib; sourceTree = "<group>"; };
+		3A346D451014EABF00B84748 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/About.xib; sourceTree = "<group>"; };
 		3A3F6BB10FEFE1C300F65169 /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat.png; sourceTree = "<group>"; };
+		3A4CA95E1014C07A0050FF99 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3A4CA96F1014C1240050FF99 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3A4CA9731014C1DA0050FF99 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3A4CA9B01014D1590050FF99 /* bluewoki.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluewoki.png; sourceTree = "<group>"; };
 		3A65E8DE0FEECBF2005CA383 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		3A65E8E20FEECC15005CA383 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3A65E8E40FEECC15005CA383 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -72,9 +87,15 @@
 		3A65E9AC0FEED5F5005CA383 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		3A65E9AE0FEED5F5005CA383 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		3A65E9AF0FEED5F5005CA383 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		3A65E9B10FEED5F5005CA383 /* About.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = About.xib; sourceTree = "<group>"; };
 		3A65E9B20FEED5F5005CA383 /* FontDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FontDetail.xib; sourceTree = "<group>"; };
 		3A65E9B30FEED5F5005CA383 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		3A66C02E11AF008D0029BCE2 /* SplitController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitController.h; sourceTree = "<group>"; };
+		3A66C02F11AF008D0029BCE2 /* SplitController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitController.m; sourceTree = "<group>"; };
+		3A66C07511AF03BE0029BCE2 /* FontDetail-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "FontDetail-iPad.xib"; sourceTree = "<group>"; };
+		3A7C75D911AED16400FA4065 /* Icon-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-ipad.png"; sourceTree = "<group>"; };
+		3A7C75DA11AED16400FA4065 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		3A7C75DB11AED16400FA4065 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		3A7C75DD11AED16400FA4065 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,7 +117,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* FontKit.app */,
+				1D6058910D05DD3D006BFB54 /* RooiFonts.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,7 +137,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				3A2969790FEF5A7D00D0A771 /* FontKit_Prefix.pch */,
+				3A2969790FEF5A7D00D0A771 /* RooiFonts_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			name = "Other Sources";
@@ -146,8 +167,8 @@
 		3A65E9960FEED5C6005CA383 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				3A2969760FEF5A7000D0A771 /* FontKitAppDelegate.h */,
-				3A2969770FEF5A7000D0A771 /* FontKitAppDelegate.m */,
+				3A2969760FEF5A7000D0A771 /* RooiFontsAppDelegate.h */,
+				3A2969770FEF5A7000D0A771 /* RooiFontsAppDelegate.m */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -170,6 +191,8 @@
 				3A296A420FEF700900D0A771 /* ComparisonPromptController.m */,
 				3A31F2CE0FEFA40800460062 /* ComparisonDetailController.h */,
 				3A31F2CF0FEFA40800460062 /* ComparisonDetailController.m */,
+				3A66C02E11AF008D0029BCE2 /* SplitController.h */,
+				3A66C02F11AF008D0029BCE2 /* SplitController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -191,10 +214,12 @@
 		3A65E9AB0FEED5F5005CA383 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3A4CA95A1014BFD70050FF99 /* Localizable.strings */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				3A65E9AC0FEED5F5005CA383 /* Entitlements.plist */,
 				3A65E9AD0FEED5F5005CA383 /* Images */,
 				3A65E9B00FEED5F5005CA383 /* NIBs */,
+				3A7C75D711AED16400FA4065 /* iPad */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -202,6 +227,7 @@
 		3A65E9AD0FEED5F5005CA383 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3A4CA9B01014D1590050FF99 /* bluewoki.png */,
 				3A3F6BB10FEFE1C300F65169 /* chat.png */,
 				3A65E9AE0FEED5F5005CA383 /* Default.png */,
 				3A65E9AF0FEED5F5005CA383 /* Icon.png */,
@@ -212,7 +238,7 @@
 		3A65E9B00FEED5F5005CA383 /* NIBs */ = {
 			isa = PBXGroup;
 			children = (
-				3A65E9B10FEED5F5005CA383 /* About.xib */,
+				3A346D411014EA9500B84748 /* About.xib */,
 				3A65E9B20FEED5F5005CA383 /* FontDetail.xib */,
 				3A65E9B30FEED5F5005CA383 /* MainWindow.xib */,
 				3A296A650FEF727F00D0A771 /* ComparisonDetail.xib */,
@@ -221,12 +247,40 @@
 			path = NIBs;
 			sourceTree = "<group>";
 		};
+		3A7C75D711AED16400FA4065 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				3A7C75D811AED16400FA4065 /* Images */,
+				3A7C75DC11AED16400FA4065 /* NIBs */,
+			);
+			path = iPad;
+			sourceTree = "<group>";
+		};
+		3A7C75D811AED16400FA4065 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				3A7C75D911AED16400FA4065 /* Icon-ipad.png */,
+				3A7C75DA11AED16400FA4065 /* Icon-Small-50.png */,
+				3A7C75DB11AED16400FA4065 /* Icon-Small.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		3A7C75DC11AED16400FA4065 /* NIBs */ = {
+			isa = PBXGroup;
+			children = (
+				3A7C75DD11AED16400FA4065 /* MainWindow-iPad.xib */,
+				3A66C07511AF03BE0029BCE2 /* FontDetail-iPad.xib */,
+			);
+			path = NIBs;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* FontKit */ = {
+		1D6058900D05DD3D006BFB54 /* RooiFonts */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "FontKit" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "RooiFonts" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -236,9 +290,9 @@
 			);
 			dependencies = (
 			);
-			name = FontKit;
+			name = RooiFonts;
 			productName = FontBrowser;
-			productReference = 1D6058910D05DD3D006BFB54 /* FontKit.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* RooiFonts.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -247,16 +301,27 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0410;
 				ORGANIZATIONNAME = "akosma software";
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "FontKit" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "RooiFonts" */;
 			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				fr,
+				es,
+				en,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* FontKit */,
+				1D6058900D05DD3D006BFB54 /* RooiFonts */,
 			);
 		};
 /* End PBXProject section */
@@ -269,12 +334,19 @@
 				3A65E9B40FEED5F5005CA383 /* Entitlements.plist in Resources */,
 				3A65E9B50FEED5F5005CA383 /* Default.png in Resources */,
 				3A65E9B60FEED5F5005CA383 /* Icon.png in Resources */,
-				3A65E9B70FEED5F5005CA383 /* About.xib in Resources */,
+				3A346D421014EA9500B84748 /* About.xib in Resources */,
 				3A65E9B80FEED5F5005CA383 /* FontDetail.xib in Resources */,
 				3A65E9B90FEED5F5005CA383 /* MainWindow.xib in Resources */,
 				3A296A660FEF727F00D0A771 /* ComparisonDetail.xib in Resources */,
 				3A296A7E0FEF78BD00D0A771 /* Size.xib in Resources */,
 				3A3F6BB20FEFE1C300F65169 /* chat.png in Resources */,
+				3A4CA95B1014BFD70050FF99 /* Localizable.strings in Resources */,
+				3A4CA9B11014D1590050FF99 /* bluewoki.png in Resources */,
+				3A7C75DE11AED16400FA4065 /* Icon-ipad.png in Resources */,
+				3A7C75DF11AED16400FA4065 /* Icon-Small-50.png in Resources */,
+				3A7C75E011AED16400FA4065 /* Icon-Small.png in Resources */,
+				3A7C75E111AED16400FA4065 /* MainWindow-iPad.xib in Resources */,
+				3A66C07611AF03BE0029BCE2 /* FontDetail-iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,30 +363,67 @@
 				3A65E9A80FEED5C6005CA383 /* FontsController.m in Sources */,
 				3A65E9A90FEED5C6005CA383 /* NSString+FirstLetters.m in Sources */,
 				3A65E9AA0FEED5C6005CA383 /* UIFont+FontList.m in Sources */,
-				3A2969780FEF5A7000D0A771 /* FontKitAppDelegate.m in Sources */,
+				3A2969780FEF5A7000D0A771 /* RooiFontsAppDelegate.m in Sources */,
 				3A2969D40FEF652F00D0A771 /* MainController.m in Sources */,
 				3A296A430FEF700900D0A771 /* ComparisonPromptController.m in Sources */,
 				3A296A7C0FEF786F00D0A771 /* SizeController.m in Sources */,
 				3A31F2D00FEFA40800460062 /* ComparisonDetailController.m in Sources */,
+<<<<<<< HEAD:FontKit.xcodeproj/project.pbxproj
 				3A2B55B6100F81CA00EF6184 /* FontTableCell.m in Sources */,
+=======
+				3A66C03011AF008D0029BCE2 /* SplitController.m in Sources */,
+>>>>>>> standard:RooiFonts.xcodeproj/project.pbxproj
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3A346D411014EA9500B84748 /* About.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A346D431014EA9D00B84748 /* es */,
+				3A346D441014EAA000B84748 /* fr */,
+				3A346D451014EABF00B84748 /* en */,
+			);
+			name = About.xib;
+			sourceTree = "<group>";
+		};
+		3A4CA95A1014BFD70050FF99 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A4CA9731014C1DA0050FF99 /* en */,
+				3A4CA95E1014C07A0050FF99 /* fr */,
+				3A4CA96F1014C1240050FF99 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+<<<<<<< HEAD:FontKit.xcodeproj/project.pbxproj
 				GCC_PREFIX_HEADER = FontKit_Prefix.pch;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+=======
+				GCC_PREFIX_HEADER = RooiFonts_Prefix.pch;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+>>>>>>> standard:RooiFonts.xcodeproj/project.pbxproj
 				INFOPLIST_FILE = Info.plist;
-				PRODUCT_NAME = FontKit;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				PRODUCT_NAME = RooiFonts;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -322,15 +431,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = FontKit_Prefix.pch;
+				GCC_PREFIX_HEADER = RooiFonts_Prefix.pch;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = Info.plist;
-				PRODUCT_NAME = FontBrowser;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				PRODUCT_NAME = RooiFonts;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		3AB6D8370ECAE16400648A85 /* Distribution */ = {
+		3A4CA9B21014E8640050FF99 /* Distribution AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
@@ -338,26 +453,70 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BB63CF9B-ACC4-4852-A7F9-182296C3629E";
-				SDKROOT = iphoneos3.0;
+				SDKROOT = iphoneos;
 			};
-			name = Distribution;
+			name = "Distribution AppStore";
 		};
-		3AB6D8380ECAE16400648A85 /* Distribution */ = {
+		3A4CA9B31014E8640050FF99 /* Distribution AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				CODE_SIGN_ENTITLEMENTS = Resources/Entitlements.plist;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Adrian Kosmaczewski";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = FontKit_Prefix.pch;
+				GCC_PREFIX_HEADER = RooiFonts_Prefix.pch;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = Info.plist;
+<<<<<<< HEAD:FontKit.xcodeproj/project.pbxproj
 				PRODUCT_NAME = FontKit;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "429F1EFD-9759-4036-A7B4-5EC3B528FEA1";
+=======
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				PRODUCT_NAME = RooiFonts;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F0C5B9DC-5402-4075-B4B4-090CE017F3E0";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
-			name = Distribution;
+			name = "Distribution AppStore";
+		};
+		3AB6D8370ECAE16400648A85 /* Distribution Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Adrian Kosmaczewski";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BB63CF9B-ACC4-4852-A7F9-182296C3629E";
+				SDKROOT = iphoneos;
+			};
+			name = "Distribution Ad Hoc";
+		};
+		3AB6D8380ECAE16400648A85 /* Distribution Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				CODE_SIGN_ENTITLEMENTS = Resources/Entitlements.plist;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Adrian Kosmaczewski";
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = RooiFonts_Prefix.pch;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				PRODUCT_NAME = RooiFonts;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BA513002-CBF8-4E4F-9BA6-634A49FAEF18";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+>>>>>>> standard:RooiFonts.xcodeproj/project.pbxproj
+			};
+			name = "Distribution Ad Hoc";
 		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -368,7 +527,6 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PREBINDING = NO;
 				SDKROOT = iphonesimulator3.0;
 			};
 			name = Debug;
@@ -381,30 +539,31 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PREBINDING = NO;
-				SDKROOT = iphoneos2.1;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "FontKit" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "RooiFonts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
 				1D6058950D05DD3E006BFB54 /* Release */,
-				3AB6D8380ECAE16400648A85 /* Distribution */,
+				3AB6D8380ECAE16400648A85 /* Distribution Ad Hoc */,
+				3A4CA9B31014E8640050FF99 /* Distribution AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "FontKit" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "RooiFonts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
-				3AB6D8370ECAE16400648A85 /* Distribution */,
+				3AB6D8370ECAE16400648A85 /* Distribution Ad Hoc */,
+				3A4CA9B21014E8640050FF99 /* Distribution AppStore */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
