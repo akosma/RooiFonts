@@ -41,6 +41,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.delegate = self;
 
     UIButton *aboutButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
     [aboutButton addTarget:self
@@ -142,13 +144,15 @@
 {
     if (self.detailController == nil)
     {
-        self.detailController = [[FontDetailController alloc] initWithNibName:@"FontDetail" bundle:nil];
+        self.detailController = [[[FontDetailController alloc] init] autorelease];
         self.detailController.hidesBottomBarWhenPushed = YES;
     }
     self.detailController.fontName = self.currentlySelectedFontName;
     self.detailController.fontFamilyName = self.currentlySelectedFontFamily;
     self.detailController.title = self.currentlySelectedFontName;
-    [self.navigationController pushViewController:self.detailController animated:YES];
+
+    [self.navigationController pushViewController:self.detailController 
+                                         animated:YES];
 }
 
 @end

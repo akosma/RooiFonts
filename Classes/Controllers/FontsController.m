@@ -15,8 +15,6 @@
 @property (nonatomic, retain) NSArray *familyNames;
 @property (nonatomic, retain) NSIndexPath *selectedIndexPath;
 
-- (void)setup;
-
 @end
 
 
@@ -28,34 +26,6 @@
 @dynamic currentlySelectedFontName;
 @dynamic currentlySelectedFontFamily;
 
-#pragma mark -
-#pragma mark Constructor and destructor
-
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-    if (self = [super initWithCoder:aDecoder])
-    {
-        [self setup];
-    }
-    return self;
-}
-
-- (id)init
-{
-    if (self = [super initWithStyle:UITableViewStylePlain])
-    {
-        [self setup];
-    }
-    return self;
-}
-
-- (void)setup
-{
-    self.tableView.rowHeight = 50;
-    self.title = @"RooiFonts";
-    self.familyNames = [[UIFont familyNames] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
-}
-
 - (void)dealloc
 {
     self.selectedIndexPath = nil;
@@ -63,8 +33,22 @@
     [super dealloc];
 }
 
-#pragma mark -
-#pragma mark Property accessors
+#pragma mark - UIViewController methods
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.title = @"RooiFonts";
+    self.familyNames = [[UIFont familyNames] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
+}
+
+- (void)didReceiveMemoryWarning 
+{
+    [super didReceiveMemoryWarning];
+    self.familyNames = nil;
+}
+
+#pragma mark - Property accessors
 
 - (NSString *)currentlySelectedFontName
 {
@@ -111,11 +95,26 @@
     return [self.familyNames objectAtIndex:section];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSArray *fontNames = [UIFont fontNamesForFamilyName:[self.familyNames objectAtIndex:indexPath.section]];
+    NSString *fontName = [fontNames objectAtIndex:indexPath.row];
+    UIFont *font = [UIFont fontWithName:fontName size:18.0];
+    CGSize size = [fontName sizeWithFont:font];
+    CGFloat height = size.height + 20.0;
+    if (height < 44.0)
+    {
+        height = 44.0;
+    }
+    return height;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
 {
     NSArray *fontNames = [UIFont fontNamesForFamilyName:[self.familyNames objectAtIndex:indexPath.section]];
-    static NSString *identifier = @"iPhoneFontBrowser";
     NSString *font = [fontNames objectAtIndex:indexPath.row];
+
+    static NSString *identifier = @"iPhoneFontBrowserCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) 
     {
@@ -123,6 +122,7 @@
         cell = [[[UITableViewCell alloc] initWithFrame:rect reuseIdentifier:identifier] autorelease];
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
+    
     cell.textLabel.font = [UIFont fontWithName:font size:18.0];
     cell.textLabel.text =  font;
     return cell;
@@ -135,15 +135,6 @@
     {
         [self.delegate fontsController:self rowSelectedAtIndexPath:indexPath];
     }
-}
-
-#pragma mark -
-#pragma mark UIViewController methods
-
-- (void)didReceiveMemoryWarning 
-{
-    [super didReceiveMemoryWarning];
-    self.familyNames = nil;
 }
 
 @end
