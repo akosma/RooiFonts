@@ -6,12 +6,12 @@
 //  Copyright 2009 akosma software. All rights reserved.
 //
 
-#import "FontDetailController.h"
-#import "RFSizeController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "RFFontDetailController.h"
+#import "RFSizeController.h"
 #import "ComparisonPromptController.h"
 
-@interface FontDetailController ()
+@interface RFFontDetailController ()
 
 @property (nonatomic, retain) UIBarButtonItem *doneButton;
 @property (nonatomic, retain) UIActionSheet *textsActionSheet;
@@ -23,7 +23,7 @@
 
 @end
 
-@implementation FontDetailController
+@implementation RFFontDetailController
 
 @synthesize fontName = _fontName;
 @synthesize fontFamilyName = _fontFamilyName;
@@ -35,27 +35,23 @@
 @synthesize sizeController = _sizeController;
 @synthesize comparativeTexts = _comparativeTexts;
 
-#pragma mark -
-#pragma mark Constructors and destructors
-
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    self.fontName = nil;
-    self.fontFamilyName = nil;
-    self.sizeView = nil;
-    self.sampleView = nil;
-    self.sizeController.delegate = nil;
-    self.sizeController = nil;
-    self.doneButton = nil;
-    self.textsActionSheet = nil;
-    self.otherActionsSheet = nil;
-    self.comparativeTexts = nil;
+    [_fontName release];
+    [_fontFamilyName release];
+    [_sizeView release];
+    [_sampleView release];
+    _sizeController.delegate = nil;
+    [_sizeController release];
+    [_doneButton release];
+    [_textsActionSheet release];
+    [_otherActionsSheet release];
+    [_comparativeTexts release];
     [super dealloc];
 }
 
-#pragma mark -
-#pragma mark UIViewController methods
+#pragma mark - UIViewController methods
 
 - (void)viewDidLoad 
 {
@@ -100,23 +96,12 @@
     [self done:self];
 }
 
-- (void)didReceiveMemoryWarning 
-{
-    [super didReceiveMemoryWarning];
-}
-
-#pragma mark -
-#pragma mark NSNotification handler methods
+#pragma mark - NSNotification handler methods
 
 - (void)shrinkTextView:(NSNotification *)notification
 {
     NSDictionary *dict = [notification userInfo];
-    NSValue *keyboardFrameValue = nil;
-#if (__IPHONE_OS_VERSION_MAX_ALLOWED >= 30200)
-        keyboardFrameValue = [dict objectForKey:UIKeyboardFrameEndUserInfoKey];
-#else
-        keyboardFrameValue = [dict objectForKey:UIKeyboardBoundsUserInfoKey];
-#endif
+    NSValue *keyboardFrameValue = [dict objectForKey:UIKeyboardFrameEndUserInfoKey];
     CGRect bounds = [keyboardFrameValue CGRectValue];
     CGSize size = CGSizeMake(self.sampleView.frame.size.width, self.sampleView.frame.size.height - bounds.size.height);
 
@@ -131,8 +116,7 @@
     self.sampleView.frame = CGRectMake(0.0, origin, size.width, self.view.frame.size.height - origin);
 }
 
-#pragma mark -
-#pragma mark Public methods
+#pragma mark - Public methods
 
 - (void)refresh
 {
@@ -198,8 +182,7 @@
     [self.textsActionSheet showInView:self.navigationController.view];
 }
 
-#pragma mark -
-#pragma mark MFMailComposeViewControllerDelegate methods
+#pragma mark - MFMailComposeViewControllerDelegate methods
 
 - (void)mailComposeController:(MFMailComposeViewController *)composer 
           didFinishWithResult:(MFMailComposeResult)result 
@@ -208,16 +191,14 @@
     [composer dismissModalViewControllerAnimated:YES];
 }
 
-#pragma mark -
-#pragma mark SizeControllerDelegate methods
+#pragma mark - RFSizeControllerDelegate methods
 
 - (void)sizeController:(RFSizeController *)sizeController didChangeSize:(CGFloat)newSize
 {
     [self refresh];
 }
 
-#pragma mark -
-#pragma mark UIActionSheetDelegate methods
+#pragma mark - UIActionSheetDelegate methods
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
@@ -274,8 +255,7 @@
     }
 }
 
-#pragma mark -
-#pragma mark UITextViewDelegate methods
+#pragma mark - UITextViewDelegate methods
 
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView
 {
@@ -283,8 +263,7 @@
     return TRUE;
 }
 
-#pragma mark -
-#pragma mark Private methods
+#pragma mark - Private methods
 
 - (UIImage *)createScreenshot
 {
@@ -308,7 +287,7 @@
 
 // This code comes from 
 // http://www.hive05.com/2008/11/crop-an-image-using-the-iphone-sdk/
-- (UIImage*)imageByCropping:(UIImage *)imageToCrop toRect:(CGRect)rect
+- (UIImage *)imageByCropping:(UIImage *)imageToCrop toRect:(CGRect)rect
 {
     //create a context to do our clipping in
     UIGraphicsBeginImageContext(rect.size);

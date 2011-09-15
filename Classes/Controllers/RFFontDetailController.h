@@ -13,22 +13,10 @@
 
 @class RFSizeController;
 
-@interface FontDetailController : UIViewController <UITextViewDelegate,
+@interface RFFontDetailController : UIViewController <UITextViewDelegate,
                                                     RFSizeControllerDelegate,
                                                     UIActionSheetDelegate,
                                                     MFMailComposeViewControllerDelegate>
-{
-@private
-    UITextView *_sampleView;
-    UIView *_sizeView;
-    UIBarButtonItem *_doneButton;
-    UIActionSheet *_textsActionSheet;
-    UIActionSheet *_otherActionsSheet;
-    RFSizeController *_sizeController;
-    NSString *_fontName;
-    NSString *_fontFamilyName;
-    NSArray *_comparativeTexts;
-}
 
 @property (nonatomic, retain) IBOutlet RFSizeController *sizeController;
 @property (nonatomic, retain) IBOutlet UIView *sizeView;

@@ -7,7 +7,7 @@
 //
 
 #import "RFMainController.h"
-#import "FontDetailController.h"
+#import "RFFontDetailController.h"
 #import "UIFont+FontList.h"
 #import "RFAboutController.h"
 
@@ -15,7 +15,7 @@
 
 @property (nonatomic, retain) UIActionSheet *toolbarActionSheet;
 @property (nonatomic, retain) RFAboutController *aboutBox;
-@property (nonatomic, retain) FontDetailController *detailController;
+@property (nonatomic, retain) RFFontDetailController *detailController;
 
 - (void)viewCurrentlySelectedFont;
 
@@ -143,7 +143,7 @@
 {
     if (self.detailController == nil)
     {
-        self.detailController = [[[FontDetailController alloc] init] autorelease];
+        self.detailController = [[[RFFontDetailController alloc] init] autorelease];
         self.detailController.hidesBottomBarWhenPushed = YES;
     }
     self.detailController.fontName = self.currentlySelectedFontName;

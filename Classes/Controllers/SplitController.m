@@ -8,7 +8,7 @@
 
 #import "SplitController.h"
 #import "RFFontsController.h"
-#import "FontDetailController.h"
+#import "RFFontDetailController.h"
 
 @implementation SplitController
 

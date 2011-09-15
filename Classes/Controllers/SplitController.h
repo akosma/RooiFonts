@@ -10,16 +10,16 @@
 #import "RFFontsControllerDelegate.h"
 
 @class RFFontsController;
-@class FontDetailController;
+@class RFFontDetailController;
 
 @interface SplitController : UIViewController <RFFontsControllerDelegate>
 {
 @private
     RFFontsController *_fontsController;
-    FontDetailController *_fontDetailController;
+    RFFontDetailController *_fontDetailController;
 }
 
 @property (nonatomic, retain) IBOutlet RFFontsController *fontsController;
-@property (nonatomic, retain) IBOutlet FontDetailController *fontDetailController;
+@property (nonatomic, retain) IBOutlet RFFontDetailController *fontDetailController;
 
 @end
