@@ -37,8 +37,7 @@
     [super dealloc];
 }
 
-#pragma mark -
-#pragma mark SizeControllerDelegate methods
+#pragma mark - SizeControllerDelegate methods
 
 - (void)sizeController:(RFSizeController *)sizeController didChangeSize:(CGFloat)newSize
 {
@@ -48,8 +47,7 @@
     self.bottomView.font = bottomFont;
 }
 
-#pragma mark -
-#pragma mark UIViewController methods
+#pragma mark - UIViewController methods
 
 - (void)viewWillAppear:(BOOL)animated
 {

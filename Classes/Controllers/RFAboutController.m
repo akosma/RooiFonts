@@ -31,13 +31,6 @@
 
 #pragma mark - UIViewController methods
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    NSString *titleText = NSLocalizedString(@"About RooiFonts", @"Title of the about screen");
-    self.title = titleText;
-}
-
 - (void)didReceiveMemoryWarning 
 {
     [super didReceiveMemoryWarning];

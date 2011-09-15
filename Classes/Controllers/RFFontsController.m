@@ -70,8 +70,7 @@
     return fontFamily;
 }
 
-#pragma mark -
-#pragma mark UITableView delegate methods
+#pragma mark - UITableView delegate methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView 
 {
