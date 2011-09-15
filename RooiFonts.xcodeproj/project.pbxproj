@@ -20,7 +20,7 @@
 		3A65E8E30FEECC15005CA383 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A65E8E20FEECC15005CA383 /* CoreGraphics.framework */; };
 		3A65E8E50FEECC15005CA383 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A65E8E40FEECC15005CA383 /* Foundation.framework */; };
 		3A65E8E70FEECC15005CA383 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A65E8E60FEECC15005CA383 /* UIKit.framework */; };
-		3A65E9A60FEED5C6005CA383 /* AboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A65E99B0FEED5C6005CA383 /* AboutController.m */; };
+		3A65E9A60FEED5C6005CA383 /* RFAboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A65E99B0FEED5C6005CA383 /* RFAboutController.m */; };
 		3A65E9A70FEED5C6005CA383 /* FontDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A65E99D0FEED5C6005CA383 /* FontDetailController.m */; };
 		3A65E9A80FEED5C6005CA383 /* RFFontsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A65E99F0FEED5C6005CA383 /* RFFontsController.m */; };
 		3A65E9A90FEED5C6005CA383 /* NSString+FirstLetters.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A65E9A20FEED5C6005CA383 /* NSString+FirstLetters.m */; };
@@ -35,7 +35,7 @@
 		3A7C75E111AED16400FA4065 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7C75DD11AED16400FA4065 /* MainWindow-iPad.xib */; };
 		3AAC5F781422453900C65725 /* Entitlements.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 3AAC5F771422453900C65725 /* Entitlements.entitlements */; };
 		3AAC5F8E14224B9C00C65725 /* ComparisonDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AAC5F8614224B9C00C65725 /* ComparisonDetail.xib */; };
-		3AAC5F8F14224B9C00C65725 /* AboutController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AAC5F8714224B9C00C65725 /* AboutController.xib */; };
+		3AAC5F8F14224B9C00C65725 /* RFAboutController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AAC5F8714224B9C00C65725 /* RFAboutController.xib */; };
 		3AAC5F9014224B9C00C65725 /* FontDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AAC5F8A14224B9C00C65725 /* FontDetail.xib */; };
 		3AAC5F9114224B9C00C65725 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AAC5F8C14224B9C00C65725 /* MainWindow.xib */; };
 		3AAC5F9214224B9C00C65725 /* RFSizeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AAC5F8D14224B9C00C65725 /* RFSizeController.xib */; };
@@ -66,8 +66,8 @@
 		3A65E8E20FEECC15005CA383 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3A65E8E40FEECC15005CA383 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3A65E8E60FEECC15005CA383 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		3A65E99A0FEED5C6005CA383 /* AboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutController.h; sourceTree = "<group>"; };
-		3A65E99B0FEED5C6005CA383 /* AboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutController.m; sourceTree = "<group>"; };
+		3A65E99A0FEED5C6005CA383 /* RFAboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = RFAboutController.h; sourceTree = "<group>"; };
+		3A65E99B0FEED5C6005CA383 /* RFAboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFAboutController.m; sourceTree = "<group>"; };
 		3A65E99C0FEED5C6005CA383 /* FontDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontDetailController.h; sourceTree = "<group>"; };
 		3A65E99D0FEED5C6005CA383 /* FontDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontDetailController.m; sourceTree = "<group>"; };
 		3A65E99E0FEED5C6005CA383 /* RFFontsController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = RFFontsController.h; sourceTree = "<group>"; };
@@ -87,10 +87,10 @@
 		3A7C75DD11AED16400FA4065 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		3AAC5F771422453900C65725 /* Entitlements.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Entitlements.entitlements; sourceTree = "<group>"; };
 		3AAC5F8614224B9C00C65725 /* ComparisonDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComparisonDetail.xib; sourceTree = "<group>"; };
-		3AAC5F8814224B9C00C65725 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/AboutController.xib; sourceTree = "<group>"; };
-		3AAC5F8914224B9C00C65725 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/AboutController.xib; sourceTree = "<group>"; };
+		3AAC5F8814224B9C00C65725 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RFAboutController.xib; sourceTree = "<group>"; };
+		3AAC5F8914224B9C00C65725 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/RFAboutController.xib; sourceTree = "<group>"; };
 		3AAC5F8A14224B9C00C65725 /* FontDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FontDetail.xib; sourceTree = "<group>"; };
-		3AAC5F8B14224B9C00C65725 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/AboutController.xib; sourceTree = "<group>"; };
+		3AAC5F8B14224B9C00C65725 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/RFAboutController.xib; sourceTree = "<group>"; };
 		3AAC5F8C14224B9C00C65725 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		3AAC5F8D14224B9C00C65725 /* RFSizeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RFSizeController.xib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
@@ -178,8 +178,8 @@
 				3A65E99E0FEED5C6005CA383 /* RFFontsController.h */,
 				3A65E99F0FEED5C6005CA383 /* RFFontsController.m */,
 				3A2969D80FEF679300D0A771 /* RFFontsControllerDelegate.h */,
-				3A65E99A0FEED5C6005CA383 /* AboutController.h */,
-				3A65E99B0FEED5C6005CA383 /* AboutController.m */,
+				3A65E99A0FEED5C6005CA383 /* RFAboutController.h */,
+				3A65E99B0FEED5C6005CA383 /* RFAboutController.m */,
 				3A65E99C0FEED5C6005CA383 /* FontDetailController.h */,
 				3A65E99D0FEED5C6005CA383 /* FontDetailController.m */,
 				3A296A410FEF700900D0A771 /* ComparisonPromptController.h */,
@@ -262,7 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				3AAC5F8614224B9C00C65725 /* ComparisonDetail.xib */,
-				3AAC5F8714224B9C00C65725 /* AboutController.xib */,
+				3AAC5F8714224B9C00C65725 /* RFAboutController.xib */,
 				3AAC5F8A14224B9C00C65725 /* FontDetail.xib */,
 				3AAC5F8C14224B9C00C65725 /* MainWindow.xib */,
 				3AAC5F8D14224B9C00C65725 /* RFSizeController.xib */,
@@ -338,7 +338,7 @@
 				3A66C07611AF03BE0029BCE2 /* FontDetail-iPad.xib in Resources */,
 				3AAC5F781422453900C65725 /* Entitlements.entitlements in Resources */,
 				3AAC5F8E14224B9C00C65725 /* ComparisonDetail.xib in Resources */,
-				3AAC5F8F14224B9C00C65725 /* AboutController.xib in Resources */,
+				3AAC5F8F14224B9C00C65725 /* RFAboutController.xib in Resources */,
 				3AAC5F9014224B9C00C65725 /* FontDetail.xib in Resources */,
 				3AAC5F9114224B9C00C65725 /* MainWindow.xib in Resources */,
 				3AAC5F9214224B9C00C65725 /* RFSizeController.xib in Resources */,
@@ -353,7 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
-				3A65E9A60FEED5C6005CA383 /* AboutController.m in Sources */,
+				3A65E9A60FEED5C6005CA383 /* RFAboutController.m in Sources */,
 				3A65E9A70FEED5C6005CA383 /* FontDetailController.m in Sources */,
 				3A65E9A80FEED5C6005CA383 /* RFFontsController.m in Sources */,
 				3A65E9A90FEED5C6005CA383 /* NSString+FirstLetters.m in Sources */,
@@ -380,14 +380,14 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		3AAC5F8714224B9C00C65725 /* AboutController.xib */ = {
+		3AAC5F8714224B9C00C65725 /* RFAboutController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3AAC5F8814224B9C00C65725 /* en */,
 				3AAC5F8914224B9C00C65725 /* es */,
 				3AAC5F8B14224B9C00C65725 /* fr */,
 			);
-			name = AboutController.xib;
+			name = RFAboutController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

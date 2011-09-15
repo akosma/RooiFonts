@@ -6,9 +6,9 @@
 //  Copyright 2009 akosma software. All rights reserved.
 //
 
-#import "AboutController.h"
+#import "RFAboutController.h"
 
-@implementation AboutController
+@implementation RFAboutController
 
 #pragma mark - IBAction methods
 

@@ -8,10 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AboutController : UIViewController 
-{
-
-}
+@interface RFAboutController : UIViewController 
 
 - (IBAction)done:(id)sender;
 - (IBAction)akosma:(id)sender;

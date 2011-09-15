@@ -9,12 +9,12 @@
 #import "RFMainController.h"
 #import "FontDetailController.h"
 #import "UIFont+FontList.h"
-#import "AboutController.h"
+#import "RFAboutController.h"
 
 @interface RFMainController ()
 
 @property (nonatomic, retain) UIActionSheet *toolbarActionSheet;
-@property (nonatomic, retain) AboutController *aboutBox;
+@property (nonatomic, retain) RFAboutController *aboutBox;
 @property (nonatomic, retain) FontDetailController *detailController;
 
 - (void)viewCurrentlySelectedFont;
@@ -65,7 +65,7 @@
 {
     if (self.aboutBox == nil)
     {
-        self.aboutBox = [[[AboutController alloc] init] autorelease];
+        self.aboutBox = [[[RFAboutController alloc] init] autorelease];
     }
     [self presentModalViewController:self.aboutBox animated:YES];
 }
