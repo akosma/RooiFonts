@@ -14,5 +14,6 @@
 @property (nonatomic, assign) IBOutlet id<RFFontsControllerDelegate> delegate;
 @property (nonatomic, readonly) NSString *currentlySelectedFontName;
 @property (nonatomic, readonly) NSString *currentlySelectedFontFamily;
+@property (nonatomic, retain) NSIndexPath *selectedIndexPath;
 
 @end

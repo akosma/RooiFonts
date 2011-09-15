@@ -12,7 +12,6 @@
 @interface RFFontsController ()
 
 @property (nonatomic, retain) NSArray *familyNames;
-@property (nonatomic, retain) NSIndexPath *selectedIndexPath;
 
 @end
 
