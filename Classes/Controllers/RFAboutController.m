@@ -31,9 +31,9 @@
 
 #pragma mark - UIViewController methods
 
-- (void)didReceiveMemoryWarning 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
-    [super didReceiveMemoryWarning];
+    return (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
 }
 
 @end
