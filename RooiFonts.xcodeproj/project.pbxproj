@@ -27,7 +27,7 @@
 		3A65E9AA0FEED5C6005CA383 /* UIFont+RooiFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A65E9A40FEED5C6005CA383 /* UIFont+RooiFonts.m */; };
 		3A65E9B50FEED5F5005CA383 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A65E9AE0FEED5F5005CA383 /* Default.png */; };
 		3A65E9B60FEED5F5005CA383 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A65E9AF0FEED5F5005CA383 /* Icon.png */; };
-		3A66C07611AF03BE0029BCE2 /* FontDetail-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A66C07511AF03BE0029BCE2 /* FontDetail-iPad.xib */; };
+		3A66C07611AF03BE0029BCE2 /* RFFontDetailControllerPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A66C07511AF03BE0029BCE2 /* RFFontDetailControllerPad.xib */; };
 		3A7C75DE11AED16400FA4065 /* Icon-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7C75D911AED16400FA4065 /* Icon-ipad.png */; };
 		3A7C75DF11AED16400FA4065 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7C75DA11AED16400FA4065 /* Icon-Small-50.png */; };
 		3A7C75E011AED16400FA4065 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7C75DB11AED16400FA4065 /* Icon-Small.png */; };
@@ -38,6 +38,9 @@
 		3AAC5F9014224B9C00C65725 /* RFFontDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AAC5F8A14224B9C00C65725 /* RFFontDetailController.xib */; };
 		3AAC5F9114224B9C00C65725 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AAC5F8C14224B9C00C65725 /* MainWindow.xib */; };
 		3AAC5F9214224B9C00C65725 /* RFSizeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AAC5F8D14224B9C00C65725 /* RFSizeController.xib */; };
+		3AAC5F98142258BA00C65725 /* RFAppDelegatePad.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AAC5F97142258BA00C65725 /* RFAppDelegatePad.m */; };
+		3AAC5F9B142259D700C65725 /* RFSplitController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AAC5F9A142259D700C65725 /* RFSplitController.m */; };
+		3AAC5FD414225B6100C65725 /* RFFontDetailControllerPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AAC5FD314225B6000C65725 /* RFFontDetailControllerPad.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,13 +74,13 @@
 		3A65E99D0FEED5C6005CA383 /* RFFontDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFFontDetailController.m; sourceTree = "<group>"; };
 		3A65E99E0FEED5C6005CA383 /* RFFontsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFFontsController.h; sourceTree = "<group>"; };
 		3A65E99F0FEED5C6005CA383 /* RFFontsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFFontsController.m; sourceTree = "<group>"; };
-		3A65E9A10FEED5C6005CA383 /* NSString+RooiFonts.h */ = {isa = PBXFileReference; fileEncoding = 4; path = "NSString+RooiFonts.h"; sourceTree = "<group>"; };
+		3A65E9A10FEED5C6005CA383 /* NSString+RooiFonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RooiFonts.h"; sourceTree = "<group>"; };
 		3A65E9A20FEED5C6005CA383 /* NSString+RooiFonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RooiFonts.m"; sourceTree = "<group>"; };
-		3A65E9A30FEED5C6005CA383 /* UIFont+RooiFonts.h */ = {isa = PBXFileReference; fileEncoding = 4; path = "UIFont+RooiFonts.h"; sourceTree = "<group>"; };
+		3A65E9A30FEED5C6005CA383 /* UIFont+RooiFonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+RooiFonts.h"; sourceTree = "<group>"; };
 		3A65E9A40FEED5C6005CA383 /* UIFont+RooiFonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+RooiFonts.m"; sourceTree = "<group>"; };
 		3A65E9AE0FEED5F5005CA383 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		3A65E9AF0FEED5F5005CA383 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		3A66C07511AF03BE0029BCE2 /* FontDetail-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "FontDetail-iPad.xib"; sourceTree = "<group>"; };
+		3A66C07511AF03BE0029BCE2 /* RFFontDetailControllerPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RFFontDetailControllerPad.xib; sourceTree = "<group>"; };
 		3A7C75D911AED16400FA4065 /* Icon-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-ipad.png"; sourceTree = "<group>"; };
 		3A7C75DA11AED16400FA4065 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
 		3A7C75DB11AED16400FA4065 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
@@ -90,6 +93,12 @@
 		3AAC5F8B14224B9C00C65725 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/RFAboutController.xib; sourceTree = "<group>"; };
 		3AAC5F8C14224B9C00C65725 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		3AAC5F8D14224B9C00C65725 /* RFSizeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RFSizeController.xib; sourceTree = "<group>"; };
+		3AAC5F96142258BA00C65725 /* RFAppDelegatePad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFAppDelegatePad.h; sourceTree = "<group>"; };
+		3AAC5F97142258BA00C65725 /* RFAppDelegatePad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFAppDelegatePad.m; sourceTree = "<group>"; };
+		3AAC5F99142259D700C65725 /* RFSplitController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFSplitController.h; sourceTree = "<group>"; };
+		3AAC5F9A142259D700C65725 /* RFSplitController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFSplitController.m; sourceTree = "<group>"; };
+		3AAC5FD214225B6000C65725 /* RFFontDetailControllerPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFFontDetailControllerPad.h; sourceTree = "<group>"; };
+		3AAC5FD314225B6000C65725 /* RFFontDetailControllerPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFFontDetailControllerPad.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,6 +163,7 @@
 				3A65E9960FEED5C6005CA383 /* AppDelegate */,
 				3A65E9990FEED5C6005CA383 /* Controllers */,
 				3A65E9A00FEED5C6005CA383 /* Helpers */,
+				3AAC5F931422583000C65725 /* iPad */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -248,7 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				3A7C75DD11AED16400FA4065 /* MainWindow-iPad.xib */,
-				3A66C07511AF03BE0029BCE2 /* FontDetail-iPad.xib */,
+				3A66C07511AF03BE0029BCE2 /* RFFontDetailControllerPad.xib */,
 			);
 			path = NIBs;
 			sourceTree = "<group>";
@@ -263,6 +273,35 @@
 				3AAC5F8D14224B9C00C65725 /* RFSizeController.xib */,
 			);
 			path = NIBs;
+			sourceTree = "<group>";
+		};
+		3AAC5F931422583000C65725 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				3AAC5F941422589400C65725 /* AppDelegate */,
+				3AAC5F951422589400C65725 /* Controllers */,
+			);
+			path = iPad;
+			sourceTree = "<group>";
+		};
+		3AAC5F941422589400C65725 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				3AAC5F96142258BA00C65725 /* RFAppDelegatePad.h */,
+				3AAC5F97142258BA00C65725 /* RFAppDelegatePad.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		3AAC5F951422589400C65725 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3AAC5F99142259D700C65725 /* RFSplitController.h */,
+				3AAC5F9A142259D700C65725 /* RFSplitController.m */,
+				3AAC5FD214225B6000C65725 /* RFFontDetailControllerPad.h */,
+				3AAC5FD314225B6000C65725 /* RFFontDetailControllerPad.m */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,7 +369,7 @@
 				3A7C75DF11AED16400FA4065 /* Icon-Small-50.png in Resources */,
 				3A7C75E011AED16400FA4065 /* Icon-Small.png in Resources */,
 				3A7C75E111AED16400FA4065 /* MainWindow-iPad.xib in Resources */,
-				3A66C07611AF03BE0029BCE2 /* FontDetail-iPad.xib in Resources */,
+				3A66C07611AF03BE0029BCE2 /* RFFontDetailControllerPad.xib in Resources */,
 				3AAC5F781422453900C65725 /* Entitlements.entitlements in Resources */,
 				3AAC5F8E14224B9C00C65725 /* RFComparisonDetailController.xib in Resources */,
 				3AAC5F8F14224B9C00C65725 /* RFAboutController.xib in Resources */,
@@ -358,6 +397,9 @@
 				3A296A430FEF700900D0A771 /* RFComparisonPromptController.m in Sources */,
 				3A296A7C0FEF786F00D0A771 /* RFSizeController.m in Sources */,
 				3A31F2D00FEFA40800460062 /* RFComparisonDetailController.m in Sources */,
+				3AAC5F98142258BA00C65725 /* RFAppDelegatePad.m in Sources */,
+				3AAC5F9B142259D700C65725 /* RFSplitController.m in Sources */,
+				3AAC5FD414225B6100C65725 /* RFFontDetailControllerPad.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

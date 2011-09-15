@@ -14,12 +14,12 @@
 @interface RFFontDetailController ()
 
 @property (nonatomic, retain) UIBarButtonItem *doneButton;
-@property (nonatomic, retain) UIActionSheet *textsActionSheet;
-@property (nonatomic, retain) UIActionSheet *otherActionsSheet;
 @property (nonatomic, retain) NSArray *comparativeTexts;
 
 - (UIImage *)createScreenshot;
 - (UIImage*)imageByCropping:(UIImage *)imageToCrop toRect:(CGRect)rect;
+- (void)showActionSheet;
+- (void)showTextsSheet;
 
 @end
 
@@ -155,7 +155,7 @@
                                                 destructiveButtonTitle:nil
                                                      otherButtonTitles:screenshotOption, copyOption, compareOption, nil] autorelease];
     }
-    [self.otherActionsSheet showInView:self.navigationController.view];
+    [self showActionSheet];
 }
 
 - (IBAction)showComparativeTexts:(id)sender
@@ -179,7 +179,7 @@
         [self.textsActionSheet addButtonWithTitle:cancelButtonText];
         self.textsActionSheet.cancelButtonIndex = [self.comparativeTexts count];
     }
-    [self.textsActionSheet showInView:self.navigationController.view];
+    [self showTextsSheet];
 }
 
 #pragma mark - MFMailComposeViewControllerDelegate methods
@@ -263,6 +263,16 @@
 }
 
 #pragma mark - Private methods
+
+- (void)showActionSheet
+{
+    [self.otherActionsSheet showInView:self.navigationController.view];
+}
+
+- (void)showTextsSheet
+{
+    [self.textsActionSheet showInView:self.navigationController.view];
+}
 
 - (UIImage *)createScreenshot
 {

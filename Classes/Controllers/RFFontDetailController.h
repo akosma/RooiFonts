@@ -23,6 +23,8 @@
 @property (nonatomic, retain) IBOutlet UITextView *sampleView;
 @property (nonatomic, copy) NSString *fontName;
 @property (nonatomic, copy) NSString *fontFamilyName;
+@property (nonatomic, retain) UIActionSheet *textsActionSheet;
+@property (nonatomic, retain) UIActionSheet *otherActionsSheet;
 
 - (IBAction)action:(id)sender;
 - (IBAction)done:(id)sender;

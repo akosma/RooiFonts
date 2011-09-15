@@ -47,6 +47,11 @@
     self.familyNames = nil;
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+}
+
 #pragma mark - Property accessors
 
 - (NSString *)currentlySelectedFontName
