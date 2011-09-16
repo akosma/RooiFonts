@@ -17,7 +17,6 @@
 @property (nonatomic, retain) NSArray *comparativeTexts;
 
 - (UIImage *)createScreenshot;
-- (UIImage*)imageByCropping:(UIImage *)imageToCrop toRect:(CGRect)rect;
 - (void)showActionSheet;
 - (void)showTextsSheet;
 
@@ -147,7 +146,7 @@
         NSString *compareOption = NSLocalizedString(@"Compare with...", 
                                                     @"'Compare' option of the action menu in the detail screen");
         NSString *cancelButtonText = NSLocalizedString(@"Cancel", 
-                                                    @"'Cancel' button in action menus");
+                                                       @"'Cancel' button in action menus");
         
         self.otherActionsSheet = [[[UIActionSheet alloc] initWithTitle:@""
                                                         delegate:self 
@@ -214,7 +213,9 @@
 
                 NSMutableString *message = [[NSMutableString alloc] init];
                 NSString *messageBody = NSLocalizedString(@"EMAIL_GREETING", @"Text sent via e-mail, below the font image.");
-                [message appendFormat:messageBody, self.fontName, self.sizeController.size];
+                BOOL isPhone = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone);
+                NSString *device = (isPhone) ? @"iPhone" : @"iPad";
+                [message appendFormat:messageBody, self.fontName, self.sizeController.size, device];
                 NSString *subject = [NSString stringWithFormat:@"%@ screenshot", self.fontName];
                 [picker setSubject:subject];
                 [picker setMessageBody:message isHTML:NO];
@@ -283,55 +284,14 @@
     // To remove the warning (missing renderInContext: method), add 
     // #import <QuartzCore/QuartzCore.h>
     // at the top of the file.
-    [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    [self.sampleView.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
     // Save to local photo album
     UIImageWriteToSavedPhotosAlbum(viewImage, self, nil, nil);
     
-    // Crop image to remove UI widgets and return
-    return [self imageByCropping:viewImage toRect:self.sampleView.frame];
-}
-
-// This code comes from 
-// http://www.hive05.com/2008/11/crop-an-image-using-the-iphone-sdk/
-- (UIImage *)imageByCropping:(UIImage *)imageToCrop toRect:(CGRect)rect
-{
-    //create a context to do our clipping in
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef currentContext = UIGraphicsGetCurrentContext();
-    
-    //create a rect with the size we want to crop the image to
-    //the X and Y here are zero so we start at the beginning of our
-    //newly created context
-    CGRect clippedRect = CGRectMake(0, 0, rect.size.width, rect.size.height);
-    CGContextClipToRect( currentContext, clippedRect);
-    
-    //create a rect equivalent to the full size of the image
-    //offset the rect by the X and Y we want to start the crop
-    //from in order to cut off anything before them
-    CGRect drawRect = CGRectMake(rect.origin.x * -1,
-                                 rect.origin.y * -1,
-                                 imageToCrop.size.width,
-                                 imageToCrop.size.height);
-
-    // This fix comes from one of the comments in page where this
-    // code was copied from...
-    CGContextTranslateCTM(currentContext, 0.0, rect.size.height);
-    CGContextScaleCTM(currentContext, 1.0, -1.0);
-
-    //draw the image to our clipped context using our offset rect
-    CGContextDrawImage(currentContext, drawRect, imageToCrop.CGImage);
-    
-    //pull the image from our cropped context
-    UIImage *cropped = UIGraphicsGetImageFromCurrentImageContext();
-    
-    //pop the context to get back to the default
-    UIGraphicsEndImageContext();
-    
-    //Note: this is autoreleased
-    return cropped;
+    return viewImage;
 }
 
 @end
