@@ -11,6 +11,7 @@
 		3A082B041423278900629C7A /* RFFontInfoControllerPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A082B031423278900629C7A /* RFFontInfoControllerPad.m */; };
 		3A082B0B1423336A00629C7A /* RFFontInfoControllerPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A082B0A1423336A00629C7A /* RFFontInfoControllerPad.xib */; };
 		3A082B111423426300629C7A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A082B0D1423426300629C7A /* Localizable.strings */; };
+		3A082B15142346C000629C7A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A082B14142346C000629C7A /* Default@2x.png */; };
 		3A21C0561422868B00700A04 /* RFFontsControllerPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A21C0551422868B00700A04 /* RFFontsControllerPad.m */; };
 		3A21C05A14228F2000700A04 /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A21C05814228F2000700A04 /* Default-Landscape.png */; };
 		3A21C05B14228F2000700A04 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A21C05914228F2000700A04 /* Default-Portrait.png */; };
@@ -57,6 +58,7 @@
 		3A082B0E1423426300629C7A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3A082B0F1423426300629C7A /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3A082B101423426300629C7A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3A082B14142346C000629C7A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		3A21C0541422868B00700A04 /* RFFontsControllerPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFFontsControllerPad.h; sourceTree = "<group>"; };
 		3A21C0551422868B00700A04 /* RFFontsControllerPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFFontsControllerPad.m; sourceTree = "<group>"; };
 		3A21C05814228F2000700A04 /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape.png"; sourceTree = "<group>"; };
@@ -247,9 +249,10 @@
 		3A65E9AD0FEED5F5005CA383 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3A082B14142346C000629C7A /* Default@2x.png */,
+				3A65E9AE0FEED5F5005CA383 /* Default.png */,
 				3A4CA9B01014D1590050FF99 /* bluewoki.png */,
 				3A3F6BB10FEFE1C300F65169 /* chat.png */,
-				3A65E9AE0FEED5F5005CA383 /* Default.png */,
 				3A65E9AF0FEED5F5005CA383 /* Icon.png */,
 			);
 			path = Images;
@@ -406,6 +409,7 @@
 				3A21C05B14228F2000700A04 /* Default-Portrait.png in Resources */,
 				3A082B0B1423336A00629C7A /* RFFontInfoControllerPad.xib in Resources */,
 				3A082B111423426300629C7A /* Localizable.strings in Resources */,
+				3A082B15142346C000629C7A /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
