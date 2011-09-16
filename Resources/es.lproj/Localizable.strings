@@ -32,5 +32,5 @@
 "Send list via e-mail" = "Enviar lista por e-mail";
 
 /* Text sent via e-mail, below the font image. */
-"EMAIL_GREETING" = "Así se ve %1$@ a %2$.0f puntos en el iPhone \
-\n\nEnviado por RooiFonts - http://rooifonts.com/";
+"EMAIL_GREETING" = "Así se ve %1$@ a %2$.0f puntos en el %3$@. \
+\nEnviado desde RooiFonts - http://rooifonts.com/";
