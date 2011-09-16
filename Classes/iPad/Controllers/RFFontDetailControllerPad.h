@@ -13,5 +13,8 @@
 @property (nonatomic, retain) IBOutlet UIToolbar *toolbar;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *actionButtonItem;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *textButtonItem;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *infoButtonItem;
+
+- (IBAction)showFontInfo:(id)sender;
 
 @end
