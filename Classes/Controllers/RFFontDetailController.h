@@ -31,6 +31,7 @@
 - (IBAction)done:(id)sender;
 - (IBAction)clear:(id)sender;
 - (IBAction)showComparativeTexts:(id)sender;
+- (void)showActionSheet;
 - (void)refresh;
 
 @end

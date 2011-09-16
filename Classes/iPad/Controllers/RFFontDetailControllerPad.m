@@ -79,6 +79,26 @@
                                              animated:YES];
 }
 
+- (IBAction)action:(id)sender
+{
+    if (self.otherActionsSheet == nil)
+    {
+        NSString *screenshotOption = NSLocalizedString(@"Screenshot via e-mail", 
+                                                       @"'Screenshot' entry of the action menu in the detail screen");
+        NSString *copyOption = NSLocalizedString(@"Copy name", 
+                                                 @"'Copy' entry of the action menu in the detail screen");
+        NSString *cancelButtonText = NSLocalizedString(@"Cancel", 
+                                                       @"'Cancel' button in action menus");
+        
+        self.otherActionsSheet = [[[UIActionSheet alloc] initWithTitle:@""
+                                                              delegate:self 
+                                                     cancelButtonTitle:cancelButtonText
+                                                destructiveButtonTitle:nil
+                                                     otherButtonTitles:screenshotOption, copyOption, nil] autorelease];
+    }
+    [self showActionSheet];
+}
+
 #pragma mark - Overridden methods
 
 - (void)showActionSheet

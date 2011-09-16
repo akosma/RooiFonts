@@ -17,7 +17,6 @@
 @property (nonatomic, retain) NSArray *comparativeTexts;
 
 - (UIImage *)createScreenshot;
-- (void)showActionSheet;
 - (void)showTextsSheet;
 
 @end
