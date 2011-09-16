@@ -10,6 +10,7 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		3A082B041423278900629C7A /* RFFontInfoControllerPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A082B031423278900629C7A /* RFFontInfoControllerPad.m */; };
 		3A082B0B1423336A00629C7A /* RFFontInfoControllerPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A082B0A1423336A00629C7A /* RFFontInfoControllerPad.xib */; };
+		3A082B111423426300629C7A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A082B0D1423426300629C7A /* Localizable.strings */; };
 		3A21C0561422868B00700A04 /* RFFontsControllerPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A21C0551422868B00700A04 /* RFFontsControllerPad.m */; };
 		3A21C05A14228F2000700A04 /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A21C05814228F2000700A04 /* Default-Landscape.png */; };
 		3A21C05B14228F2000700A04 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A21C05914228F2000700A04 /* Default-Portrait.png */; };
@@ -19,7 +20,6 @@
 		3A296A7C0FEF786F00D0A771 /* RFSizeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A296A7B0FEF786F00D0A771 /* RFSizeController.m */; };
 		3A31F2D00FEFA40800460062 /* RFComparisonDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A31F2CF0FEFA40800460062 /* RFComparisonDetailController.m */; };
 		3A3F6BB20FEFE1C300F65169 /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A3F6BB10FEFE1C300F65169 /* chat.png */; };
-		3A4CA95B1014BFD70050FF99 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A4CA95A1014BFD70050FF99 /* Localizable.strings */; };
 		3A4CA9B11014D1590050FF99 /* bluewoki.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A4CA9B01014D1590050FF99 /* bluewoki.png */; };
 		3A65E8DF0FEECBF2005CA383 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A65E8DE0FEECBF2005CA383 /* MessageUI.framework */; };
 		3A65E8E30FEECC15005CA383 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A65E8E20FEECC15005CA383 /* CoreGraphics.framework */; };
@@ -54,6 +54,9 @@
 		3A082B021423278900629C7A /* RFFontInfoControllerPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFFontInfoControllerPad.h; sourceTree = "<group>"; };
 		3A082B031423278900629C7A /* RFFontInfoControllerPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFFontInfoControllerPad.m; sourceTree = "<group>"; };
 		3A082B0A1423336A00629C7A /* RFFontInfoControllerPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RFFontInfoControllerPad.xib; sourceTree = "<group>"; };
+		3A082B0E1423426300629C7A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3A082B0F1423426300629C7A /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3A082B101423426300629C7A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3A21C0541422868B00700A04 /* RFFontsControllerPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFFontsControllerPad.h; sourceTree = "<group>"; };
 		3A21C0551422868B00700A04 /* RFFontsControllerPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFFontsControllerPad.m; sourceTree = "<group>"; };
 		3A21C05814228F2000700A04 /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape.png"; sourceTree = "<group>"; };
@@ -72,9 +75,6 @@
 		3A31F2CE0FEFA40800460062 /* RFComparisonDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFComparisonDetailController.h; sourceTree = "<group>"; };
 		3A31F2CF0FEFA40800460062 /* RFComparisonDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFComparisonDetailController.m; sourceTree = "<group>"; };
 		3A3F6BB10FEFE1C300F65169 /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat.png; sourceTree = "<group>"; };
-		3A4CA95E1014C07A0050FF99 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3A4CA96F1014C1240050FF99 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3A4CA9731014C1DA0050FF99 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3A4CA9B01014D1590050FF99 /* bluewoki.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluewoki.png; sourceTree = "<group>"; };
 		3A65E8DE0FEECBF2005CA383 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		3A65E8E20FEECC15005CA383 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -169,6 +169,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3A082B0C1423426300629C7A /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				3A082B0D1423426300629C7A /* Localizable.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
 		3A65E9950FEED5C6005CA383 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,9 +234,9 @@
 		3A65E9AB0FEED5F5005CA383 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3A4CA95A1014BFD70050FF99 /* Localizable.strings */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				3AAC5F771422453900C65725 /* Entitlements.entitlements */,
+				3A082B0C1423426300629C7A /* Strings */,
 				3AAC5F8514224B9C00C65725 /* NIBs */,
 				3A65E9AD0FEED5F5005CA383 /* Images */,
 				3A7C75D711AED16400FA4065 /* iPad */,
@@ -382,7 +390,6 @@
 				3A65E9B50FEED5F5005CA383 /* Default.png in Resources */,
 				3A65E9B60FEED5F5005CA383 /* Icon.png in Resources */,
 				3A3F6BB20FEFE1C300F65169 /* chat.png in Resources */,
-				3A4CA95B1014BFD70050FF99 /* Localizable.strings in Resources */,
 				3A4CA9B11014D1590050FF99 /* bluewoki.png in Resources */,
 				3A7C75DE11AED16400FA4065 /* Icon-ipad.png in Resources */,
 				3A7C75DF11AED16400FA4065 /* Icon-Small-50.png in Resources */,
@@ -398,6 +405,7 @@
 				3A21C05A14228F2000700A04 /* Default-Landscape.png in Resources */,
 				3A21C05B14228F2000700A04 /* Default-Portrait.png in Resources */,
 				3A082B0B1423336A00629C7A /* RFFontInfoControllerPad.xib in Resources */,
+				3A082B111423426300629C7A /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,12 +438,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3A4CA95A1014BFD70050FF99 /* Localizable.strings */ = {
+		3A082B0D1423426300629C7A /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3A4CA9731014C1DA0050FF99 /* en */,
-				3A4CA95E1014C07A0050FF99 /* fr */,
-				3A4CA96F1014C1240050FF99 /* es */,
+				3A082B0E1423426300629C7A /* en */,
+				3A082B0F1423426300629C7A /* es */,
+				3A082B101423426300629C7A /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
