@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		3A082B041423278900629C7A /* RFFontInfoControllerPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A082B031423278900629C7A /* RFFontInfoControllerPad.m */; };
+		3A082B0B1423336A00629C7A /* RFFontInfoControllerPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A082B0A1423336A00629C7A /* RFFontInfoControllerPad.xib */; };
 		3A21C0561422868B00700A04 /* RFFontsControllerPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A21C0551422868B00700A04 /* RFFontsControllerPad.m */; };
 		3A21C05A14228F2000700A04 /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A21C05814228F2000700A04 /* Default-Landscape.png */; };
 		3A21C05B14228F2000700A04 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A21C05914228F2000700A04 /* Default-Portrait.png */; };
@@ -49,6 +51,9 @@
 /* Begin PBXFileReference section */
 		1D6058910D05DD3D006BFB54 /* RooiFonts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RooiFonts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3A082B021423278900629C7A /* RFFontInfoControllerPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFFontInfoControllerPad.h; sourceTree = "<group>"; };
+		3A082B031423278900629C7A /* RFFontInfoControllerPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFFontInfoControllerPad.m; sourceTree = "<group>"; };
+		3A082B0A1423336A00629C7A /* RFFontInfoControllerPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RFFontInfoControllerPad.xib; sourceTree = "<group>"; };
 		3A21C0541422868B00700A04 /* RFFontsControllerPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFFontsControllerPad.h; sourceTree = "<group>"; };
 		3A21C0551422868B00700A04 /* RFFontsControllerPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFFontsControllerPad.m; sourceTree = "<group>"; };
 		3A21C05814228F2000700A04 /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape.png"; sourceTree = "<group>"; };
@@ -268,6 +273,7 @@
 			children = (
 				3A7C75DD11AED16400FA4065 /* MainWindow-iPad.xib */,
 				3A66C07511AF03BE0029BCE2 /* RFFontDetailControllerPad.xib */,
+				3A082B0A1423336A00629C7A /* RFFontInfoControllerPad.xib */,
 			);
 			path = NIBs;
 			sourceTree = "<group>";
@@ -311,6 +317,8 @@
 				3A21C0551422868B00700A04 /* RFFontsControllerPad.m */,
 				3AAC5FD214225B6000C65725 /* RFFontDetailControllerPad.h */,
 				3AAC5FD314225B6000C65725 /* RFFontDetailControllerPad.m */,
+				3A082B021423278900629C7A /* RFFontInfoControllerPad.h */,
+				3A082B031423278900629C7A /* RFFontInfoControllerPad.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -389,6 +397,7 @@
 				3AAC5F9214224B9C00C65725 /* RFSizeController.xib in Resources */,
 				3A21C05A14228F2000700A04 /* Default-Landscape.png in Resources */,
 				3A21C05B14228F2000700A04 /* Default-Portrait.png in Resources */,
+				3A082B0B1423336A00629C7A /* RFFontInfoControllerPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +423,7 @@
 				3AAC5F9B142259D700C65725 /* RFSplitController.m in Sources */,
 				3AAC5FD414225B6100C65725 /* RFFontDetailControllerPad.m in Sources */,
 				3A21C0561422868B00700A04 /* RFFontsControllerPad.m in Sources */,
+				3A082B041423278900629C7A /* RFFontInfoControllerPad.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
