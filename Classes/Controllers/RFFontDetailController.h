@@ -21,6 +21,7 @@
 @property (nonatomic, retain) IBOutlet RFSizeController *sizeController;
 @property (nonatomic, retain) IBOutlet UIView *sizeView;
 @property (nonatomic, retain) IBOutlet UITextView *sampleView;
+@property (nonatomic, retain) IBOutlet UIToolbar *customToolbar;
 @property (nonatomic, copy) NSString *fontName;
 @property (nonatomic, copy) NSString *fontFamilyName;
 @property (nonatomic, retain) UIActionSheet *textsActionSheet;

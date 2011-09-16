@@ -33,11 +33,13 @@
 @synthesize otherActionsSheet = _otherActionsSheet;
 @synthesize sizeController = _sizeController;
 @synthesize comparativeTexts = _comparativeTexts;
+@synthesize customToolbar = _customToolbar;
 
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [_fontName release];
+    [_customToolbar release];
     [_fontFamilyName release];
     [_sizeView release];
     [_sampleView release];
@@ -102,17 +104,31 @@
     NSDictionary *dict = [notification userInfo];
     NSValue *keyboardFrameValue = [dict objectForKey:UIKeyboardFrameEndUserInfoKey];
     CGRect bounds = [keyboardFrameValue CGRectValue];
-    CGSize size = CGSizeMake(self.sampleView.frame.size.width, self.sampleView.frame.size.height - bounds.size.height);
-
-    self.sampleView.frame = CGRectMake(0.0, self.sampleView.frame.origin.y, size.width, size.height);
+    bounds = [self.view convertRect:bounds fromView:self.view.window];
+    CGFloat origin = self.sampleView.frame.origin.y;
+    CGSize size = CGSizeMake(self.sampleView.frame.size.width, 
+                             self.sampleView.frame.size.height - (bounds.size.height - self.customToolbar.frame.size.height));
+    [UIView animateWithDuration:0.35
+                     animations:^{
+                         self.sampleView.frame = CGRectMake(0.0, 
+                                                            origin,
+                                                            size.width, 
+                                                            size.height);
+                     }];
 }
 
 - (void)expandTextView:(NSNotification *)notification
 {
     CGFloat origin = self.sampleView.frame.origin.y;
-    CGSize size = CGSizeMake(self.sampleView.frame.size.width, self.view.frame.size.height - origin);
-    
-    self.sampleView.frame = CGRectMake(0.0, origin, size.width, self.view.frame.size.height - origin);
+    CGSize size = CGSizeMake(self.sampleView.frame.size.width, 
+                             self.view.frame.size.height - origin);
+    [UIView animateWithDuration:0.35
+                     animations:^{
+                         self.sampleView.frame = CGRectMake(0.0, 
+                                                            origin, 
+                                                            size.width, 
+                                                            self.view.frame.size.height - origin - self.customToolbar.frame.size.height);
+                     }];
 }
 
 #pragma mark - Public methods
