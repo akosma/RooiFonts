@@ -28,7 +28,6 @@
 		3A296A7C0FEF786F00D0A771 /* RFSizeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A296A7B0FEF786F00D0A771 /* RFSizeController.m */; };
 		3A31F2D00FEFA40800460062 /* RFComparisonDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A31F2CF0FEFA40800460062 /* RFComparisonDetailController.m */; };
 		3A3F6BB20FEFE1C300F65169 /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A3F6BB10FEFE1C300F65169 /* chat.png */; };
-		3A4CA9B11014D1590050FF99 /* bluewoki.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A4CA9B01014D1590050FF99 /* bluewoki.png */; };
 		3A65E8DF0FEECBF2005CA383 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A65E8DE0FEECBF2005CA383 /* MessageUI.framework */; };
 		3A65E8E30FEECC15005CA383 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A65E8E20FEECC15005CA383 /* CoreGraphics.framework */; };
 		3A65E8E50FEECC15005CA383 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A65E8E40FEECC15005CA383 /* Foundation.framework */; };
@@ -40,9 +39,6 @@
 		3A65E9AA0FEED5C6005CA383 /* UIFont+RooiFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A65E9A40FEED5C6005CA383 /* UIFont+RooiFonts.m */; };
 		3A65E9B50FEED5F5005CA383 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A65E9AE0FEED5F5005CA383 /* Default.png */; };
 		3A66C07611AF03BE0029BCE2 /* RFFontDetailControllerPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A66C07511AF03BE0029BCE2 /* RFFontDetailControllerPad.xib */; };
-		3A7C75DE11AED16400FA4065 /* Icon-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7C75D911AED16400FA4065 /* Icon-ipad.png */; };
-		3A7C75DF11AED16400FA4065 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7C75DA11AED16400FA4065 /* Icon-Small-50.png */; };
-		3A7C75E011AED16400FA4065 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A7C75DB11AED16400FA4065 /* Icon-Small.png */; };
 		3A7C75E111AED16400FA4065 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A7C75DD11AED16400FA4065 /* MainWindow-iPad.xib */; };
 		3AAC5F781422453900C65725 /* Entitlements.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 3AAC5F771422453900C65725 /* Entitlements.entitlements */; };
 		3AAC5F8E14224B9C00C65725 /* RFComparisonDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AAC5F8614224B9C00C65725 /* RFComparisonDetailController.xib */; };
@@ -90,7 +86,6 @@
 		3A31F2CE0FEFA40800460062 /* RFComparisonDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFComparisonDetailController.h; sourceTree = "<group>"; };
 		3A31F2CF0FEFA40800460062 /* RFComparisonDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFComparisonDetailController.m; sourceTree = "<group>"; };
 		3A3F6BB10FEFE1C300F65169 /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat.png; sourceTree = "<group>"; };
-		3A4CA9B01014D1590050FF99 /* bluewoki.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluewoki.png; sourceTree = "<group>"; };
 		3A65E8DE0FEECBF2005CA383 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		3A65E8E20FEECC15005CA383 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3A65E8E40FEECC15005CA383 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -107,9 +102,6 @@
 		3A65E9A40FEED5C6005CA383 /* UIFont+RooiFonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+RooiFonts.m"; sourceTree = "<group>"; };
 		3A65E9AE0FEED5F5005CA383 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		3A66C07511AF03BE0029BCE2 /* RFFontDetailControllerPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RFFontDetailControllerPad.xib; sourceTree = "<group>"; };
-		3A7C75D911AED16400FA4065 /* Icon-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-ipad.png"; sourceTree = "<group>"; };
-		3A7C75DA11AED16400FA4065 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
-		3A7C75DB11AED16400FA4065 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
 		3A7C75DD11AED16400FA4065 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		3AAC5F771422453900C65725 /* Entitlements.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Entitlements.entitlements; sourceTree = "<group>"; };
 		3AAC5F8614224B9C00C65725 /* RFComparisonDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RFComparisonDetailController.xib; sourceTree = "<group>"; };
@@ -270,7 +262,6 @@
 				3A082B1C14234E9500629C7A /* iTunesArtwork */,
 				3A082B14142346C000629C7A /* Default@2x.png */,
 				3A65E9AE0FEED5F5005CA383 /* Default.png */,
-				3A4CA9B01014D1590050FF99 /* bluewoki.png */,
 				3A3F6BB10FEFE1C300F65169 /* chat.png */,
 			);
 			path = Images;
@@ -290,9 +281,6 @@
 			children = (
 				3A21C05814228F2000700A04 /* Default-Landscape.png */,
 				3A21C05914228F2000700A04 /* Default-Portrait.png */,
-				3A7C75D911AED16400FA4065 /* Icon-ipad.png */,
-				3A7C75DA11AED16400FA4065 /* Icon-Small-50.png */,
-				3A7C75DB11AED16400FA4065 /* Icon-Small.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -410,10 +398,6 @@
 			files = (
 				3A65E9B50FEED5F5005CA383 /* Default.png in Resources */,
 				3A3F6BB20FEFE1C300F65169 /* chat.png in Resources */,
-				3A4CA9B11014D1590050FF99 /* bluewoki.png in Resources */,
-				3A7C75DE11AED16400FA4065 /* Icon-ipad.png in Resources */,
-				3A7C75DF11AED16400FA4065 /* Icon-Small-50.png in Resources */,
-				3A7C75E011AED16400FA4065 /* Icon-Small.png in Resources */,
 				3A7C75E111AED16400FA4065 /* MainWindow-iPad.xib in Resources */,
 				3A66C07611AF03BE0029BCE2 /* RFFontDetailControllerPad.xib in Resources */,
 				3AAC5F781422453900C65725 /* Entitlements.entitlements in Resources */,
