@@ -71,7 +71,6 @@
     CGSize size = self.sizeController.view.frame.size;
     self.sizeController.view.frame = CGRectMake(0.0, 0.0, size.width, 50.0);
     [self.sizeView addSubview:self.sizeController.view];
-    self.fontName = @"Helvetica";
     self.sampleView.text = [self.comparativeTexts lastObject];
     
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
@@ -253,7 +252,7 @@
             case 2:
             {
                 RFComparisonPromptController *comparisonPrompt = [[[RFComparisonPromptController alloc] init] autorelease];
-                comparisonPrompt.title = self.fontName;
+                comparisonPrompt.topFontName = self.fontName;
                 [self.navigationController pushViewController:comparisonPrompt animated:YES];
                 break;
             }

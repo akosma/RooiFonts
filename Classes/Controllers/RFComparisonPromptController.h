@@ -10,4 +10,6 @@
 
 @interface RFComparisonPromptController : RFFontsController <RFFontsControllerDelegate>
 
+@property (nonatomic, copy) NSString *topFontName;
+
 @end

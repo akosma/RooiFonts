@@ -19,9 +19,11 @@
 @implementation RFComparisonPromptController
 
 @synthesize comparisonController = _comparisonController;
+@synthesize topFontName = _topFontName;
 
 - (void)dealloc
 {
+    [_topFontName release];
     [_comparisonController release];
     [super dealloc];
 }
@@ -52,7 +54,7 @@
     {
         self.comparisonController = [[[RFComparisonDetailController alloc] init] autorelease];
     }
-    self.comparisonController.topFontName = self.title;
+    self.comparisonController.topFontName = self.topFontName;
     self.comparisonController.bottomFontName = self.currentlySelectedFontName;
     [self.navigationController pushViewController:self.comparisonController animated:YES];
 }
