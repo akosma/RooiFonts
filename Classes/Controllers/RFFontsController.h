@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "RFFontsControllerDelegate.h"
 
-@interface RFFontsController : UITableViewController
+@interface RFFontsController : UITableViewController <UISearchDisplayDelegate,
+                                                      UISearchBarDelegate>
 
 @property (nonatomic, assign) IBOutlet id<RFFontsControllerDelegate> delegate;
 @property (nonatomic, readonly) NSString *currentlySelectedFontName;
 @property (nonatomic, readonly) NSString *currentlySelectedFontFamily;
 @property (nonatomic, retain) NSIndexPath *selectedIndexPath;
+@property (nonatomic, retain) UISearchDisplayController *searchController;
+@property (nonatomic, retain) UISearchBar *searchBar;
 
 @end
